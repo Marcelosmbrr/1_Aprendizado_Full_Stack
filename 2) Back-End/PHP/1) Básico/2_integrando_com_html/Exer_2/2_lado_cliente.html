@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo2.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Aprendizado com PHP</h1>
+        <h2>Com integração HTML<h2>
+    </header>
+
+    <section>
+        
+        <div id = "Container">
+            
+            <form method = "get" action = "2_recuperando_dados.php"> <!-- Método GET e local de envio dos dados-->
+                Nome: <input type = "text" name = "nome"/></br>
+                Ano de nascimento: <input type = "number" name = "ano"/></br>
+                <fieldset><legend>Sexo</legend> <!-- Fieldset é uma caixa para agrupar elementos-->
+                    <input type = "radio" name = "sexo" id = "masc" value = "masculino" checked /> <!-- type = botao de radio, value = valor enviado para o GET, checked = opção marcada por padrão -->
+                    <label for = "masc"> Masculino </label></br> <!-- Atributo for-->
+                    <input type = "radio" name = "sexo" id = "fem" value = "feminino"/>
+                    <label for = "fem"> Feminino</label> 
+                </fieldset></br>
+                <input id = "botao_enviar" type = "submit" value = "Enviar"/>
+            </form>
+        
+        </div>
+    
+    </section>
+    
+</body>
+</html>

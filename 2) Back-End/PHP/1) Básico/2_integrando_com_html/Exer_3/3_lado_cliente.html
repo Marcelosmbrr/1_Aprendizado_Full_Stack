@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo3.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Aprendizado com PHP</h1>
+        <h2>Com integração HTML<h2>
+    </header>
+
+    <section>
+        
+        <div id = "Container">
+            
+            <form method = "get" action = "3_recuperando_dados.php"> <!-- Método GET e local de envio dos dados-->
+                Primeiro número: <input type = "number" name = "numero1"/> </br>
+                Segundo número: <input type = "number" name = "numero2"/></br>
+
+                <fieldset><legend> Operação </legend>
+                
+                    <input type = "radio" name = "operação" value = "soma" id = "operação_1"/>
+                    <label for = "operação_1"> Soma </label></br>
+                    <input type = "radio" name = "operação" value = "subtração" id = "operação_2"/>
+                    <label for = "operação_2"> Subtração </label></br>
+                    <input type = "radio" name = "operação" value = "multiplicação" id = "operação_3"/>
+                    <label for = "operação_3"> Multiplicação </label></br>
+
+                </fieldset>
+                
+                <input id = "botao_enviar" type = "submit" value = "Enviar"/>
+            </form>
+        
+        </div>
+    
+    </section>
+    
+</body>
+</html>
