@@ -20,6 +20,9 @@
             
             <?php
 
+            /* Vale citar que existem centenas de funções pré-definidas do próprip PHP, e outras conhecidas também em outras linguagens,
+            como C e C++. Para cada aplicação, é melhor pesquisar se existe uma adequada, ao invés de tentar decorar diversas */
+
 
             function maior($a, $b, $c, $d){
                 if($a > $b && $a > $c && $a > $d){
@@ -136,3 +139,4 @@
     
 </body>
 </html>
+
