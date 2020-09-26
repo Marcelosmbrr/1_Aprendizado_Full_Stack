@@ -30,6 +30,7 @@
         echo "<p> Por ser um conta do tipo {$tipo_conta} o saldo inicial padrão é de {$conta1->getSaldo()}.</p>";
         echo "<p> Senhor(a) {$conta1->getDono()}, veja abaixo os dados atualizados de sua conta bancária: </p>";
         print_r($conta1);
+        /** */
         
         
         
