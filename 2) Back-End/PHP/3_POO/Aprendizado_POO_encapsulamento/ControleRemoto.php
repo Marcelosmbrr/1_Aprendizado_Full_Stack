@@ -1,7 +1,7 @@
 <?php
 require_once 'Interface_encapsulamento.php';
 
-class ControleRemoto implements Interface_encapsulamento{
+class ControleRemoto implements Interface_controle{
     private $ligado;
     private $volume;
     private $tocando;
