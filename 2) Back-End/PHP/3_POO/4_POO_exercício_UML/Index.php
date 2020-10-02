@@ -11,9 +11,9 @@
         
         /* Poderia haver uma recuperação de dados via GET em laços, como
         for($con = 0; $con <= 2; $con ++){
-          $nome[$con] = isset($_GET["nome_form"]) ? $_GET["nome_form] : null;
-          $idade[$con] = isset($_GET["idade_form"]) ? $_GET["idade_form] : null;
-          $sexo[$con] = isset($_GET["sexo_form"]) ? $_GET["sexo_form] : null;
+          $nome[$con] = isset($_GET["nome_form[$cont]"]) ? $_GET["nome_form[$cont]"] : null;
+          $idade[$con] = isset($_GET["idade_form[$cont]"]) ? $_GET["idade_form[$cont]"] : null;
+          $sexo[$con] = isset($_GET["sexo_form[$cont]"]) ? $_GET["sexo_form[$cont]"] : null;
          }
          */
         
