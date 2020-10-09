@@ -7,12 +7,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <title>JS- Manipulação da DOM</title>
-    <style>
+    <style> 
 
-        #js_logo{
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        #js_logo_div{
+            background-color:#121214;
+            min-width: 12%;
+            max-width: 12%;
             float: left;
-            margin-left: 150px;
-            margin-top: 5px;
+            margin-left: 5%;
+  
+        }
+        #js_logo{
+            margin-left: 6%;
             box-shadow: 2px 3px 26px 0px rgba(0,0,0,0.75);
             padding-top: 0;
             -moz-transition: all 0.3s;
@@ -31,13 +42,17 @@
             -moz-transition: all 0.3s;
             -webkit-transition: all 0.3s;
             transition: all 0.3s;
+            font-family: 'roboto';
         }
         .card:hover{
             -moz-transform: scale(1.1);
             -webkit-trasform: scale(1.1);
             transform: scale(1.1);
-            box-shadow: -1px -1px 30px 0px rgba(0,0,0,0.75);
+            box-shadow: -1px 0px 15px 6px rgba(235,235,115,1);
             z-index: 1;
+        }
+        div.card-body{
+            box-shadow: inset 0px 1px 5px 0px rgba(0,0,0,0.69);
         }
         img{
             padding-top: 5px;
@@ -67,8 +82,8 @@
             height: 50px;
             margin-bottom: 10px;
             box-shadow: inset -1px 2px 5px 0px rgba(0,0,0,0.75);
-            
-        }
+        }  
+       
 
     </style>
   </head>
@@ -76,13 +91,15 @@
  
     <header>
         <div class="jumbotron jumbotron-fluid">
-            <img src="img/js.png" alt="" id = "js_logo" width="200">
-            <div class="container">
-              <h1 class="display-4">JAVASCRIPT- MANIPULANDO A DOM</h1>
-              <p class="lead">DOM (Document Object Model) é uma representação estruturada do documento como uma árvore. 
-                  O DOM define métodos que permitem acesso à árvore, 
-                   para que eles possam alterar a estrutura, estilo e conteúdo do documento. 
-                   <br><br> Para entender a síntaxe utilizada em cada exemplo, veja o arquivo fonte.
+            <div id = "js_logo_div">
+                <img src="img/js.png" alt="" id = "js_logo" width="200">
+            </div>
+            <div class="container">             
+                <h1 class="display-4">JAVASCRIPT- MANIPULANDO A DOM</h1>
+                <p class="lead">DOM (Document Object Model) é uma representação estruturada do documento como uma árvore. 
+                 O DOM define métodos que permitem acesso à árvore, 
+                para que eles possam alterar a estrutura, estilo e conteúdo do documento. 
+                <br><br> Para entender a síntaxe utilizada em cada exemplo, veja o arquivo fonte.
                 </p>
             </div>
           </div>
@@ -188,7 +205,7 @@
         </div>
 
       <script>
-
+          
     ///////////////////////////////////////////////////////// SCRIPT DAS CARDS DO CONTAINER_1 ////////////////////////////////////////////////////////////////////////////////////
 
           //EXEMPLO 1 - EVENTO DE TECLADO "ONCLICK"
