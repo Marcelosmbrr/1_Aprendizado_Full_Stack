@@ -1,0 +1,27 @@
+ul{ /* Corpo da lista em si */
+    list-style-type: none;
+     /*border: 1px solid red;*/
+    margin: 0;
+    padding: 0;
+    
+}
+ul a{
+    width: 200px;
+    height: 40px;
+    display: block; /* link, que é inline, se torna block*/
+    background-color: orange;
+    color: #000;
+    text-decoration: none;
+    text-indent: 20px;
+    
+}
+li{ /* Cada item da lista */
+    padding: 10px 20px;
+    /*border: 1px solid red;*/
+    background: url(imagens/seta.png) no-repeat center left;
+}
+
+a:hover{
+    background-color: orangered;
+    color: #fff;
+}

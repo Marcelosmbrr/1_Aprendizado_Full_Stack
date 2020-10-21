@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+}
+.bola{
+    background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--4NKfyYpY--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/173104/b22e6060-52af-4c85-89cb-47d487832bd2.jpg);
+    background-size: 100px; /* Desta forma significa que cobre 100px de largura do container */
+    background-repeat: no-repeat; /* Por padrão, se o background não ocupar o container todo, ele é repetido até ocupar a totalidade */
+    background-position: center center; /* Define a posição do background no container, na horizontal e vertical. E claro, só faz sentido se não ocupar todo o espaço */ 
+    background-color: #ff7675; 
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 4px solid whitesmoke;
+}
+
+.bola:hover{
+    background-color: #F15A6F ;
+    border-color: orangered;
+    cursor: pointer;
+}
