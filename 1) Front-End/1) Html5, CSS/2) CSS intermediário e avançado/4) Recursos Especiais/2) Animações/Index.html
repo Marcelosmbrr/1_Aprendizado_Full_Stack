@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações</title>
+    <style>
+        @keyframes animacao-caixa{
+            from{
+                background: orange;
+            }
+            to{
+                background: orangered;
+                width: 100%;
+            }
+
+        }
+        #caixa{
+            width: 300px;
+            height: 300px;
+            background: orangered;
+            animation-name: animacao-caixa;
+            animation-duration: 10s; /* tempo de ocorrência da animação */
+            animation-delay: 1s; /* tempo até a animação começar*/
+
+        }
+    </style>
+</head>
+<body>
+
+    <div id = "caixa">
+        
+    </div>
+    
+</body>
+</html>
