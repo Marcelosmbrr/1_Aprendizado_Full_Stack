@@ -1,0 +1,193 @@
+<!--
+
+    O sistema grid Bootstrap usa vários containers, linhas e colunas para arranjar e alinhar conteúdo. Ele é feito com flexbox e é, totalmente, responsivo.
+    Veja a fonte dos códigos em: https://getbootstrap.com.br/docs/4.1/layout/grid/
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Olá, mundo!</title>
+    <style>
+
+        .jumb{
+            background: whitesmoke;
+            border: 1px solid #333;
+            padding: 10px;
+        }
+
+        .grid{
+            padding: 2px 0;
+            margin-bottom: 20px;
+        }
+        .container .row{
+            background: gray;
+        }
+
+        .col-sm, .col-4{
+           border: 1px solid #333; 
+           background-color: steelblue;
+        }
+
+        .img{
+            background: #A7BFDB;
+        }
+        .primeira, .segunda, .terceira{
+            margin: 0 5px;
+        }
+
+        .col-4 > img{
+            display: block;
+            margin: auto;
+        }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container jumb">
+          <h1 class="display-4">CSS GRID COM BOOSTRAP</h1>
+          <p class="lead">Todos os códigos das estruturas base utilizadas existem prontamente para serem implementadas - basta copia-las do bootstrap.</p>
+          <a class="btn btn-primary btn-lg" href="https://getbootstrap.com.br/docs/4.1/layout/grid/" role="button">Site do Bootstrap</a>
+        </div>
+    </div>
+
+    <!-- O exemplo abaixo cria três colunas de larguras idênticas em dispositivos pequenos, médios, grandes e extra grandes, usando nossas classes grid pré-definidas. 
+    Estas colunas são centralizadas na página, usando o elemento pai .container.-->
+    <div class="container grid">
+        <div class="row primeira">
+          <div class="col-sm">
+            Uma de três colunas
+          </div>
+          <div class="col-sm">
+            Uma de três colunas
+          </div>
+          <div class="col-sm">
+            Uma de três colunas
+          </div>
+        </div>
+        <div class="row segunda">
+            <div class="col-sm">
+              Uma de três colunas
+            </div>
+            <div class="col-sm">
+              Uma de três colunas
+            </div>
+            <div class="col-sm">
+              Uma de três colunas
+            </div>
+        </div>
+        <div class="row terceira">
+            <div class="col-sm">
+              Uma de três colunas
+            </div>
+            <div class="col-sm">
+              Uma de três colunas
+            </div>
+            <div class="col-sm">
+              Uma de três colunas
+            </div>
+        </div>
+    </div>
+    <!-- Segundo exemplo ---------------------------->
+    <div class="container grid">
+        <div class="row justify-content-start">
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+          <div class="col-4">
+            Uma de duas colunas
+          </div>
+        </div>
+      </div>
+
+      <!-- Terceiro exemplo ---------------------------->
+    <div class="container grid">
+        <div class="row justify-content-start">
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+          <div class="col-4 img">
+            <img src="imagens/img1.jpg" alt="" width="100px">
+          </div>
+        </div>
+      </div>
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

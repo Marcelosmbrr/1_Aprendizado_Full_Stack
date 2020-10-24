@@ -1,0 +1,157 @@
+<!-- 
+CSS Grid introduz um sistema bi-dimensional de grid (literalmente "grades") para CSS. 
+Grids podem ser usados para o design de layouts de grandes seções de uma webpage, assim como de pequenos elementos de interface.
+Como dito nos documentos escritos, se o Flexbox permite definir o posicionamento de móveis de uma casa, o Grid permite definir o posicionamento dos cômodos.
+
+
+Sendo assim, e tendo o Flexbox já sido explicado, o ****CSS Grid será mostrado em conjunto com o Flexbox****, pois é assim mesmo que podem e devem ser utilizados.
+
+OBS: Análise a estrutura da grade na ferramenta "inspectionar" do browser */
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-flexbox.css">
+    <link rel="stylesheet" href="css-grid.css">
+    <link rel="stylesheet" href="css-grid2.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>CSS Grid</title>
+    <style>
+        
+
+    
+    </style>
+</head>
+<body>
+
+    <!-- LEMBRANDO: FLEXBOX É BASEADO EM PARENT-CHILD -->
+    <!-- O DISPLAY: FLEX E SUAS CONFIGURAÇÕES SÃO IMPLEMENTADAS NO PARENT E OS EFEITOS RECAEM SOBRE OS CHILDREN-->
+
+    <!-- Header é a raíz -->
+    <header class = "header">
+        <!-- Tag a, abaixo, é child de Header -->
+        <a href="">Logo</a>
+        <!-- Tag nav, abaixo, é child de Header-->
+        <nav>
+            <!-- Tag UL abaixo é child de Nav-->
+            <ul class = "menu">
+                <!-- Li's abaixo são child de Ul-->
+                <li><a href="">Sobre</a></li>
+                <li><a href="">Produtos</a></li>
+                <li><a href="">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Section Flexbox</h1>
+    <section class = "section-flexbox">
+        <!-- Cada Div em si é child de Section-->
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>     
+    </section>
+
+    <!-- As explicações para o Grid estão nos arquivos CSS-->
+    <h1>Section Grid</h1>
+    <section class = "section-grid">
+        <!-- Cada Div em si é child de Section-->
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div>
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <p>Legenda</p>
+        </div> 
+        <div class = "anuncio">
+            <img src="imagens/img1.jpg" alt="">
+            <p>Anuncio</p>
+        </div> 
+    </section>
+
+    <h1>Section Grid 2</h1>
+    <section class = "section-grid2">
+        <!-- A div abaixo é child de Section -->
+        <div>
+            <img src="imagens/img1.jpg" alt="">
+            <h2>Legenda maior</h2>
+        </div>
+
+        <!-- A div abaixo é child de Section -->
+        <div class = "barra-lateral">
+            <!-- As quatro seguintes divs são child da div "barra-lateral"-->
+            <div>
+                <img src="imagens/img1.jpg" alt="">
+                <p>Legenda</p>
+            </div>
+            <div>
+                <img src="imagens/img1.jpg" alt="">
+                <p>Legenda</p>
+            </div>
+            <div>
+                <img src="imagens/img1.jpg" alt="">
+                <p>Legenda</p>
+            </div>
+            <div>
+                <img src="imagens/img1.jpg" alt="">
+                <p>Legenda</p>
+            </div>
+        </div>
+    </section>
+
+    
+    
+</body>
+</html>
