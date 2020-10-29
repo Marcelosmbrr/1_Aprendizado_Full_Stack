@@ -1,5 +1,0 @@
-Sobre position: https://pt.stackoverflow.com/questions/38215/quando-usar-position-absolute-ou-relative-em-css
-
-Flexbox: https://origamid.com/projetos/flexbox-guia-completo/
-
-Css Grid: https://www.origamid.com/projetos/css-grid-layout-guia-completo/
