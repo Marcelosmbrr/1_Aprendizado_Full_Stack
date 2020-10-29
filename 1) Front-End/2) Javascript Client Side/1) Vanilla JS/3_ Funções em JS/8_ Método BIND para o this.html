@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções em JS</title>
+</head>
+<body>
+
+    <script>
+
+        //USO DO "THIS" EM FUNÇÕES //MÉTODO BIND
+        //É muito comum, ocorrer a transformação do this conforme são efetuadas novas chamadas de métodos
+        //O método BIND serve para definir o contexto do "this" de uma função independente de onde seja chamada
+        //Siga a enumeração para ver a lógica
+            function cozinhar() {
+                console.log(this.ingredientes); // 1) This se refere ao que? Aqui, a nada
+                }
+                let jantar = { // 2) Criado o objeto "jantar", e seu atributo "ingredientes"
+                    ingredientes: 'bacon' 
+                }
+                let ref_bind = cozinhar.bind(jantar); // 3) A variável "ref_bind" recebe a função "cozinhar", que teve o contexto do seu this atribuído ao objeto "jantar"
+                ref_bind(); // 4) Chamamos a função "cozinhar" por meio do "ref_bind", que irá imprimir, agora, o valor de "this.ingredientes", ou seja, "bacon"
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,2 @@
+SEMPRE abrir os arquivos .html também por meio da barra de navegação, começando por localhost/
+Se ao invés disto, abrirmos o arquivo clicando no atalho da página .html, não estaremos abrindo o arquivo no localhost, e assim o envio dos dados para o arquivo.php dará errado.

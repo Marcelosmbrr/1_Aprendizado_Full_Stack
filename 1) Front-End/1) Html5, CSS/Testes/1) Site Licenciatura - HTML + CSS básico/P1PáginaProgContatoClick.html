@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html> 
+
+	<head>
+		<meta charset="UTF-8"> 
+		<title>LC - Programação I </title>
+		<link rel="stylesheet" type="text/css" href="EstiloPáginaProg.css"/> 
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="icon" href="img/html5.png" >
+	</head>
+
+	<body>
+	 
+		<div id="HeaderMain"> <!-- Container grande-->
+			<div id="ContainerHeader"> <!-- Container menor centralizado-->
+				<img src="img/lcomp.png" alt= "Logo LC" width=130 height=100 id= "LogoLC">
+				<h1 id="Titulo"> Disciplina de Programação I</h1>
+			</div>
+		</div>
+
+		<aside>
+			<div id= "ContainerConteúdo">
+
+					<ul id="MenuLateral">
+							<li><a href= "P1PáginaProg.html">INÍCIO</a></li>
+							<li><a href= "P1PáginaProgHoráriosClick.html">GRADE DE HORÁRIOS</a></li>
+							<li><a href= "P1PáginaProgContatoClick.html">CONTATO</a></li>
+						</ul>
+
+					<main>
+						<div id="TituloMain"> 
+							<text>Formúlario de Contato</text>
+						</div>
+						<form action="cadastro.php" method="post">
+							<p>
+								Informe seu nome e sobrenome: <input type="text" name="nome" placeholder="Nome completo" value="">
+							</p>
+							<p>
+								Informe seu Telefone: <input type="text" name="Fone" placeholder="(xx)xxxx-xxxx" value="">
+							</p>
+							<p>
+								Informe seu Email: <input type="text" name="Email" placeholder=" ____@___.com" value="">
+							</p>
+							<p>
+								<textarea name="Comentário" placeholder="Deixe seu comentário" rows="5" cols="40"></textarea>
+							</p>
+							<p>
+								<input id="BotãoEnviar" type="submit" name="botao" value="Enviar">
+							</p>
+						</form>
+					<main>
+							
+				</div>
+				
+			</div>
+		</div>
+		
+	
+	</aside>
+
+
+		<div id= "Rodapé">
+			<div id="LogoIfsul">
+				<img src="img/ifsulpb.png" alt= "Logo LC" width=200 height=70>
+			</div>
+			<div id="TextoRodapé">
+				<p> Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense</br> Curso de Licenciatura em Computação</br> Disciplina de Programação I</p>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
+

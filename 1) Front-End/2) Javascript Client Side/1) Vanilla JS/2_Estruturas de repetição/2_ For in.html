@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de repetição</title>
+</head>
+<body>
+    <script>
+
+        //A ESTRUTURA FOR IN PERMITE PERCORRER UM ARRAY, POSIÇÃO POR POSIÇÃO, INDEPENDENTE DO VALOR UTILIZADO PARA SER O ÍNDICE
+        //A síntaxe é for(índice in array)
+        let lista = ['a', 'b', 'c', 'd'];
+        console.log(lista);
+        for(var posicao in lista){
+            console.log('Na posição ' + posicao + ' da lista, há o valor ' + lista[posicao]);
+
+            }
+        
+        //EXEMPLO 2, COM ÍNDICES ALEATÓRIOS
+        let nomes = Array();
+        nomes['a'] = 'João';
+        nomes[2] = 'Rodrigo';
+        nomes['Mario'] = 'Bross';
+        nomes[false] = 'Falsiane';
+        for(var x in nomes){
+            console.log('No índice ' + x + ' do vetor nomes, há o nome ' + nomes[x]);
+        }
+
+        
+
+        
+
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+body{
+    margin:0;
+    padding:0;
+}
+header{
+    width: 100%;
+    height: 620px;
+    background-color: #181818;
+    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75);
+}
+h1{ 
+    font-size: 50px;
+    color: lightskyblue;
+    float: left;
+    background-color: blue;
+}
+#Menucima{
+    margin: auto;
+    background-color: whitesmoke;
+    height: 6%;
+    width: 16.5%;
+    border-radius: 2px;
+}
+.LiMenu1{
+    float: left;
+    list-style: none;
+    margin: 2%;
+    background-color:whitesmoke;
+    height: 28px; 
+    border-radius: 2px;
+}
+.aMenu1{
+    text-decoration: none;
+    display: block;
+    font-family: 'roboto';
+    color: black;
+    font-weight: bold;
+}
+.aMenu1:hover{
+    border-bottom:solid;
+    border-bottom-width: 4px;
+    border-bottom-color: #FF851B;
+}
+#CENTROCIMA{
+    width: 100%;
+    height: 500px;
+    background-image: url('img/Headermeio.jpeg');
+    opacity: 0.4;
+}
+#CENTROCIMA:hover{
+    transition: 2s;
+    opacity: 1.0;
+
+}
+aside{
+    width: 100%;
+    height: 600px;
+    background-color:steelblue;
+    overflow: hidden; /*resolveu o vão entre o aside e o header*/
+}
+#Menubaixo{
+    background-color:  #181818;
+    border-radius: 5px;
+    height: 260px;
+    width: 15%;
+    margin-left:20px;
+    box-shadow: 1px 1px 4px black;
+    padding: 0;
+
+}
+.LiMenu2{
+    list-style: none;
+    margin: 6%;
+    background-color: whitesmoke;
+    height: 28px; 
+    border-radius: 2px;
+    overflow: hidden;
+    text-align: center;
+}
+.aMenu2{
+    text-decoration: none;
+    /* se por display block, o hover vai sublinar toda a largura do botão*/
+    font-family: 'roboto';
+    color: black;
+    font-weight: bold;
+}
+.aMenu2:hover{
+    border-bottom:solid;
+    border-bottom-width: 4px;
+    border-bottom-color: #FF851B;
+}
+#TITULO{
+    background-color:transparent;
+    border: solid;
+    border-color: steelblue;
+    border-width: 5px;
+    width: 30%;
+    height: 10%;
+    overflow: hidden;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    border-radius: 10px;
+
+    
+}
+h1{
+    color: black;
+    background-color: transparent;
+    font-family: 'roboto';
+    font-size: 30px;
+    background-color: steelblue;
+    position: relative;
+    margin-left:10%;
+    font-weight: bolder;
+    border-radius:3px;
+}

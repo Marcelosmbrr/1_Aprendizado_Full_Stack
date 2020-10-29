@@ -1,0 +1,19 @@
+body{
+    background-color: whitesmoke;
+    text-align: center; /* Alinhar centralmente os elementos do body, isto é, as caixas*/
+}
+div{
+    background-color: gray;
+    display: inline-block; /* Caixas dispostas na horizontal, em sentido de linha */
+    vertical-align: top; /* Caixas alinhadas pelo topo*/
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+
+}
+p{
+    margin-top: 50%;
+}
+#Caixa1{
+    height: 250px;
+}

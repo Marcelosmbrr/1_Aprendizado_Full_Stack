@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo4.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Aprendizado com PHP</h1>
+        <h2>Com integração HTML<h2>
+    </header>
+
+    <section>
+        
+        <div id = "Container">  
+            
+            <form method = "get" action = "4_recuperando_dados.php"> <!-- Método GET e local de envio dos dados-->
+                Digite um número qualquer entre 0 e 9: <input type = "number" name = "numero"/> </br>
+
+                <fieldset><legend> Tipo de Matriz </legend>
+                
+                    <input type = "radio" name = "forma" value = "2x2" id = "forma1"/>
+                    <label for = "forma1"> 2 por 2 </label></br>
+                    <input type = "radio" name = "forma" value = "3x2" id = "forma2"/>
+                    <label for = "forma2"> 3 por 2 </label></br>
+                    <input type = "radio" name = "forma" value = "4x2" id = "forma3"/>
+                    <label for = "forma3"> 4 por 2 </label></br>
+
+                </fieldset>
+                
+                <input id = "botao_enviar" type = "submit" value = "Enviar"/>
+            </form>
+        
+        </div>
+    
+    </section>
+    
+</body>
+</html>

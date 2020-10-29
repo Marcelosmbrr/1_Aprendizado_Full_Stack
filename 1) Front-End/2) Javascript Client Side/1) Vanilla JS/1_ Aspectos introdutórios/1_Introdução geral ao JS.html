@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript</title>
+</head>
+<body>
+    
+    <script> 
+
+        //Onde os códigos JS serão implementados
+
+        //VARIÁVEIS E DADOS
+        //Javascript é uma linguagem pouco tipada
+            var nome = "Fulano";
+            var idade = 18;
+            var verdadeiro = true;
+            var falso = false;
+            var array = ["amarelo", "verde", "azul", "preto"];
+            var objeto = {
+                cor: array[1],
+                peso: 1200.00,
+                nome: "Hulk",
+                humano: false
+            }
+        //VAR, LET E CONST
+        //let possui escopo de bloco, global e de função
+        //var possui escopo global e de função
+        //const é uma constante
+            let nome2 = "Fulano";
+            var idade2 = 17;
+            const sexo = "masculino";
+
+        //OPERAÇÕES MATEMÁTICAS
+        //Em JS + serve para somar e concatenar, e por isso podem ocorrer confusões
+        //Para evitar isso deixamos claro para o compilador que a variável é um número com Number();
+            let a = 2, b = 3;
+            let soma = Number(a) + Number(b);
+            let concatenar = "10" + 5; //Imprimiria 105
+            let multi = a * b;
+
+        //FUNÇÕES
+        //Da mesma forma que em C/C++ e PHP
+            function operacao(c, d){
+                let resultado = c + d;
+                return resultado;
+            }
+
+            c = 2;
+            d = 3;
+            let resultado = operacao(c, d);
+        
+        //PASSAGEM DE VALOR POR REFERÊNCIA
+        //Em JS isto pode ser feito com arrays e objetos
+        //No exemplo abaixo, "ref" aponta para o mesmo local da memória que "carro"
+            let carro = { cor: "azul", preço: 2000.00}
+            let ref = carro;
+            altera(carro);
+            function altera(objeto){
+                carro.cor = "vermelho";
+                carro.preço = 3000.00;
+            }
+
+        //CONDICIONAIS
+        //As estruturas condicionais possuem a mesma síntaxe de C/C++ e PHP
+        //If, else, condição ternária, ...
+
+        //OPERADORES LÓGICOS
+        //Mesmos das outras linguagens usuais
+        //&&, ||, =, ==, ===, ...
+
+        //ESTRUTURAS DE REPETIÇÃO COMUNS
+        //For, do, do while
+
+        //ESTRUTURAS DE REPETIÇÃO ALTERNATIVAS
+        //For in, for of, foreach, e outras
+
+        //OPERADOR TERNÁRIO EM JS
+            var variavel = condicao ? valorSeTrue : valorSeFalse;
+
+        //FUNCÕES INTERVAL E TIMEOUT
+            function hello(){
+                console.log("Hello World!");
+            }
+            function ola(){
+                consoole.log("Olá!");
+            }
+            setInterval(hello, 200); //Passamos a função em si, e ela é executada 200 vezes
+            setTimeout(ola, 5000); //Vai executar uma vez a função ola, apenas depois de passados 5 segundos
+
+        // Testando impressão
+            const numero = 50;
+            document.write('<h1> Uma das formas de concatenar strings, em JS, é pondo as variáveis entre símbolos de soma (+). A variável numero é igual a: ' + numero + '</h1>');
+            document.write(`<h1> Outra forma de concatenar strings é com template string. O time stamp de agora é ${Date.now()} </h1>`);
+
+        //Casting em JS
+        //toString()
+        //parseInt
+        //Parsefloat()
+
+        //Desvio de Fluxo com Break e Continue
+        
+
+    </script>
+
+    <script src="arquivo.js">
+        //DESTA FORMA PODEMOS INCLUIR CÓDIGOS JS EXTERNOS
+    </script>
+</body>
+</html>
