@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    border: none;
+    outline: none;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    list-style: none;
+}
+}
+
+body{
+    background: #f5f5f5;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* CABEÇALHO */
+header{
+    width: 100%;
+    padding: 3% 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.caixa-logo{
+    width: 200px;
+    height: 50px;
+    background: url(../img/logo.png);
+    background-size: cover;
+    margin-left: 50px;
+}
+
+.container-menu{
+    margin-right: 50px;
+}
+
+.btn-menu{ 
+    width: 50px;
+    height: 50px;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.check-menu{
+    
+}
+
+nav{
+    position: fixed;
+    background: #333;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    display: none;
+    
+}
+
+.menu-lista{
+    width: 100%;
+}
+
+.menu-item a{
+    display: block;
+    padding: 5%;
+    text-align: center;
+    color: #fff;
+}
+
+.fechar-menu{
+    text-align: center;
+    padding: 5%;
+    cursor: pointer;
+    background: whitesmoke;
+
+}
+
+.menu-item a:hover{
+    background: rgba(0, 0, 10, 0.5);
+    border-left: 1px solid #fff;
+}

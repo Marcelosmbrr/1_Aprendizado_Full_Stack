@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    margin: 0;
+    width: 100vw;
+    font-family: 'arial';
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    background: url(img/background.jpg);
+    background-size: cover no-repeat;
+    
+}
+
+/* HEADER */
+header{
+    width: 100%;
+    background: #333;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
+
+.menu-horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 20px 0 0;
+}
+
+/* Elemento icon para menu mobile */
+.menu-horizontal li:nth-child(7){
+    background: whitesmoke;
+    margin: 5px;
+    border-radius: 10%;
+    width: 10%;
+    width: 50%;
+}
+
+input[type = 'checkbox']{
+    display: none;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.caixa-logo{
+    min-width: 20%;
+    position: relative;
+    height: 100vh;
+    box-shadow: 7px 4px 16px 0px rgba(0,0,0,0.75);
+    background: url();
+    background: whitesmoke;
+}
+
+.caixa-logo img{
+    position: absolute;
+    top: 0;
+    box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
+    transition: all 2s;
+}
+
+.caixa-logo img:hover{
+    transform: scale(1.1);
+}
+
+.menu-item a{
+    display: block;
+    padding: 20px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.menu-item a:hover{
+    border-top: 1px solid #fff;
+}
+
+.primeiro{
+    display: relative; /* Para conter o submenu absolute */
+}
+
+/*Sub-menu*/
+.sub-menu{
+    position: absolute;
+    top: 70px;
+    transform: translateY(-500px);
+}
+
+.invisivel{
+    visibility: hidden;
+}
+
+.primeiro:hover .sub-menu{
+    transition: 1s;
+    transform: translateY(0);
+}
+
+.sub-item a{
+    background: #333;
+}
+
+.sub-item a:hover{
+    opacity: 0.9;
+    border-top: none;
+    border-left: 1px solid #fff;
+}
+
+/* MENU MOBILE */
+.icon{
+    position: relative;
+}
+
+.container-menu-mobile{
+    position: absolute;
+    top: 40px;
+    transform: translateY(-500px);
+}
+
+.menu-mobile{
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-item a{
+    background: #333;
+}
+
+.mobile-item a:hover{
+    opacity: 0.9;
+    border-top: none;
+    border-left: 1px solid #fff;
+}
+
+input[type = "checkbox"]:checked ~.container-menu-mobile{
+    transition: 2s;
+    transform: translateY(0);
+}
+
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px){
+    /* Some o menu horizontal */
+    .primeiro, .segundo, .terceiro, .quarto, .quinto, .sexto{
+        display: none;
+    }
+
+    /* Aparece o menu mobile */
+    .menu-horizontal li:nth-child(7){
+        display: block;
+        max-width: 60%;
+    }
+
+    /* O menu mobile é posicionado no final do eixo x */
+    header{
+        justify-content: flex-end;
+    }
+
+    .caixa-logo{
+        transition: 1s;
+        width: 40%;
+
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px){
+    /* Some o menu horizontal */
+    .primeiro, .segundo, .terceiro, .quarto, .quinto, .sexto{
+        display: none;
+    }
+
+    /* Aparece o menu mobile */
+    .menu-horizontal li:nth-child(7){
+        display: block;
+        max-width: 60%;
+    }
+
+    /* O menu mobile é posicionado no final do eixo x */
+    header{
+        justify-content: flex-end;
+    }
+
+    .caixa-logo{
+        transition: 1s;
+        width: 40%;
+
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1200px){
+    /* Sem menu mobile*/
+    .menu-horizontal li:nth-child(7){
+        display: none;
+    }
+    .caixa-logo{
+        width: 35%;
+        transition: 1s;
+
+    }
+}
+
+@media (min-width: 1200px){
+    /* Sem menu mobile */
+    .menu-horizontal li:nth-child(7){
+        display: none;
+    }
+
+    .caixa-logo{
+        width: 30%;
+        transition: 1s;
+    }
+}
