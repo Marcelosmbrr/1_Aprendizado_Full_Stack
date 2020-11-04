@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> <!-- font-family: 'Staatliches', cursive; -->
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="icon" href="img/icon.png">
     <title>Nodedrop</title>
 </head>
@@ -24,8 +25,8 @@
 
             <button class = "btn-menu"><i class="fas fa-bars"></i></button>
 
-            <nav>
-                <ul class = "menu-lista">
+            <nav class = "nav-mobile">
+                <ul class = "menu-lista-mobile">
                     <li class = "menu-item fechar-menu"><button class = "btn-back"><i class="fas fa-angle-double-right"></i></button></li>
                     <li class = "menu-item"><a href="">Opção1</a></li>
                     <li class = "menu-item"><a href="">Opção2</a></li>
@@ -34,13 +35,108 @@
                     <li class = "menu-item"><a href="">Opção5</a></li>
                 </ul>
             </nav>
+
+            <nav class = "nav-desk">
+                <ul class = "menu-lista-desk">
+                    <li class = "menu-item-desk"><a href="">Opção1</a></li>
+                    <li class = "menu-item-desk"><a href="">Opção2</a></li>
+                    <li class = "menu-item-desk"><a href="">Opção3</a></li>
+                    <li class = "menu-item-desk"><a href="">Opção4</a></li>
+                    <li class = "menu-item-desk"><a href="">Opção5</a></li>
+                </ul>
+            </nav>
             
         </div>
 
     </header>
 
+    <div class = "banner">
+
+        <div class = "title">
+            <h2> TEXTO DE NÍVEL SECUNDÁRIO </h2>
+            <h3>Descrição extensa de nível terciário</h3>
+        </div>
+
+        <div class = "banner-buttons">
+            <button class = "btn-cadastrar"> Cadastrar <i class="fas fa-user-check"></i> </button>
+            <button class = "btn-sobre"> Sobre <i class="fas fa-question-circle"></i> </button>
+        </div>
+
+    </div>
+
+    <main class = "servicos">
+
+        <article class = "servico">
+
+            <a href=""> <img src="img/criacoes.jpg" alt="alternative text"></a>
+
+            <div class = "texto-interno">
+                <a href=""> hiperlink para a imagem </a>
+                <h4> Texto de nível quartenário </h4>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Velit doloremque quaerat enim ipsum facilis rerum dolores debitis numquam nihil. Nobis, obcaecati nisi laudantium aliquam reiciendis dolore. Assumenda molestias voluptas expedita!
+                </p>
+            </div>
+
+        </article>
+
+        <article class = "servico">
+
+            <a href=""> <img src="img/md.jpg" alt="alternative text"></a>
+
+            <div class = "texto-interno">
+                <a href=""> hiperlink para a imagem </a>
+                <h4> Texto de nível quaternário </h4>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Velit doloremque quaerat enim ipsum facilis rerum dolores debitis numquam nihil. Nobis, obcaecati nisi laudantium aliquam reiciendis dolore. Assumenda molestias voluptas expedita!
+                </p>
+            </div>
+
+        </article>
+
+        <article class = "servico">
+
+            <a href=""> <img src="img/cs.jpg" alt="alternative text"></a>
+
+            <div class = "texto-interno">
+                <a href=""> hiperlink para a imagem </a>
+                <h4> Texto de nível quaternário </h4>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Velit doloremque quaerat enim ipsum facilis rerum dolores debitis numquam nihil. Nobis, obcaecati nisi laudantium aliquam reiciendis dolore. Assumenda molestias voluptas expedita!
+                </p>
+            </div>
+
+        </article>
+
+
+    </main>
+
+    <footer>
+        <div class = "redes-sociais">
+            <i class="fab fa-twitter-square"></i>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram-square"></i>
+        </div>
+
+        <h5>&copy; Autor: MarceloSMBR | Projeto Responsivo </h5>
+    </footer>
+
+    <script src="Jquery/jquery-3.5.1.min.js"></script>
+    <script>
+
+        $(".btn-menu").click(function(){
+            $('nav').show(500);
+        })
+
+        $(".btn-back").click(function(){
+            $('nav').hide(500);
+        })
+
+    </script>
+
     <!-- Ao clicar no botão btn-menu o nav deve se tornar block -->
     <!-- Ao clicar no botão btn-back o nav deve se tornar hidden -->
+
     
 </body>
 </html>
