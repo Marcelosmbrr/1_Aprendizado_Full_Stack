@@ -1,0 +1,51 @@
+<!--
+    O JavaScript não tem a capacidade de criar membros públicos, privados e protegidos em uma classe.
+    Se você trabalhou com qualquer linguagem orientada a objetos, você deve saber a importância da interface interna vs externa. 
+    Interface interna refere-se aos métodos e propriedades de uma classe que só é acessível pela própria classe e não de fora. 
+    Em contraste, a interface externa possui métodos e propriedades que também podem ser acessados ​​de fora da classe.
+    Para simular estas funcionalidades, além de usar convenções simbólicas, utiliza-se estruturas pensadas para serem o mais próximo possível do que deveriam.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto em JS</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //Por padrão, as variáveis são públicas
+        //Utiliza-se _ por convenção, para simbolizar o "private"
+        //Os atributos são criados diretamente no construtor
+        class Endereco {
+            constructor(rua) {
+                this._rua = rua; //rua é um atributo privado, e que deve ser acessado, portanto, por Getter e Setter
+            }
+
+            set Set_rua(nova) {
+                this._rua = nova;
+                }
+
+            get Get_rua(){
+                return this._rua;
+                }
+            } 
+
+            let E1 = new Endereco(null);
+            // É assim que se chama, e envia um valor, para um Setter ou Getter no JS 
+            //Como apenas chamar: objeto.nome_método; //Como chamar e enviar um parâmetro: objeto.nome_método = valor;
+            E1.Set_rua = "Rua x"; 
+            console.log(E1.Get_rua);
+            
+    </script>
+
+</head>
+<body> 
+    
+
+<div id="output"></div>
+    
+</body>
+</html>

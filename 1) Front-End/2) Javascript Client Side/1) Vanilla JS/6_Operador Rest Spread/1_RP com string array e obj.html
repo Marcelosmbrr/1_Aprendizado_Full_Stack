@@ -1,0 +1,42 @@
+<!--
+  Sintaxe de Espalhamento (Spread syntax) permite que um objeto iterável, como uma expressão de array ou uma string seja expandido para ser usado
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+
+  //COM STRINGS
+  let tituloArtigo = 'Como utilizar o operador rest/spread'
+
+  console.log(tituloArtigo); //Irá imprimir normalmente
+  console.log(...tituloArtigo); //Irá imprimir letra por letra, existindo um espaço entra cada uma
+  console.log([...tituloArtigo]); //Irá imprimir em um vetor, índice por índice, correspondendo cada um a uma letra
+
+  //COM ARRAYS
+  let listaCursos1 = ['NodeJS e MongoDB', 'ES6', 'TypeScript e Angular 4'];
+  let listaCursos2 = ['Multiplataforma Android/IOS', 'Introdução ao GNU/Linux'];
+  let listaCursosCompleto = ['Web Completo', 'Android Completo', ...listaCursos1, ...listaCursos2]; //Adiciona os elementos dos arrays adicionados a "listaCursosCompleto"
+
+  console.log(listaCursosCompleto); //Imprime os elementos nativos do array, mais os adicionais, das outras estruturas
+
+  //COM OBJETOS
+  let pessoa = {nome: 'João', idade: 27};
+  let clone = {endereco: 'Rua Abc', ...pessoa}; //Adiciona os atributos do Objeto Pessoa ao Objeto Clone
+
+  console.log(clone); //Imprime os atributos nativos do Objeto Clone, e os atributos adicionados do Objeto Pessoa
+  </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

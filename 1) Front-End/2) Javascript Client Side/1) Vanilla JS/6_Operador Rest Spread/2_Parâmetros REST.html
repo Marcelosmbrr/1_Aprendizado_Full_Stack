@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    //OPERADOR REST SPREAD EM PARÂMETRO DE FUNÇÕES
+
+    //PRIMEIRO EXEMPLO
+    function soma(...param) { //Parâmetros REST são arrays
+      let resultado = 0;
+
+      console.log(param); //Será impresso um array com os valores enviados
+      param.forEach(v => resultado += v); //v recebe o valor do índice, e soma a resultado, v recebe o novo valor do índice seguinte, e soma a resultado,...etc
+
+      return resultado; //Irá retornar a soma dos valores de cada índice
+    }
+
+    let retorno_soma = soma(3, 8, 5, 7, 8, 10, 115);
+    console.log(retorno_soma);
+
+    //SEGUNDO EXEMPLO
+    function multiplicacao(m, ...p) { //m recebe 5, e o parâmetro REST recebe os restantes
+      console.log(m);
+      let resultado = 0;
+      console.log(p);
+
+      p.forEach(v => resultado += m * v); //v recebe o valor do índice, é multiplicado pelo valor fixo de m, que é 5, e somado a resultado, e assim em diante, até o final do array
+
+      return resultado;
+    }
+
+    let retorno_multi = multiplicacao(5, 7, 12, 3, 49);
+    console.log(retorno_multi);
+
+  </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
