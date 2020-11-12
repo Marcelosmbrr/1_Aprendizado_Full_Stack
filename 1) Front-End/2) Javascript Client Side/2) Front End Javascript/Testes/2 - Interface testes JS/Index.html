@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marcelosmbr">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="script_hora.js"></script> <!-- script incluido -->
+    <script src="script_pessoa.js"></script> <!-- script incluido -->
+    <script src = "script-tabuada.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <title>Interface - Cadastro Pessoa</title>
+</head>
+<body onload="carregar()" onresize = "console.log('Evento onresize disparado')" onscroll= "console.log('Evento onscroll disparado')">
+
+    <header id = "cabecalho-hora">
+
+        <div id = "titulo">
+            <h1> Testes com JS </h1>
+            <p id = "msg-hora"> ............ </p>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class = "caixa pessoa">
+
+            <div class = "caixa-titulo">
+                <h3> Preencha os dados abaixo </h3>
+            </div>
+
+            <div class = "caixa-conteudo cpessoa">
+                Ano nascimento: <input type="number" id = "ano_nascimento">
+                <br>
+                <input type="radio" name="radsex" id="masc" value = "Masculino" checked>
+                <label for="masc"> Masculino </label>
+                <br>
+                <input type="radio" name="radsex" id="fem" value = "Feminino">
+                <label for="fem"> Feminino </label>
+                <br>
+                <button class = "btn" onclick = "analise_pessoa()"> Analisar </button>
+            </div>
+
+            <img src="" alt="" id = "foto_pessoa">
+
+            
+
+        </section>
+
+        <section class = "caixa tabuada">
+
+            <div class = "caixa-titulo">
+                <h3> Que tabuada quer conferir? </h3>
+            </div>
+           
+
+            <div class = "caixa-conteudo ctabuada">
+                Tabuada do: <input type="number" id = "tabuada">
+                <br>
+                <button class = "btn" onclick = "listar_tabuada()"> Listar </button>
+            </div>
+
+            <select name="tabuada" id="lista"> 
+                <!--
+                    <option> ..... </option>
+                    <option> ..... </option>
+                    <option> ..... </option>
+                    ....
+                -->
+            </select>
+
+        </section>
+
+        <section class = "caixa drag-elementos">
+
+            <div class = "caixa-titulo">
+                <h3> Arrastar elementos </h3>
+            </div>
+           
+
+            <div class = "caixa-conteudo ccontador">
+
+            </div>
+            
+        </section>
+
+    </main>
+
+    
+    
+    
+</body>
+</html>
