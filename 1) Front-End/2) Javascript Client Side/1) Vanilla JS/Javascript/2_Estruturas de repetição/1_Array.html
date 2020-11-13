@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array JS</title>
+</head>
+<body>
+    
+    <script>
+
+        //ARRAY BÁSICO - NOTAÇÃO 1
+        var lista_frutas = Array('banana', 'maça', 'laranja', 'morango');
+        console.log('Imprimindo um array em si: ' + lista_frutas); //Vai imprimir o array em si, inteiro
+        console.log('Imprimindo um termo do array, de uma posição: ' + lista_frutas[1]); //Vai imprimir 'maça'
+        var contador;
+        for(contador = 0; contador < lista_frutas.length; contador ++ ){ 
+            console.log('Imprimindo elemento por elemento do array, e seu índice, com um for: ' + lista_frutas[contador] + ' índice ' + contador);
+        }
+
+        //ARRAY BÁSICO - NOTAÇÃO 2
+        var lista_nomes = [];
+        lista_nomes = [
+            'Fulaneides',
+            'Fulaninos',
+            'Fulanol'
+        ];
+
+        //ATRIBUTO LENGTH
+        function length(){
+            let string =  'abc';
+            let array = Array('a', 'b', 'c');
+            console.log('A string possui ' + string.length + ' letras');
+            console.log('O array possui ' + array.length + ' elementos');
+        }
+        length();
+
+        //ARRAY MULTIDIMENSIONAL
+        //JavaScript não fornece o array multidimensional nativamente. No entanto, você pode criar uma matriz multidimensional definindo uma matriz de elementos, onde cada elemento também é outra matriz.
+        var numeric = [
+            ['input1','input2'],
+            ['input3','input4']
+        ];
+        numeric[0][0] == 'input1';
+        numeric[0][1] == 'input2';
+        numeric[1][0] == 'input3';
+        numeric[1][1] == 'input4';
+
+        //MÉTODO DE INCLUSÃO E EXCLUSÃO DE ELEMENTOS 
+        var lista_animais = Array('Elefante', 'Girafa', 'Cachorro');
+        console.log('Array original, sem push: ' + lista_animais);
+
+        //Método Push //Inserir elementos no final do array
+        lista_animais.push('Elemento1_Push', 'Elemento2_Push');
+        console.log('Utilizando método Push: ' + lista_animais);
+
+        //Método Unshift //Inserir elementos no inicio do array e retornar o número de elementos
+        console.log('Utilizando método Unshift: ' + lista_animais.unshift('Elemento_Unshift') + ' || Array pós Unshift: ' + lista_animais);
+
+        //Método Pop //Retirar o último elemento de um array e retorna-lo
+        console.log('Utilizando método Pop: ' + lista_animais.pop() + ' || Array pós Pop: ' + lista_animais);
+
+        //MÉTODO DE PESQUISA NO ARRAY
+        //O método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array, retorna -1 caso o mesmo não esteja presente
+        var lista_elementos = Array('Bola', 'Carro', 'Dedo', 'Celular');
+        console.log('Utilizando método Indexof: ' + lista_elementos.indexOf('Carro'));
+
+        //MÉTODO DE ORDENAÇÃO DE ELEMENTOS
+        //O método sort() ordena os elementos do próprio array e retorna o array
+        var lista_numeros = Array(4, 1, 3, 2);
+        console.log('Array antes do método Sort: '+ lista_numeros);
+        console.log('Array depois de ordenado com Sort: ' + lista_numeros.sort());
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
