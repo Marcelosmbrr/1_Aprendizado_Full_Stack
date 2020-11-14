@@ -1,0 +1,179 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>API - App Pesquisa Endereço</title>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		
+		<!-- API DO GOOGLE -->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+		<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdHsMj-oRr9ooDut6ZB5I4Tsp1N0IusXY&callback=initMap&libraries=&v=weekly"
+		defer
+		></script>
+		<style>
+			#mensagem{
+				width: 100%;
+			}
+
+			body{
+				background: #333;
+			}
+
+			h3{
+				font-size: 1.5em;
+			}
+
+			/*Mapa Google */
+			
+			#map {
+				height: 100%;
+			}
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+
+		</style>
+		<script>
+
+			function getDadosEnderecoPorCEP(cep) { //Função é chamada, e recebe o valor do CEP
+
+				console.log(cep)
+
+				//URL disponibilizada pela API
+				//A API apresenta os dados referentes ao CEP em forma de um JSON com codificação unicode
+				let url = 'https://viacep.com.br/ws/'+cep+'/json/unicode/'; 
+
+				//Criação do Objeto 
+				let xmlHttp = new XMLHttpRequest();
+				//Abertura da requisição
+				xmlHttp.open('GET', url);
+				//Envio da requisição
+				xmlHttp.send();
+
+				//Método para verificação do stat do Objeto
+				xmlHttp.onreadystatechange = () => {
+					if(xmlHttp.readyState == 4 && xmlHttp.status == 200) { //Se o state for = 4 e o status = 200
+						let dadosJSONText = xmlHttp.responseText;
+						console.log(dadosJSONText);
+						let dadosJSONObj = JSON.parse(dadosJSONText);
+
+						document.getElementById('endereco').value = dadosJSONObj.logradouro;
+						document.getElementById('bairro').value = dadosJSONObj.bairro;
+						document.getElementById('cidade').value = dadosJSONObj.localidade;
+						document.getElementById('uf').value = dadosJSONObj.uf;
+
+						let mensagem = window.document.getElementById("mensagem");
+						mensagem.className = "alert alert-success";
+						mensagem.setAttribute('role', 'alert');
+						mensagem.style.display = "hidden";
+						mensagem.innerHTML = 'Endereço encontrado';
+						mensagem.style.marginTop = "15px";
+						mensagem.style.transition = "2s";
+						mensagem.style.display = "block";
+
+						
+					} else if(xmlHttp.readyState == 4 && xmlHttp.status == 404){
+
+						let mensagem = window.document.getElementById("mensagem");
+						mensagem.className = "alert alert-danger";
+						mensagem.setAttribute('role', 'alert');
+						mensagem.style.display = "hidden";
+						mensagem.innerHTML = 'ERRO! 404 Not Found!';
+						mensagem.style.marginTop = "15px";
+						mensagem.style.transition = "2s";
+						mensagem.style.display = "block";
+
+						
+				
+					} else{
+						let mensagem = window.document.getElementById("mensagem");
+						mensagem.className = "alert alert-danger";
+						mensagem.setAttribute('role', 'alert');
+						mensagem.style.display = "hidden";
+						mensagem.innerHTML = 'ERRO! Falha na requisição!';
+						mensagem.style.marginTop = "15px";
+						mensagem.style.transition = "2s";
+						mensagem.style.display = "block";
+
+						document.getElementById('endereco').value = '';
+						document.getElementById('bairro').value = '';
+						document.getElementById('cidade').value = '';
+						document.getElementById('uf').value = '';
+
+						
+
+					}
+
+				}
+			}
+						
+		</script>
+
+		
+			
+		<script>
+			
+			function initMap() {
+				let map;
+				map = new google.maps.Map(document.getElementById("map"), {
+				center: { lat: -34.397, lng: 150.644 },
+				zoom: 8,
+					});
+				}
+
+		</script>
+
+		
+	
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-light bg-light mb-4">
+			<div class="container">
+				<div class="navbar-brand mb-0 h1">
+					<h3>API + AJAX - Aplicação para pesquisa de endereço </h3>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row form-group">
+				<div class="col-sm-3">
+					<!-- Evento onblur é ativado sempre que o usuário deixa o input --> <!-- this.value se refere ao valor contido no próprio elemento da tag -->
+					<input type="text" class="form-control" placeholder="CEP" id = "cep_input" onblur=""/>
+				</div>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" placeholder="Endereço" readonly id="endereco" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<div class="col-sm-6">
+					<input type="text" class="form-control" placeholder="Bairro" readonly id="bairro" />
+				</div>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" placeholder="Cidade" readonly id="cidade" />
+				</div>
+
+				<div class="col-sm-2">
+					<input type="text" class="form-control" placeholder="UF" readonly id="uf" />
+				</div>
+			</div>
+
+			<button class = "btn btn-success" onclick = "getDadosEnderecoPorCEP(window.document.querySelector('input#cep_input').value)"> Pesquisar </button>
+
+			<div id = "mensagem">
+
+			</div>
+
+			<div id = "map">
+
+			</div>
+
+		</div>
+	</body>
+</html>
