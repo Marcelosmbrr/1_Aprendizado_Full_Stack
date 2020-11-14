@@ -1,0 +1,85 @@
+<!--
+	TODO ESTE PROCESSO, ASSIM COMO A PRÓPRIA REQUISIÇÃO AJAX, PODE SER MAIS FACILMENTE REALIZADO COM BIBLIOTECAS JS
+	BIBLIOTECAS COMO JQUERY ENCAPSULAM OS PROCEDIMENTOS
+-->
+
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Catálogo de filmes</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		
+		<!-- Script conversão de XML para JSON -->
+		<script src = "XML_to_JSON.js"></script> 
+		<script>
+
+			function getFilmes() {
+
+				//Criação do objeto XMLHttpRequest
+				let xmlHttp = new XMLHttpRequest();
+
+				//Conexão estabelecida com o servidor, state = 1
+				//O XMLHttpRequestmétodo open()inicializa uma solicitação recém-criada ou reinicializa uma existente
+				xmlHttp.open('GET', 'http://localhost/4_Ajax/2%20_Recuperando%20XML%20via%20HTTP/filmes.xml'); //O recurso requisitado é o arquivo XML
+
+				//Envio da requisição aberta
+				xmlHttp.send();
+				
+				//Tarefa para conferir o progresso da requisição
+				xmlHttp.onreadystatechange = () => {
+					if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+						let XMLFilmes = xmlHttp.responseText; //Recebe o recurso, que é o arquivo filmes.xml
+						console.log(XMLFilmes); //Imprime o conteúdo do arquivo
+
+						//Parser é um algoritmo que realiza a leitura e identificação de uma estrutura de uma determinada gramática, como XML e HTML
+						//Criação do DOMParserobject //Este objeto pode ser usado para analisar o texto de um documento usando o parseFromString()método
+						let parser = new DOMParser();
+
+						//o parseFromString () método converte uma string em um documento XML
+						//domFilmes recebe a execução do método do Objeto instanciado parser, da classe DOMParser
+						//O método realiza a leitura do arquivo XML e retorna a árvore XML 
+						domFilmes = parser.parseFromString(XMLFilmes, 'text/xml');
+
+						//Imprimimos a árvore XML
+						console.log(domFilmes);
+
+						//jsonFilmes recebe o retorno da função que converte XML para JSON
+						//A árvore XML está em domFilmes, então o parâmetro da função é o próprio
+						jsonFilmes = xmlToJson(domFilmes);
+
+						//Imprime as informações, antes em XML, agora em JSON
+						//JSON é mais utilizado por ser nativamente em JS
+						console.log(jsonFilmes);
+
+					}
+
+
+					if(xmlHttp.readyState == 4 && xmlHttp.status == 404) {
+						//..
+					}
+				}
+
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-light bg-light mb-4">
+			<div class="container">
+				<div class="navbar-brand mb-0 h1">
+					<h3>Catálogo de filmes</h3>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<button type="button" class="btn btn-success" onclick="getFilmes()">Listar filmes</button> <!-- Chamar a função com evento onclick -->
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
