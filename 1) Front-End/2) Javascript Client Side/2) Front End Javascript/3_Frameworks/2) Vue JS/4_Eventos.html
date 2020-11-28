@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizado VueJS - com CDN</title>
+     <!-- CDN VueJS -->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+
+        *{
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #app{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid lightblue;
+            width: 350px;
+            height: 350px;
+        }
+
+        p{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        button{
+            background: lightblue;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.5em;
+            outline: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            box-shadow: inset -1px -1px 0px 4px rgba(137,189,224,1);
+        }
+
+        #area_neutra{
+            width: 80%;
+            height: 10%;
+            border: 2px solid crimson;
+            padding: 10px;
+            color: crimson;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            padding: 5px;
+            margin-top: 20px;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body >
+
+    <div class = "exercicio">
+        <div id = "app" @mousemove = "atualizarPosicao">
+
+            <!-- 
+              https://br.vuejs.org/v2/guide/events.html  
+            -->
+
+            <p> {{ contador }} </p>
+            <p>
+                <button v-on:click="add">+1</button>
+                <button @click = "contador -= 1">-1</button>
+            </p>
+
+            <p>
+                Coordenadas: {{x}} {{y}}
+            </p>
+
+            <div @mousemove.stop id="area_neutra">
+                Área neutra (mouse position capture não funciona)
+            </div>
+
+            <input type="text" placeholder= "Digite e pressione enter" @keyup.enter="alerta"> <!-- admite qualquer tecla -->
+
+            
+
+        </div>
+    </div>
+
+    <script>
+
+        //INSTANCIA DO VUE
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                x: 0,
+                y: 0,
+                contador: 0
+                
+            },
+            methods: {
+                add(){
+                    this.contador++
+                },
+
+                atualizarPosicao(e){
+                    this.x = e.clientX;
+                    this.y = e.clientY;
+                },
+                alerta(){
+                    window.alert("Clicou a tecla enter")
+                }
+            }
+        
+        });
+
+
+    </script>
+
+
+</body>
+</html>

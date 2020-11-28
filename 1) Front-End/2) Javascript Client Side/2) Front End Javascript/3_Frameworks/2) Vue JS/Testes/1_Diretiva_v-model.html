@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste com a diretiva v-model</title>
+    <!-- CDN VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+        body{
+            background: #333;
+        }
+
+        #app{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1em;
+        }
+
+        input{
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        select{
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        label{
+            font-weight: bolder;
+            color: orangered;
+        }
+
+
+    </style>
+</head>
+
+    <body>
+        <div id="app">
+        <label for="">Nome</label><br>
+        <input type="text" v-model="nome">
+
+        <br><br>
+        <label for="">Telefone</label><br>
+        <input type="text" v-model="telefone">
+
+        <br><br>
+        <label for="">Deseja receber nossas novidades?</label><br>
+        <input type="radio" v-model="novidades"> Sim
+        <input type="radio" v-model="novidades"> Não
+
+        <br><br>
+        <label for="">Interesses</label>
+        <input type="text" type="checkbox" v-model="interesses"> Futebol <br>
+        <input type="text" type="checkbox" v-model="interesses"> Formula 1 <br>
+        <input type="text" type="checkbox" v-model="interesses"> Corrida <br>
+
+        <br><br>
+        <label for="">Como nos conhece?</label>
+        <select v-model="comoNosConheceu">
+        <option value="">Escolha</option>
+        <option value="Google">Google</option>
+        <option value="TV">TV</option>
+        <option value="Revista">Revista</option>
+        </select>
+
+        <br><br>
+
+        <hr>
+
+        Nome: {{ nome }} <br>
+        Telefone: {{ telefone }} <br>
+        Novidades: {{ novidades }} <br>
+        Interesses: {{ interesses }} <br>
+        Como nos conheceu? {{ comoNosConheceu }} <br>
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    nome: '',
+                    telefone: '',
+                    novidades: '',
+                    interesses: '',
+                    comoNosConheceu: ''
+                },
+            });
+        </script>
+    </body>
+
+</html>

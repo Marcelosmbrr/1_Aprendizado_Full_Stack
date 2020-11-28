@@ -1,0 +1,1 @@
+Deve ser executado estando, antes, os arquivos no diretório do servidor utilizado.

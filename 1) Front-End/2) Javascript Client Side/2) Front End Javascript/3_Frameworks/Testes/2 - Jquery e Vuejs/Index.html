@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Framework JS - Jquery</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Fonts Aewsome -->
+        <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
+        <!-- Font Anton -->
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <!-- Jquery é um arquivo codificado em JS, obtido a partir do seu site oficial, que contém uma série de funcionalidades e funções para uso -->
+        <script src = "Jquery/jquery-3.5.1.min.js"></script>
+        <!-- CDN VueJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- scripts criados-->
+        <script src = "scripts_jquery.js"></script>
+        <script src = "ajax_jquery.js"></script>
+        <script src = "scripts_vuejs.js"></script>
+    </head>
+    <body onload = "scripts_jquery()">
+
+        <div class = "topo">
+
+        </div>
+        <hr>
+
+        <header>
+
+            <div class = "logo"></div>
+
+            <div id = "div_vue"><img src="img/vue.png" alt="vuejs" id = "vuejs_logo"></div>
+
+        </header>
+        <hr>
+
+        <main class = "main main-Jquery">
+
+            <!--
+                OBSERVAÇÕES:
+                sprimeiro = section primeiro
+                aprimeiro = artigo primeiro
+                a/s-primeiro-jquery = artigo/section primeiro do main-Jquery
+            -->
+
+            <section class = "section sprimeiro sprimeiro-jquery">
+                <article class = "aprimeiro a-primeiro-jquery">
+                    <h2>Testes <br> Framework Jquery </h2>
+                </article>
+            </section>
+
+            <section class = "section ssegundo s-segundo-jquery">
+                <article class = "asegundo a-segundo-jquery">
+                    <i class="fas fa-cogs"></i>
+                </article>
+            </section>
+
+            <section class = "section sterceiro s-terceiro-jquery">
+                <article class = "aterceiro a-terceiro-jquery">
+                    <i class="fas fa-cogs" id = "icon_play"></i>
+                </article>
+            </section>
+
+            <section class = "section squarto s-quarto-jquery">
+                <article class = "aquarto a-quarto-jquery" id = "icon_travolta">
+                    <i class="fas fa-cogs"></i> <img src="img/travolta.gif" alt="travolta" id = "gif_travolta"> <img src="img/dance.gif" alt="dance" id = "gif_dance">
+                </article>
+            </section>
+
+            <section class = "section squinto s-quinto-jquery">
+                <article class = "aquinto a-quinto-jquery">
+                    <i class="fas fa-cogs" id = "icon_move"></i>
+                </article>
+            </section>
+
+            <section class = "section ssexto s-sexto-jquery">
+                <article class = "asexto a-sexto-jquery">
+                    <i class="fas fa-cogs" id = "icon_back"></i>
+                </article>
+            </section>
+
+        </main>
+
+        <main class = "main main-Vuejs">
+
+        </main>
+        
+    </body>
+
+</html>
