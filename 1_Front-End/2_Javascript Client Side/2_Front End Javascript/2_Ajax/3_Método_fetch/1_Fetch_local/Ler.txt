@@ -1,0 +1,1 @@
+Por ser uma requisição assíncrona, e os recursos carregados no Index provenientes de um servidor, devem ser salvos e executados a partir de um.

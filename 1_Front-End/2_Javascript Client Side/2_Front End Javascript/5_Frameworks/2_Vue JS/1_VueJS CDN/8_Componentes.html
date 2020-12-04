@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizado VueJS - com CDN</title>
+     <!-- CDN VueJS -->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+
+        *{
+            list-style: none;
+            text-decoration: none;
+            color: white;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #app{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid lightblue;
+            width: 350px;
+            height: 350px;
+        }
+
+        button{
+            color: black;
+        }
+
+
+
+
+    </style>
+</head>
+<body >
+
+    <!-- 
+        Componentes são instâncias reutilizáveis do Vue com um nome.
+        Como componentes são instância Vue reutilizáveis, eles aceitam as mesmas opções que new Vue, como data, computed, watch, methods e gatilhos de ciclo de vida. 
+        As únicas exceções são as poucas opções específicas de raiz, como el.
+    -->
+
+    <id id = "app">
+        <chulispa></chulispa>
+    </div>
+
+    <script>
+
+        //Definindo novo componente chamado chulispa, seguido do segundo parametro, que é um objeto com suas propriedades
+        Vue.component('chulispa', {
+            //Em componentes, o Data é uma função que SEMPRE retorna um objeto
+            data(){
+                return {
+                    titulo: "Painel Notícias",
+                    condicao: false
+                }     
+            },
+            methods: {
+                mudarMensagem(valor){
+                    if(valor){
+                        this.titulo = "Minhoca Uha Há!";
+                        this.condicao = valor;
+                    }
+                    else{
+                        this.titulo = "Painel Notícias";
+                        this.condicao = valor;
+                    }
+                    
+                }
+            },
+            template: `
+            <div>
+                <h1> {{ titulo }} </h1>
+                <button @click = "mudarMensagem(!condicao)">Mudar</button>
+            </div>
+            `
+        })
+
+        //SEMPRE instanciar o monitoramento Vue
+        new Vue ({
+            el: "#app"
+        })
+        
+
+
+    </script>
+
+
+</body>
+</html>

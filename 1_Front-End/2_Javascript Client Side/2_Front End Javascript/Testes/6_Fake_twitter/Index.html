@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author = "Marcelosmbr">
+    <script src="Jquery/jquery-3.5.1.min.js"></script>
+    <script src = "script.js"></script>
+    <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="media_querie.css">
+    <link rel="stylesheet" href="icons-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body onload="carregar()" onresize = "viewport_change()">
+
+    <div id = "grid-container">
+        <div class = "coluna colesquerda">
+            <nav class = "menu_colesquerda">
+
+                <h2 class = "h2-icon"><i class="fab fa-ethereum"></i></h2>
+
+                <ul class = "colesquerda_ul">
+                    <li class = "list-item li-colesquerda"><a href="#"><i class="fas fa-house-user"></i>Home</a></li>
+                    <li class = "list-item li-colesquerda"><a href="#"><i class="fas fa-bell"></i>Notificações</a></li>
+                    <li class = "list-item li-colesquerda"><a href="#"><i class="fas fa-envelope"></i>Mensagens</a></li>
+                    <li class = "list-item li-colesquerda"><a href="#"><i class="fas fa-star"></i>Favoritos</a></li>
+                    <li class = "list-item li-colesquerda"><a href="#"><i class="fas fa-list-alt"></i>Atividades</a></li>
+                </ul>
+                <button class = "botao btn-publicar">Publicar</button>
+
+                <div class = "container_publicacao">
+                    <div class = "container_publicacao-cabecalho">
+                        <i class="fas fa-times btn-close"></i>
+                    </div>
+                    <div class = "area-meio">
+                        <div class = "foto-usuario_publicacao"></div>
+                    </div>
+
+                    <div class = "publicacao-widgets">
+                        <i class="fas fa-images"></i><i class="far fa-smile-beam"></i> <button style = "cursor: pointer;">Submit</button>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    
+        <main>
+            <section class = "perfil-usuario">
+                <div class = "caixa-superior">
+
+                    <div class = "div-menu_icon">
+                        <i class="fas fa-bars"></i>
+
+                        <!-- 
+                        <div class = "container-menu-mobile">
+                            <ul class = "menu-mobile_ul">
+                                <li class = "list-item li-mobile"><a href="#"><i class="fas fa-house-user"></i>Home</a></li>
+                                <li class = "list-item li-mobile"><a href="#"><i class="fas fa-bell"></i>Notificações</a></li>
+                                <li class = "list-item li-mobile"><a href="#"><i class="fas fa-envelope"></i>Mensagens</a></li>
+                                <li class = "list-item li-mobile"><a href="#"><i class="fas fa-star"></i>Favoritos</a></li>
+                                <li class = "list-item li-mobile"><a href="#"><i class="fas fa-list-alt"></i>Atividades</a></li>
+                            </ul>
+                        </div>
+                        -->
+                    </div>
+
+                    <div class = "caixa-superior_dados">
+                        <h3>Fulaninho</h3> <p><i class="fas fa-globe"></i> Online</p>
+                    </div>
+                    
+                </div>
+
+                <div class = "perfil-banner">
+
+                    <div class = "div-foto_usuario"></div>
+                    
+                </div>
+
+                <div class = "container-perfil-dados">
+
+                    <div class = "caixa-botao-editar">
+                        <button class = "botao btn-editar">Editar Perfil</button>
+                    </div>
+
+                    <div class = "usuario-informacoes">
+                        <h2>Immanuel Kant</h2>
+                        <p>@kant_master</p>
+                        <br>
+                        <p><i class="far fa-calendar-alt"></i> Entrou em 03/12/2020</p>
+                        <p>Seguidores 30mi </p>
+                    </div>
+                    
+                </div>
+
+                <nav class = "menu-perfil">
+                    <ul class = "menu-perfil_ul">
+                        <li> <i class="fas fa-eye"></i> Publicações</li>
+                        <li>Respostas</li>
+                        <li>Fotos</li>
+                        <li>Grupos</li>
+                    </ul>
+                </nav>
+            </section>
+
+            <!-- Neste container irão as publicações -->
+            <section class = "container-conteudo">
+                <!-- Cada article corresponde a publicação de um usuário, que é dividida em duas colunas -->
+                <article class = "publicacao">
+                    <!-- A primeira coluna é divida em mais duas linhas, uma para a foto do usuário e outra para o nome -->
+                    <div class = "perfil-publicacao p1">
+                        <div class = "usuario-publicacao up1">
+                            <!-- aqui vai a foto -->
+                        </div>
+
+                        <div class = "dados-usuario-publicacao">
+                            <h3>Voltaire</h3>
+                        </div>
+                    </div>
+                    <!-- Esta é a segunda coluna, que contém o conteúdo da publicação -->
+                    <div class = "postagem-perfil">
+                        <div class = "caixa-conteudo-postagem">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                Beatae consectetur maiores quis doloremque quaerat corporis dolor praesentium necessitatibus,   
+                            </p>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- Cada article corresponde a publicação de um usuário, , que é dividida em duas colunas -->
+                <article class = "publicacao">
+                    <!-- A primeira coluna é divida em mais duas linhas, uma para a foto do usuário e outra para o nome -->
+                    <div class = "perfil-publicacao p2">
+                        <div class = "usuario-publicacao up2">
+                            <!-- aqui vai a foto -->
+                        </div>
+
+                        <div class = "dados-usuario-publicacao">
+                            <h3>John Locke</h3>
+                        </div>
+                    </div> 
+                    <!-- Esta é a segunda coluna, que contém o conteúdo da publicação -->
+                    <div class = "postagem-perfil">
+                        <div class = "caixa-conteudo-postagem">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                Beatae consectetur maiores quis doloremque quaerat corporis dolor praesentium necessitatibus,     
+                            </p>
+                        </div>
+                    </div>
+                    
+                </article>
+
+                <!-- Cada article corresponde a publicação de um usuário, , que é dividida em duas colunas -->
+                <article class = "publicacao">
+                    <!-- A primeira coluna é divida em mais duas linhas, uma para a foto do usuário e outra para o nome -->
+                    <div class = "perfil-publicacao p3">
+                        <div class = "usuario-publicacao up3">
+                            <!-- aqui vai a foto -->
+                        </div>
+
+                        <div class = "dados-usuario-publicacao">
+                            <h3>Descartes</h3>
+                        </div>
+                    </div>   
+                    <!-- Esta é a segunda coluna, que contém o conteúdo da publicação -->
+                    <div class = "postagem-perfil">
+                        <div class = "caixa-conteudo-postagem">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                Beatae consectetur maiores quis doloremque quaerat corporis dolor praesentium necessitatibus, 
+                            </p>
+                        </div>
+                    </div>
+                    
+                </article>
+                
+            </section>
+    
+        </main>
+    
+        <div class = "coluna coldireita">
+
+            <div class = "container_API">
+
+            </div>
+    
+        </div>
+
+    </div>
+
+    <script>
+
+        $(".btn-publicar").click(() => {
+            $(".container_publicacao").fadeIn(500);
+        });
+
+        $(".btn-close").click(() => {
+            $(".container_publicacao").fadeOut(500);
+        })
+
+
+    
+    </script>
+
+</body>
+
+</html>

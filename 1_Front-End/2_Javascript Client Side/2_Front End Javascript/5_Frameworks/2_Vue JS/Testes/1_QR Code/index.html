@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/vue.min.js"></script>
+    <!-- Biblioteca que irá gerar o QR Code -->
+    <!-- https://github.com/neocotic/qrious -->
+    <script src="js/qrious.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gerador de QRCode</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1> {{ titulo }} </h1>
+
+        <div>
+            <!-- O value do input é igual ao valor do atributo texto -->
+            <!-- Sempre que o usuário digitar algo no input, será chamado o evento "OnData" que modificará o valor do atributo texto -->
+            <input type="text" size = "25" placeholder = "Digite para gerar..." v-bind:value = "texto" @input = "onData">
+        </div>
+
+        <!-- Se o atributo texto for true, isto é, possuir valor.. -->
+        <!-- Renderize a imagem do QRCode, aplicando os procedimentos da função newQrCode -->
+        <div v-if = "texto" class = "output">
+            <img v-bind:src="newQrCode" alt="QrCode">
+        </div>
+
+    </div>
+
+    <script>
+        
+        new Vue ({
+
+            el: "#app",
+            data: {
+                titulo: "Gerador QR Code",
+                texto: "https://www.cod3r.com.br/",
+                qrcode: new QRious({ size: 300}) //Sobre essa classe: https://github.com/neocotic/qrious
+            },
+            computed: {
+                //Sempre que alterado o atributo "texto", esta função será chamada
+                //Ela retorna o objeto instanciado com a classe QRious modificado pela função toDataURL 
+                newQrCode(){
+                    this.qrcode.value = this.texto;
+                    return this.qrcode.toDataURL(); //Sobre toDataURL: https://developer.mozilla.org/pt-BR/docs/Web/API/HTMLCanvasElement/toDataURL
+                }
+            },
+            methods: {
+                onData(event){
+                    //this.texto = Ao valor do objeto que enviou o evento
+                    //Event.target = origem do evento (o input)
+                    this.texto = event.target.value;
+                }
+            }
+
+
+        });
+    </script>
+</body>
+
+</html>

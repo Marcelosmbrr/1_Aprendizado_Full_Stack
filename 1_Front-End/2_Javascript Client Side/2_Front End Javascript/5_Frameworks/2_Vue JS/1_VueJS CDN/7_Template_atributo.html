@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizado VueJS - com CDN</title>
+     <!-- CDN VueJS -->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+
+        *{
+            list-style: none;
+            text-decoration: none;
+            color: white;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #app{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid lightblue;
+            width: 350px;
+            height: 350px;
+        }
+
+        p{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            font-size: 1.5em;
+        }
+
+
+
+
+    </style>
+</head>
+<body >
+
+    <div id = "app">
+        <!-- O QUE HAVERIA AQUI, SERÁ DESCRITO NO ATRIBUTO TEMPLATE -->
+    </div>
+
+    <script>
+
+        //INSTANCIA DO VUE
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                titulo: "VueJS",
+                subtitulo: "Framework Progressivo"
+            },
+            template: `
+                <div>
+                    <h1> {{ titulo }} </h1>
+                    <h3> {{ subtitulo }} </h2>
+                </div>
+            `
+        });
+
+
+    </script>
+
+
+</body>
+</html>

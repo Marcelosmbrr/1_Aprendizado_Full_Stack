@@ -1,0 +1,15 @@
+/* icone do globo */
+.fa-globe{ 
+    color: green;
+}
+
+/*Icones do menu lateral esquerdo*/
+a i{
+    color: #8390fa;
+    margin-right: 10px;
+}
+
+/* Icone do olho no menu horizontal*/
+.fa-eye{
+    margin-right: 5px;
+}

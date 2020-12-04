@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Filter</title>
+</head>
+<body>
+
+    <script>
+
+        const lista = [
+            "Banana",
+            "Maça",
+            "Carro",
+            "R$5000",
+            "Mouse",
+            "R$200M",
+            "R$200",
+            "Maria"
+        ]
+
+        //Filter retorna um array novo, sem modificar o original, contendo os itens filtrados
+        //Mas ele só retorna efetivamente alguma coisa, para a variável, quando seu retorno for especificado como "true"
+        const itensFiltrados = lista.filter(function(item){
+            console.log(item);
+            if(item == "R$200"){
+                return true;
+            } else{
+                return false;
+            }
+
+        });
+        console.log(itensFiltrados);
+
+
+
+        //Também é possível filtrar não um termo inteiro, mas parte dele
+        const filtroParcial = lista.filter(elemento => {
+            //Irá ser incluso no array filtrado o item que tiver "M"
+            return elemento.includes("M");
+              
+        });
+        console.log(filtroParcial);
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
