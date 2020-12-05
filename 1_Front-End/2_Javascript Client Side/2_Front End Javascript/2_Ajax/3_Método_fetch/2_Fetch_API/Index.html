@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisições Assíncronas - Fetch para API</title>
+    <script src = "script.js"></script>
+</head>
+<body>
+
+    <!-- 
+        Este exemplo vai demonstrar o uso de Fetch para uso de uma API
+    -->
+
+    <script>
+
+        url = "...............url da API.....................";
+
+        //Primeiro será feita a requisição, ou criação da "Promisse"
+        const request = fetch(url);
+
+        //Para recuperar a resposta da Promisse, devemos chamar o método "then()"
+        //O parâmetro do primeiro "then()" é uma função, cujo parâmetro é a resposta do servidor
+        request.then((response) => { 
+            //Converte a resposta para o conteúdo final
+            //Sendo uma API, a resposta virá como dados em string, e portanto devemos converte-los para JSON
+            return response.json() }); 
+
+        //Este then será o mesmo procedimento do anterior, mas, agora, a resposta que teremos está em JSON
+        //Agora, em outras palavras, usamos a resposta já tratada
+        request.then((response_json) => {
+            console.log(response_json);
+
+            //códigos//
+        });
+
+        
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,2 @@
+https://www.w3schools.com/js/DEFAULT.asp
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript

@@ -1,0 +1,8 @@
+A API Fetch fornece uma interface JavaScript para acessar e manipular partes do pipeline HTTP, tais como os pedidos e respostas. 
+Ela também fornece o método global fetch() que fornece uma maneira fácil e lógica para buscar recursos de forma assíncrona através da rede.
+Este tipo de funcionalidade era obtida anteriormente utilizando XMLHttpRequest. Fetch fornece uma alternativa melhor.
+
+https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch
+
+Comparação entre XMLHttpRequest e Fetch:
+https://www.treinaweb.com.br/blog/requisicoes-ajax-no-javascript-com-a-fetch-api/

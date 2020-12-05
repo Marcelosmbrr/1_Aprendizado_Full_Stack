@@ -8,9 +8,6 @@
 
     }
 
-    .div-menu_icon{
-        display: block;
-    }
 }
 
 @media (max-width: 550px){
@@ -25,5 +22,9 @@
 
     .menu_colesquerda{
         display: none;
+    }
+
+    .div-menu_icon{
+        display: block;
     }
 }

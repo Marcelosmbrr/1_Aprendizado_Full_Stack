@@ -53,7 +53,7 @@
                     <div class = "div-menu_icon">
                         <i class="fas fa-bars"></i>
 
-                        <!-- 
+                        
                         <div class = "container-menu-mobile">
                             <ul class = "menu-mobile_ul">
                                 <li class = "list-item li-mobile"><a href="#"><i class="fas fa-house-user"></i>Home</a></li>
@@ -63,7 +63,7 @@
                                 <li class = "list-item li-mobile"><a href="#"><i class="fas fa-list-alt"></i>Atividades</a></li>
                             </ul>
                         </div>
-                        -->
+                        
                     </div>
 
                     <div class = "caixa-superior_dados">
@@ -197,6 +197,10 @@
 
         $(".btn-close").click(() => {
             $(".container_publicacao").fadeOut(500);
+        })
+
+        $(".div-menu_icon").click(() => {
+            $(".container-menu-mobile").slideToggle(1000);
         })
 
 
