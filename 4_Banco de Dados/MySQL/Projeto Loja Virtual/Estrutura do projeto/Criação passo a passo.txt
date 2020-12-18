@@ -1,0 +1,59 @@
+Considere PK = Primary Key, FK = FOREIGN KEY
+
+------------------PRIMEIRA PARTE - UM PARA UM - CRIANDO O BANCO E AS TABELAS------------------------------------------
+
+1º) Deve existir um banco chamado "loja_virtual".
+2º) Deve existir uma tabela de produtos, que irá ter os atributos id do produto(PK), nome do produto, e valor do produto.
+3º) Deve existir uma tabela de descrições técnicas, que irá ter os atributos id da descrição(PK), texto da descrição, e o id do produto descrito(FK).
+
+Sobre:
+Dado que a tabela de descrições irá conter descrições técnicas dos produtos, listados em outra tabela, a relação é de um para um, pois cada descrição só pode descrever
+um único registro da tabela de produtos, e cada produto só pode ser descrito por um único registro da tabela de descrição. Ou seja, um produto para uma descrição, e
+uma descrição para um produto.
+A chave estrangeira pode ser alocada em qualquer uma das duas tabelas, por ser um relacionamento um para um. Neste caso, foi definida na tabela de descrições, fazendo
+referência ao atributo PK da tabela de produtos.
+
+
+------------------SEGUNDA PARTE - UM PARA UM - POPULANDO AS TABELAS------------------------------------------
+
+1º)Inserir registros em cada tabela, para que hajam dados a serem operados. Utilizar INSERT INTO.
+
+Exemplos:
+Tabela produtos:
+INSERT INTO tb_produto(produto, valor) VALUES ('Notebook Dell Inspiron Ultrafino Intel Core i7, 16GB RAM e 240GB SSD', 3500.00);
+
+Tabela descrições:
+INSERT INTO tb_descricoes_tecnica(ref_id_produto, descricao_tecnica) VALUES (1, 'O novo Inspiron Dell oferece um design elegante e tela infinita que amplia seus sentidos, mantendo a sofisticação e medidas compactas...');
+
+------------------TERCEIRA PARTE - UM PARA MUITOS - TABELA IMAGENS DOS PRODUTOS------------------------------------------
+
+1º) Criar tabela que irá conter a URL de imagens de produtos, que irá conter o id da imagem(PK), o id do produto da imagem(FK), e o atributo que irá conter a url da imagem(tipo varchar).
+
+Exemplo:
+
+INSERT INTO tb_imagens(ref_id_produto, url_imagem) VALUES (1, 'notebook_1.jpg'), (1, 'notebook_2.jpg'),
+(1, 'notebook_3.jpg');
+
+É possível que um produto tenha mais de uma imagem. 
+Com um único comando INSERT INTO, é possível adicionar mais de um registro à tabela de imagens, e ainda, fazendo referência a um único produto, pois note que o valor inserido na FOREIGN KEY, da tabela de imagens,
+é o mesmo (1). Portanto, este comando estaria adicionando 3 registros de imagens, na tabela de imagens, cada uma fazendo referência a um mesmo produto da tabela de produtos.
+
+
+------------------QUARTA PARTE - MUITOS PARA MUITOS - PEDIDOS X PRODUTOS ------------------------------------------
+
+1º) Criar uma tabela de clientes, que irá conter o id do cliente(PK), seu nome e sua idade.
+2º) Criar uma tabela de pedidos, que irá conter o id do pedido(PK), o id do cliente(FK) e a data/hora do pedido.
+3º) Criar uma tabela que irá intermediar a relação entre os pedidos e os produtos, que irá conter o id do pedido(FK) e o id do produto(FK).
+
+Sobre:
+Pedidos são realizados por clientes, e nesta relação, há o tipo um para muitos, pois cada pedido será realizado por um único cliente, mas um único cliente pode realizar muitos pedidos.
+Pedidos de clientes são pedidos de produtos, portanto devemos saber os produtos referentes a cada pedido. Neste caso há o tipo muitos para muitos, pois pedidos podem ter muitos produtos, e produtos podem estar inclusos em muitos pedidos.
+Posso, por exemplo, pedir três produtos em um único pedido, e, paralelamente, os mesmos produtos estarem inclusos em pedidos de outras pessoas.
+Há, portanto, a necessidade de uma tabela auxiliar que irá relacionar cada pedido com o de cada produto.
+
+Não é tão fácil de visualizar em palavras, ou de derivar estas relações, pois são escolhas de relações que poderiam ser outras, a depender da perspectiva.
+Quando analisados os diagramas, as relações foram pensadas por outros e estão dadas para que apenas sejam aplicadas.
+
+------------------ MAIS SOBRE A QUARTA PARTE ------------------------------------------
+
+Analisar a imagem de nome "Diagrama_quarta_parte" para entender as relações propostas. 
