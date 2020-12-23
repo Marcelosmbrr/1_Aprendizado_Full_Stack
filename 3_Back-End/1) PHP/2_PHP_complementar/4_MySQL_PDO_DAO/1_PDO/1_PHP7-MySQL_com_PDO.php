@@ -32,5 +32,25 @@
     
    
     
+    //$conn = new PDO('mysql:host=localhost;dbname=meuBancoDeDados', $username, $password);
+    $conn = new PDO('mysql:host=localhost;dbname=dbphp7', $username, $pass);
     
+    //PDO :: prepare - Prepara uma instrução SQL para execução no banco, e retorna um objeto de instrução
+    $stmt = $conn->prepare("SELECT * FROM tb_usuarios ORDER BY des_login");
     
+    //Executa a instrução preparada
+    $stmt->execute();
+    
+
+
+
+    $username = "root";
+    $pass = '';
+    
+    $conn = new PDO('mysql:host=localhost;dbname=dbphp7', $username, $pass);
+    
+    $stmt = $conn->prepare("SELECT * FROM tb_usuarios ORDER BY des_login");
+    
+    $stmt->execute();
+    
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
