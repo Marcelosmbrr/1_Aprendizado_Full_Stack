@@ -122,7 +122,7 @@
                             </td>
                             <?php
                                 //Dentro desta tag php, reaberta, iremos fechar a atual Table Row
-                                echo "<tr>";
+                                echo "</tr>";
                                 //Abaixo está o fechamento do laço de leitura da atual linha da matriz
                                 //Se não for a última, o processo irá reiniciar, e se for, será terminado
                                     }
@@ -158,3 +158,64 @@
     }
  
 ?>
+
+
+
+
+
+<table class="table table-hover">
+                    <thead>
+                      <tr>
+                          
+                        <th scope="col">Código</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Sexo</th>
+                        <th scope="col">Data de nascimento</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <?php
+                                
+                                //Chamando método buscarDados
+                                //Array_registros recebe o retorno do método //Que é o retorno da função count()
+                                $array_registros = $pessoa_obj->buscarDados("SELECT codigo, nome, cpf, sexo, data_nasc, email, cidade, estado FROM cadastros");
+                                
+                                //Variável recebe número de linhas do array_registros
+                                $num_registros = count($array_registros);
+                                
+                              
+                                
+                                    for($linha = 0; $linha < $num_registros; $linha ++ ){
+                                        //Nova linha da tabela HTML
+                                        echo "<tr>";
+                                        //No foreach percorremos as colunas 
+                                        foreach($array_registros[$linha] as $coluna => $valor){
+                                            //O valor da coluna da linha da matriz é lida, (2) um td é criado, e (3) seu valor é o da coluna lida
+                                           echo "<td scope='row'>$valor</td>";
+                                        }
+                                        //Fechamento da linha da tabela HTML
+                                        echo "</tr>";
+                                
+                                    }
+                                
+                                
+                            ?>
+                 
+                    </tbody>
+                 </table>
+
+
+
+
+
+
+                 <form action="script.php" method="post">
+                    Campo 1: <input type=text name=campo1><br>
+                    Campo 2: <input type=text name=campo2><br>
+                    <input type=submit value="OK">
+                </form>
