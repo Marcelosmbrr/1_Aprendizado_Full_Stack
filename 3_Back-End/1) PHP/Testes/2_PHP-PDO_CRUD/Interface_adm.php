@@ -208,14 +208,3 @@
                  
                     </tbody>
                  </table>
-
-
-
-
-
-
-                 <form action="script.php" method="post">
-                    Campo 1: <input type=text name=campo1><br>
-                    Campo 2: <input type=text name=campo2><br>
-                    <input type=submit value="OK">
-                </form>

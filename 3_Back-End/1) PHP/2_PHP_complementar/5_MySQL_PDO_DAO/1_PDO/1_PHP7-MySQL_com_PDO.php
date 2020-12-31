@@ -41,9 +41,6 @@
     //Executa a instrução preparada
     $stmt->execute();
     
-
-
-
     $username = "root";
     $pass = '';
     
