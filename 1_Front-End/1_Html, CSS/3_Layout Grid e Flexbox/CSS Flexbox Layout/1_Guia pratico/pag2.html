@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="display-pag2.css">
+    <title>CSS Flexbox</title>
+</head>
+<body>
+
+    <header>
+        
+        <h1 class = "logo-item">CSS FLEXBOX</h1>
+
+        <nav>
+            <ul class = "list-nav">
+                <li class = "list-item li-first"><a href="https://origamid.com/projetos/flexbox-guia-completo/">Guia Origamid</a></li>
+                <li class = "list-item li-second"><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceitos_Basicos_do_Flexbox">Guia MDN Mozilla</a></li>
+                <li class = "list-item li-second"><a href="https://www.devmedia.com.br/css3-flexbox-funcionamento-e-propriedades/29532">Guia DevMedia</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Each section will cover a different segment of Flexbox -->
+        <!-- The first section will have the subclass fc-a, the second will have the subclass fc-b, and so on the sections will differ -->
+        <!-- The practical example of each section will have three Flex items (the orange boxes). Each item in each section will have the subclass "[item order] - [section letter]" -->
+        <section class = "flex-container fc-a">
+            <div class = "fc-presentation">
+                <h2 class = "fc-tittle">FLEX ITEM</h2>
+                <p>A área de um documento que faz uso do flexbox é chamada de Flex Container. 
+                Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex.
+                Desse modo, os elementos-filhos desse contêiner tornar-se-ão do tipo flex.
+                <br>Assim, ao utilizar a propriedade Flexbox, deve-se manter em mente o fato de existir tanto o próprio <strong>Flex Container</strong>, quanto seus filhos, que serão <strong>Flex Items</strong>.
+                <br>As propriedades manipuláveis, disponibilizadas pelo display FlexBox, existem tanto para o Flex Container quanto para os Flex Items.
+                </p>
+                <br>
+                <h3>Propriedades DEFAULT - deste exemplo</h3>
+                <p>Por padrão, o eixo principal é o horizontal. Portanto, o <strong>"flex-direction" é "row"</strong>.
+                <br>Por padrão, o alinhamento se dá na borda inicial (superior esquerda) do eixo principal. Portanto, o <strong>"justify-content" é "flex-start"</strong>.
+                <br>Por padrão, não há expansão no eixo principal. Os elementos ocupam o espaço de seu conteúdo. Portanto, o <strong>"flex-grow" é 0</strong>, e o <strong>"flex-basis" é "auto"</strong>.
+                <br>Por padrão, os itens serão esticados para preencher o espaço disponível no eixo transversal. Portanto, o <strong>"align-items" é "stretch"</strong>.
+                <br>Por padrão, os itens do container tentarão se ajustar em uma única linha dentro do container pai. Portanto, o <strong>"flex-wrap" é "nowrap"</strong>.
+                </p>
+            </div>
+    
+            <div class = "fc-content fc-content-a">
+                <div class = "flex-item one-a">
+                    <strong>Item one</strong> 
+                </div>
+    
+                <div class = "flex-item two-a">
+                    <strong>Item two</strong>
+                </div>
+    
+                <div class = "flex-item three-a">
+                    <strong>Item three</strong>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <nav class = "nav-page">
+        <ul class = "list-nav list-page">
+            <li class = "list-item np-one"><a href="index.html">Flexbox - Flex Container</a></li>
+            <li class = "list-item np-two"><a href="#" style="color: rgba(255, 99, 71);">FlexBox - Flex Item</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        
+    </footer>
+    
+    
+
+</body>
+</html>
