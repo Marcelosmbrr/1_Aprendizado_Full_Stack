@@ -46,6 +46,19 @@ header{
     color: tomato;
 }
 
+.fa-css3-alt{
+    color: #264DE4;
+}
+
+/************ TÍTULO DO CONTEÚDO DA PÁGINA ************************/
+
+h1{
+    text-align: center;
+    margin-top: 15px;
+    padding: 15px 0px 10px 0px;
+    font-size: 3em;
+}
+
 /************ TRONCO DA PÁGINA GERAL ************************/
 
 main{
@@ -57,13 +70,14 @@ main{
     padding: 5px;
     margin: 50px auto;
     display: flex;
+    flex-direction: row-reverse;
 }
 
 /*Contém o título e texto sobre a funcionalidade*/
 .fc-presentation{
-    border-left: 2px solid tomato;
-    padding-left: 5px;
-    margin-right: 2px;
+    border-left: 4px solid tomato;
+    margin-left: 10px;
+    padding-left: 10px;
     width: 50%;
 }
 
@@ -73,19 +87,19 @@ main{
     border: 8px solid #333;
     padding: 5px;
     display: flex;
-    box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.75);
 }
 
 .flex-item{
     background: tomato;
     text-align: center;
-    margin: 1px;
+    margin: 5px;
 }
 
 input[type=text]{
     border: 2px solid #1E212B;
     border-radius: 5px;
-    margin-top: 10px;
+    margin: 10px 8px 0px 0px;
 }
 
 input[type=submit]{
@@ -93,6 +107,74 @@ input[type=submit]{
     cursor: pointer;
     background: rgba(255, 99, 71, 0.8);
     border: 1px solid #333;
+}
+
+/************ SEGUNDA SECTION - FC-B ************************/
+
+.fc-content-b{
+    flex-direction: column;
+}
+
+.one-b{
+    flex-basis: 80px;
+}
+
+.two-b{
+    flex-basis: auto;
+}
+
+.three-b{
+    flex-basis: 120px;
+}
+
+/************ TERCEIRA SECTION - FC-C ************************/
+
+.one-c, .two-c, .three-c{
+    flex-grow: 1;
+}
+
+.fc-content-c{
+    flex-direction: column;
+}
+
+/************ QUARTA SECTION - FC-D ************************/
+
+.one-d, .two-d{
+    flex-basis: 350px;
+    flex-shrink: 1;
+}
+
+.three-d{
+    flex-basis: 200px;
+    flex-shrink: 0;
+}
+
+/************ QUINTA SECTION - FC-E ************************/
+
+.two-e{
+    order: 1;
+}
+
+.one-e{
+    order: 2;
+}
+
+.three-e{
+    order: 3;
+}
+
+/************ SEXTA SECTION - FC-F ************************/
+
+.one-f{
+    align-self: flex-start;
+}
+
+.two-f{
+    align-self: flex-end;
+}
+
+.three-f{
+    align-self: center;
 }
 
 /************ NAV PARA MUDAR DE PÁGINA  ************************/
@@ -109,6 +191,8 @@ input[type=submit]{
     transform: scale(1.1);
     color: white;
 }
+
+
 
 
 

@@ -20,7 +20,6 @@
                 <li class = "list-item li-second"><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceitos_Basicos_do_Flexbox">Guia MDN Mozilla</a></li>
                 <li class = "list-item li-second"><a href="https://www.devmedia.com.br/css3-flexbox-funcionamento-e-propriedades/29532">Guia DevMedia</a></li>
             </ul>
-
         </nav>
     </header>
 
@@ -41,11 +40,12 @@
                 <br>As propriedades manipuláveis, disponibilizadas pelo display FlexBox, existem tanto para o Flex Container quanto para os Flex Items.
                 </p>
                 <br>
-                <h3>Propriedades DEFAULT - deste exemplo</h3>
+                <h3>Propriedades DEFAULT do Display Flex</h3>
                 <p>Por padrão, o eixo principal é o horizontal. Portanto, o <strong>"flex-direction" é "row"</strong>.
                 <br>Por padrão, o alinhamento se dá na borda inicial (superior esquerda) do eixo principal. Portanto, o <strong>"justify-content" é "flex-start"</strong>.
-                <br>Por padrão, não há expansão no eixo principal. Os elementos ocupam o espaço de seu conteúdo. Portanto, o <strong>"flex-grow" é 0</strong>, e o <strong>"flex-basis" é "auto"</strong>.
                 <br>Por padrão, os itens serão esticados para preencher o espaço disponível no eixo transversal. Portanto, o <strong>"align-items" é "stretch"</strong>.
+                <br>Por padrão, não há expansão no eixo principal. Os elementos ocupam o espaço de seu conteúdo. Portanto, o <strong>"flex-grow" é 0</strong>, e o <strong>"flex-basis" é "auto"</strong>.
+                <br>Por padrão, os itens podem ser reduzidos para caber no Container. Portanto, o <strong>"flex-shrink" é 1</strong>.
                 <br>Por padrão, os itens do container tentarão se ajustar em uma única linha dentro do container pai. Portanto, o <strong>"flex-wrap" é "nowrap"</strong>.
                 </p>
             </div>
@@ -75,10 +75,12 @@
                 <br>Assim, por exemplo, se com "row" a posição inicial dos elementos é a borda superior esquerda, do Flex Container, com "row-reverse" será na superior direta.
                 </p>
                 <br>
-                <h3>Teste os valores descritos</h3>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
                 <form action="#">
                     <label for="flex-direction">Flex-direction:</label>
-                    <input type="text" id="flex-direction" name="f-direction">
+                    <input type="text" id="flex-direction" name="fdirection">
                     <input type="submit" value="Ok">
                   </form>
                 </p>
@@ -107,10 +109,12 @@
                 <br><strong>Os valores possíveis são</strong>: "flex-start", "flex-end", "center", "space-between" e "space-around".
                 </p>
                 <br>
-                <h3>Teste os valores descritos</h3>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
                 <form action="#">
-                    <label for="flex-direction">Justify-content:</label>
-                    <input type="text" id="flex-direction" name="f-direction">
+                    <label for="flex-justify-content">Justify-content:</label>
+                    <input type="text" id="flex-justify-content" name="fjustify_content">
                     <input type="submit" value="Ok">
                   </form>
                 </p>
@@ -138,10 +142,12 @@
                 <br><strong>Os valores possíveis são</strong>: "flex-start", "flex-end", "center", "baseline".
                 </p>
                 <br>
-                <h3>Teste os valores descritos</h3>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
                 <form action="#">
-                    <label for="flex-direction">Align-items:</label>
-                    <input type="text" id="flex-direction" name="f-direction">
+                    <label for="flex-align-items">Align-items:</label>
+                    <input type="text" id="flex-align-items" name="falign_items">
                     <input type="submit" value="Ok">
                   </form>
                 </p>
@@ -170,10 +176,12 @@
                 <br><strong>Os valores possíveis são</strong>: "flex-start", "flex-end", "center", "space-between" e "space-around".
                 </p>
                 <br>
-                <h3>Teste os valores descritos</h3>
+
+                <h3>Teste <i class="far fa-keyboard"></i></h3>
+
                 <form action="#">
-                    <label for="flex-direction">Align-content:</label>
-                    <input type="text" id="flex-direction" name="f-direction">
+                    <label for="flex-align-content">Align-content:</label>
+                    <input type="text" id="flex-align-content" name="falign_content">
                     <input type="submit" value="Ok">
                   </form>
                 </p>
