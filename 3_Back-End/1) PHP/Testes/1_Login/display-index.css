@@ -1,0 +1,79 @@
+/* RESET */
+header{
+    padding: 10px;
+    background: #333;
+    box-shadow: -1px 4px 15px 0px rgba(0,0,0,0.75);
+    color: #fff;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.flex_container-f1{
+    width: 600px;
+    height: 350px;
+    margin-top: 150px;
+    box-shadow: 1px -1px 38px -5px rgba(0,6,190,1);
+    border-radius: 5px;
+    display: flex;
+}
+
+.flex_item-side{
+    flex-grow: 1;
+}
+
+.leftside-f1{
+    background: url(recursos/Login-image.png) no-repeat center center;
+}
+
+.flex_rightside-f1{
+    background: #005BEA;
+    border-radius: 0px 5px 5px 0px;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-gap: 20px;
+}
+
+.form_tittle{
+    color: #fff;
+    padding: 15px 0px 0px 50px;
+}
+
+.form_div{
+    background: green;
+}
+
+form{
+    text-align: center;
+    padding-top: 30px;
+}
+
+#name_input, #password_input{
+    padding: 10px;
+    margin-top: 10px;
+    width: 250px;
+    border-radius: 30px;
+}
+
+.btn_form{
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.btn_signin{
+    width: 100px;
+    color: #fff;
+    margin-right: 10px;
+    border: 1px solid #fff;
+    background: transparent;
+}
+
+.btn_signup{
+    background: #fc4a1a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
