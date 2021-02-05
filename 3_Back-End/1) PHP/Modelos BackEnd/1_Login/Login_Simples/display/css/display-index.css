@@ -14,10 +14,10 @@ main{
 .flex_container-f1{
     width: 600px;
     height: 350px;
-    margin-top: 150px;
     box-shadow: 1px -1px 38px -5px rgba(0,6,190,1);
     border-radius: 5px;
     display: flex;
+    margin: 150px 10px 0px 10px;
 }
 
 .flex_item-side{
@@ -25,7 +25,7 @@ main{
 }
 
 .leftside-f1{
-    background: url(recursos/Login-image.png) no-repeat center center;
+    background: url(../img/Login-image.png) no-repeat center center;
 }
 
 .flex_rightside-f1{
@@ -41,10 +41,6 @@ main{
     padding: 15px 0px 0px 50px;
 }
 
-.form_div{
-    background: green;
-}
-
 form{
     text-align: center;
     padding-top: 30px;
@@ -54,7 +50,11 @@ form{
     padding: 10px;
     margin-top: 10px;
     width: 250px;
-    border-radius: 30px;
+    border-radius: 10px;
+}
+
+#password_input{
+    margin-bottom: 5px;
 }
 
 .btn_form{
@@ -71,9 +71,20 @@ form{
     background: transparent;
 }
 
-.btn_signup{
-    background: #fc4a1a;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.btn_signin:hover{
+    background: rgba(255, 255, 255, 0.1);
 }
 
+.login_erro{
+    color: #fff;
+    font-weight: bolder;
+}
+
+/**********************************************/
+
+@media (max-width:550px){
+
+    .leftside-f1{
+        display: none;
+    }
+}
