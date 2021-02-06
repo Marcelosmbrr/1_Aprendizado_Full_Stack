@@ -16,17 +16,17 @@
 
         if(!empty($usuario) && !empty($senha)){
 
-            //Para criptograr a senha
+            //A senha do banco deve ser criptografada
             //Ver em: https://www.php.net/manual/pt_BR/function.password-hash.php
-            $pass_hash = password_hash($senha, PASSWORD_DEFAULT); //Copiar a senha criptografada para inserir no banco de dados, na coluna de senha
+            //Para encriptografar: password_hash($senha, PASSWORD_BCRYPT); 
 
-            //Pesquisar usuário no BD
-            //Instanciar objeto da classe User
+            //Instanciar objeto da classe User, usada para procurar usuários no banco
+            //Enviamos o Objeto da classe PDO instanciado no arquivo conexao.php
             $user = new User($pdo);
 
-            //Chamar método da classe User
-            //Enviamos o nome de usuário e a senha que digitou na forma de hash
-            if($user->getUsuario($usuario, $pass_hash)){
+            //Chamar método GET da classe User
+            //Enviamos o nome de usuário e a senha 
+            if($user->getUsuario($usuario, $senha)){
 
                 //Se o método Get retornar true, significa que o usuário e senha foram encontrados no banco, em um mesmo registro (linha)
                 if(isset($_SESSION['nome_usuario'])){

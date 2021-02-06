@@ -9,38 +9,40 @@
         }
 
         //Recebe o nome de usuário digitado no input, a senha, e o hash
-        function getUsuario($username, $pass_hash){
+        function getUsuario($username, $senha){
 
-            //
-            $sql = "SELECT * FROM usuario WHERE username = :username AND senha = :senha";
+            $sql = "SELECT * FROM usuario WHERE username = :username";
 
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(":username", $username);
-            $stmt->bindParam(":senha", $pass_hash);
             $stmt->execute();
             
             //rowCount retorna o número de linhas afetadas pela instrução SQL
-            //Se o número de linhas for superior a 0
             if($stmt->rowCount() > 0){
 
-                //Fetch() transforma a linha afetada em um array //Ideal para aplicações de login
-                //Seu alternativo, Fetch_all(), serve para quando o retorno da instrução é de mais de uma linha
+                //Neste caso o rowCount é superior a 0
+                //Significa que existe um registro cujo campo "username" é igual ao valor passado no input
+
+                //Fetch() transforma a linha afetada em um array, o que é ideal para aplicações de login //Seu alternativo é Fetch_all()
                 $registro = $stmt->fetch();
 
-                //Criamos uma sessão para recuperar cada valor de cada campo do registro do BD, exceto a senha, claro
-                $_SESSION['id'] = $registro['id'];
-                $_SESSION['nome_usuario'] = $registro['username'];
-                    
-                //Retornamos true para indicar que o Get foi bem sucedido
-                return true;
+                //Se a senha do input for compatível com o hash salvo no campo "senha", do registro..
+                if(password_verify($senha, $registro["senha"])){
+
+                    //Criamos uma sessão para recuperar cada valor de cada campo do registro do BD, exceto a senha, claro
+                    $_SESSION['id'] = $registro['id'];
+                    $_SESSION['nome_usuario'] = $registro['username'];
+                        
+                    //Retornamos true para indicar que o usuário e senha estão corretos
+                    return true;
+
+                }
 
             }else{
-                
                 //Retornamos false para indicar que o usuário e senha digitados não foram encontrados em um mesmo registro do BD
                 return false;
             }
         }
-
 
     }
 

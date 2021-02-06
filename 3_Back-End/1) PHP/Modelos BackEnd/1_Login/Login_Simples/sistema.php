@@ -2,13 +2,13 @@
 
     session_start();
 
-    if(!empty($_SESSION['username'])){
+    if(!empty($_SESSION['nome_usuario'])){
 
         echo "Logado com sucesso!";
         echo "<br>";
-        echo "ID do usuário: {$_SESSION['username']}";
+        echo "ID do usuário: {$_SESSION['id']}";
         echo "<br>";
-        echo "Nome do usuário: {$_SESSION['id']}";
+        echo "ID do usuário: {$_SESSION['nome_usuario']}";
         echo "<br>";
         echo "<a href = 'http://localhost:8000/logout.php'> Sair </a>";
 
