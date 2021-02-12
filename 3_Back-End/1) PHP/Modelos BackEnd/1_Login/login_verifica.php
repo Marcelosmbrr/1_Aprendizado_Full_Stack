@@ -7,12 +7,12 @@
     //Utilizar filter_input, ao invés de isset(), garante um nível a mais de segurança
     //Esta função, ao invés de isset, pode filtrar o valor segundo algumas especificações passadas
     //Ver: https://www.php.net/manual/pt_BR/function.filter-input.php //https://www.php.net/manual/en/filter.filters.php
-    $btn_login = filter_input(INPUT_GET, "login_btn_press", FILTER_SANITIZE_STRING);
+    $btn_login = filter_input(INPUT_POST, "login_btn_press", FILTER_SANITIZE_STRING);
 
     if($btn_login){
 
-        $usuario = filter_input(INPUT_GET, "username", FILTER_SANITIZE_STRING);
-        $senha = filter_input(INPUT_GET, "pass", FILTER_SANITIZE_STRING);
+        $usuario = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+        $senha = filter_input(INPUT_POST, "pass", FILTER_SANITIZE_STRING);
 
         if(!empty($usuario) && !empty($senha)){
 

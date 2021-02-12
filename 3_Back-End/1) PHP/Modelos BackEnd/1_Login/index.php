@@ -32,7 +32,7 @@ session_start();
             <div class = "flex_item-side flex_rightside-f1">
                 <h2 class = "form_tittle"><strong>Faça seu login</strong></h2>
 
-                <form action="login_verifica.php" method= "GET">
+                <form action="login_verifica.php" method= "POST">
 
                     <input type="text" id = "name_input" name = "username" placeholder= "Nome de usuário"><br>
                     <input type="password" id = "password_input" name = "pass" placeholder= "Senha"><br>

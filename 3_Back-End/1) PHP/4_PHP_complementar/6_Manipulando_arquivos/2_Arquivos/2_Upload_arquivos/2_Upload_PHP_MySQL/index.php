@@ -60,7 +60,7 @@
 
     <section class = "sec-form">
 
-        <!-- A variável super global passada na URL do atributo action se refere ao próprio arquivo php -->
+        <!-- A variável super global $_SERVER passada na URL do atributo action se refere ao próprio arquivo php // https://www.php.net/manual/pt_BR/reserved.variables.server.php -->
         <!-- O atributo encytpe, com o valor declarado, define que o elemento enviado via formulário será um arquivo -->
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method = "POST" enctype = "multipart/form-data">
 
@@ -80,21 +80,25 @@
         //MANIPULAÇÃO PADRÃO PARA ARQUIVOS ENVIADOS EM UM FORM//
 
         //Recuperar arquivo
+        //O botão submit envia esse valor, via url, quando clicado
+        //Portanto, se foi clicado...
         if(isset($_POST["form_enviado"])){
 
             //Variável para conter as extensões permitidas
             $extensionsPermited = array("png", "jpg", "jpeg", "gif");
 
             //Recuperar extensão do arquivo
+            //$_FILES, um array, serve para recuperar arquivos e seus dados //https://www.php.net/manual/pt_BR/reserved.variables.files.php
             $extension = strtolower(pathinfo($_FILES['arquivo_var']['name'], PATHINFO_EXTENSION));
 
             //Renomear o arquivo
+            //Será: id_único.extensão
             $novoNome = uniqid() . ".$extension";
 
             //Caminho da pasta
             $diretorio = "upload/";
 
-            //Mover arquivo para o endereço $diretorio.$novoNome, ou seja, "upload/xxxxx.extensão"
+            //Mover arquivo para o endereço $diretorio.$novoNome, ou seja, "upload/uniqid().extensão"
            move_uploaded_file($_FILES['arquivo_var']['tmp_name'], $diretorio.$novoNome);
 
            //ENVIANDO PARA O BANCO DE DADOS//
