@@ -10,7 +10,7 @@
         echo "<br>";
         echo "ID do usuário: {$_SESSION['nome_usuario']}";
         echo "<br>";
-        echo "<a href = 'http://localhost:8000/logout.php'> Sair </a>";
+        echo "<a href = 'http://localhost:8000/Login/logout.php'> Sair </a>";
 
     }else{
 

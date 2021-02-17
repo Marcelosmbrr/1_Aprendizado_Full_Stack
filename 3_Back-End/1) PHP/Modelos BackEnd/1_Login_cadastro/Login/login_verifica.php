@@ -2,7 +2,7 @@
 
     session_start();
     require_once("conexao.php");
-    require_once("UserClass.php");
+    require_once("Classes/UserClass.php");
 
     //Utilizar filter_input, ao invés de isset(), garante um nível a mais de segurança
     //Esta função, ao invés de isset, pode filtrar o valor segundo algumas especificações passadas
@@ -33,7 +33,7 @@
 
                     //Se existir a sessão que recebe o nome de usuário do campo 'username' do banco de dados //Operação realizada no arquivo da classe User
                     //Somos redirecionados para a página do sistema
-                    header("location: http://localhost:8000/sistema.php");
+                    header("location: http://localhost:8000/Login/sistema.php");
 
                 }
 

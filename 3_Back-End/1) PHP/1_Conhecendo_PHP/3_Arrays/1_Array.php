@@ -19,7 +19,7 @@
 
     print_r($array_bi);
 
-    //ARRAYS DENTRO DE ARRAYS //INDEX-CHAVE 
+    //ARRAY COM CHAVE-VALOR DEFINIDOS
     $sujeitos = array();
 
     array_push($sujeitos, array(
@@ -40,8 +40,10 @@
 
     print_r($sujeitos);
 
-    //Variáveis pre-definidas, quando são arrays, são manipuladas desta forma
+    //Variáveis pre-definidas, quando são arrays, são manipuladas desta forma, por meio de suas CHAVES
     //Campos de bancos de dados também são manipulados desta forma, quando inseridos como arrays em variáveis, com fetch() ou fetch_all()
+
+    //Neste caso, sendo o índice 0, e a chave "nome", o valor é "Fulano"
     echo $sujeitos[0]["nome"];
 
     

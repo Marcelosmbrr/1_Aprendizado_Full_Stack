@@ -44,6 +44,30 @@
             }
         }
 
+        function setUsuario($username, $senha){
+
+            //Senha deve ser inserida no banco criptografada
+            $pass = password_hash($senha, PASSWORD_BCRYPT); 
+
+            $sql = "INSERT INTO usuario VALUES (DEFAULT, :username, :senha)";
+
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(":username", $username);
+            $stmt->bindParam(":senha", $pass);
+            if($stmt->execute()){
+
+                //Com o INSERT realizado com sucesso, retornamos true
+                return true;
+
+            }else{
+
+                return false;
+
+            }
+
+
+        }
+
     }
 
     
