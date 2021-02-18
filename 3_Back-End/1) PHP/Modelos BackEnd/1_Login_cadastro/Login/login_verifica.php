@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    require_once("conexao.php");
+    require_once("Conexao/conexao.php");
     require_once("Classes/UserClass.php");
 
     //Utilizar filter_input, ao invés de isset(), garante um nível a mais de segurança

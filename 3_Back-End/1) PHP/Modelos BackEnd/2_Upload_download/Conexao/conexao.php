@@ -1,7 +1,7 @@
 <?php
 
     try{
-        $pdo = new PDO("mysql:host=localhost;dbname=login_teste", "root", "root");
+        $pdo = new PDO("mysql:host=localhost;dbname=upload_download", "root", "root");
     }
     catch(PDOException $e){
         echo "Erro com o banco de dados:" .$e->getMessage();
