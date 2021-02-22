@@ -78,14 +78,19 @@ header{
     grid-gap: 5px;
 }
 
-.div_erro-msg, .div_sucesso-msg{
+.upload_msg{
     width: 500px;
 }
 
-.div_form, .div_download{
+.div_form, .div_download, .upload_msg{
     margin: 50px auto;
 }
 
 .div_download-leftside{
     border-right: 2px solid #333;
+}
+
+.div_download-rightside img{
+    display: block;
+    width: 100%;
 }

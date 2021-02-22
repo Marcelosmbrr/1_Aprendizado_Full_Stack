@@ -42,13 +42,13 @@
             //Se o método setFile retornar true
             if($set_retorno){
 
-                //$_SESSION["imagem_salva"] = $novoNome;
+                $_SESSION["imagem_salva"] = $novoNome;
                 header("location: http://localhost:8000/");
             
             //Se o método setFile retornar false
             }else{
 
-                //$_SESSION["erro_msg"] = "Erro com a inserção do arquivo no banco de dados!";
+                $_SESSION["erro_msg"] = "Erro com a inserção do arquivo no banco de dados!";
                 header("location: http://localhost:8000/");
 
             }
@@ -60,8 +60,12 @@
             header("location: http://localhost:8000/");
 
         }
+ 
+    }
 
-        
+    if(isset($_POST["btn_reset"])){
+
+        header("location: http://localhost:8000/Upload/reset.php");
     }
 
 
