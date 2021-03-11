@@ -5,20 +5,22 @@
     require_once("Conexao/conexao.php");
     require_once("Classes/PessoaClass.php");
 
-    if(isset($_POST["btn_cadastrar"])){
+    if(isset($_POST["btn_update"])){
 
         //PRIMEIRO FILTRO
-        $nome = filter_input(INPUT_POST, "cadastro_nome", FILTER_SANITIZE_STRING);
-        $telefone = filter_input(INPUT_POST, "cadastro_telefone", FILTER_SANITIZE_STRING);
-        $email = filter_input(INPUT_POST, "cadastro_email", FILTER_SANITIZE_STRING);
+        $id = filter_input(INPUT_POST, "update_id", FILTER_SANITIZE_NUMBER_INT);
+        $nome = filter_input(INPUT_POST, "update_nome", FILTER_SANITIZE_STRING);
+        $telefone = filter_input(INPUT_POST, "update_telefone", FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, "update_email", FILTER_SANITIZE_STRING);
 
         //SEGUNDO FILTRO //PARA IMPEDIR XSS
         //O "f" no final denota que foram "filtrados"
+        $idf = strip_tags($id);
         $nomef = strip_tags($nome);
         $telefonef = strip_tags($telefone);
         $emailf = strip_tags($email);
 
-        if(!empty($nomef) && !empty($telefonef) && !empty($emailf)){
+        if(!empty($idf) && !empty($nomef) && !empty($telefonef) && !empty($emailf)){
 
             //Para contar quantos caracteres tem o número de telefone informado
             $telefoneff = strlen($telefonef);
@@ -32,24 +34,22 @@
 
                     /////////////////////////////////////////////CASO OS VALORES PASSEM POR TODOS OS TESTES DE FILTRAGEM/////////////////////////////////////
 
-                    //O "c" denota "cadastro"
-                    $pessoac = new Pessoa($pdo);
-                    $set_type = "sql_insert";
+                    //O "u" denota "update"
+                    $pessoau = new Pessoa($pdo);
+                    $set_type = "sql_update";
 
-                    //Chamar método SET da classe Pessoa, usado para cadastrar pessoas
-                    //Enviamos o tipo de sql, nome da pessoa, seu telefone, e o seu email
-                    //Enviamos o tipo porque método setPessoa está sendo usado para INSERT e UPDATE
-                    if($pessoac->setPessoa($set_type, null, $nomef, $telefonef, $emailf)){
 
-                        //Se o método Set retornar true, significa que o INSERT funcionou
+                    if($pessoau->setPessoa($set_type, $idf, $nomef, $telefonef, $emailf)){
+
+                        //Se o método Set retornar true, significa que o UPDATE funcionou
                         //A página é recarregada
-                        $_SESSION["sucesso"] = "Cadastro realizado com sucesso!";
+                        $_SESSION["sucesso"] = "Update realizado com sucesso!";
                         header("location: http://localhost:8000");
 
                     }else{
 
-                        //Se o método retornar false, significa que o INSERT FALHOU
-                        $_SESSION['erro_msg'] = "Erro! O processo de cadastro falhou";
+                        //Se o método retornar false, significa que o UPDATE falhou
+                        $_SESSION['erro_msg'] = "Erro! O processo de update falhou";
 
                         //A página é recarregada
                         header("location: http://localhost:8000");

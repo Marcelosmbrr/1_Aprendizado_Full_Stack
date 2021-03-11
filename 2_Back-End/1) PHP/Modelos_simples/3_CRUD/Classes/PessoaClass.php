@@ -8,46 +8,101 @@
             $this->pdo = $pdo;
         }
 
-        function getPessoas(){
+        //OS MÉTODOS A SEGUIR SÃO CHAMADOS NOS ARQUIVOS DE SCRIPT E APENAS APÓS TODOS OS PROCEDIMENTOS DE VERIFICAÇÃO DE DADOS
 
-            $sql = "SELECT * FROM pessoas";
+        //Recebe um valor para indentificar se o SELECT será geral, ou de um registro específico
+        function getPessoas($get_type, $id){
 
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
+            if($get_type == "select_all"){
 
-            //rowCount retorna o número de linhas afetadas pela instrução SQL
-            if($stmt->rowCount() > 0){
+                $sql = "SELECT * FROM pessoas";
 
-                //Neste caso o rowCount é superior a 0
-                //Significa que existem registros no banco de dados
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->execute();
 
-                //FetchAll() retorna diversos registros
-                $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                //rowCount retorna o número de linhas afetadas pela instrução SQL
+                if($stmt->rowCount() > 0){
 
-                return $registros;
+                    //Neste caso o rowCount é superior a 0
+                    //Significa que existem registros no banco de dados
 
-            }else{
-                //Retornamos false para indicar que o usuário e senha digitados não foram encontrados em um mesmo registro do BD
-                return false;
-            }
+                    //FetchAll() retorna diversos registros
+                    //O modo passado transformar o retorno um array associativo
+                    $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    return $registros;
+
+                }else{
+                    //Retornamos false para indicar que o usuário e senha digitados não foram encontrados em um mesmo registro do BD
+                    return false;
+                }
+
+            }else if($get_type == "select_notall"){
+
+                $sql = "SELECT * FROM pessoas WHERE id = :id";
+
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->bindParam(":id", $id);
+                $stmt->execute();
+
+                //Se o número de linhas afetadas for maior que zero (será apenas uma linha, na verdade)
+                if($stmt->rowCount() > 0){
+
+                    //Tornamos o registro retornado um array associativo
+                    $registro = $stmt->fetch(PDO::FETCH_ASSOC);
+                    return $registro;
+
+                }else{
+
+                    return false;
+
+
+                }
+            } 
         }
 
-        function setPessoa($nome, $telefone, $email){
+        //Este método é usado para INSERT e UPDATE
+        function setPessoa($set_type, $id, $nome, $telefone, $email){
 
-            $sql = "INSERT INTO pessoas VALUES (DEFAULT, :nome, :telefone, :email)";
+            if($set_type == "sql_insert"){
 
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(":nome", $nome);
-            $stmt->bindParam(":telefone", $telefone);
-            $stmt->bindParam(":email", $email);
-            if($stmt->execute()){
+                $sql = "INSERT INTO pessoas VALUES (DEFAULT, :nome, :telefone, :email)";
 
-                //Com o INSERT realizado com sucesso, retornamos true
-                return true;
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->bindParam(":nome", $nome);
+                $stmt->bindParam(":telefone", $telefone);
+                $stmt->bindParam(":email", $email);
+                if($stmt->execute()){
 
-            }else{ //Se o INSERT falhar
+                    //Com o INSERT realizado com sucesso, retornamos true
+                    return true;
 
-                return false;
+                }else{ //Se o INSERT falhar
+
+                    return false;
+
+                }
+
+            }else if($set_type == "sql_update"){
+
+                $sql = "UPDATE pessoas SET id = :id, nome = :nome, telefone = :telefone, email = :email WHERE id = :id";
+
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->bindParam(":id", $id);
+                $stmt->bindParam(":nome", $nome);
+                $stmt->bindParam(":telefone", $telefone);
+                $stmt->bindParam(":email", $email);
+
+                if($stmt->execute()){
+
+                    //Com o UPDATE realizado com sucesso, retornamos true
+                    return true;
+
+                }else{ //Se o UPDATE falhar
+
+                    return false;
+
+                }
 
             }
 
@@ -71,8 +126,6 @@
             }
 
         }
-
-        
 
     }
 

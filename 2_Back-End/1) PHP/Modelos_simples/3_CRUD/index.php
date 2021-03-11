@@ -1,6 +1,6 @@
 <?php
 
-  session_set_cookie_params(5,"/"); //duração da session
+  session_set_cookie_params(2,"/"); //duração da session
   session_start();
 
   require_once("Conexao/conexao.php");
@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="Display/reset.css">
     <link rel="stylesheet" href="Display/display.css">
     <script src="https://kit.fontawesome.com/49b7b83709.js" crossorigin="anonymous"></script>
-    <script src="jquery/jquery-3.5.1.js"></script>
     <title>CRUD</title>
 </head>
 <body>
@@ -104,7 +103,8 @@
 
                     //TABELA DINÂMICA///////////////
 
-                    $registros = $obj->getPessoas();
+                    $get_type = "select_all";
+                    $registros = $obj->getPessoas($get_type, null);
 
                     if($registros){ //Se a variável não for false
 
@@ -131,8 +131,8 @@
                   //Portanto, é criada dinâmicamente, na linha, por ainda estar dentro do for, e com formato fixo por ser escrita em HTML puro
                   ?>
                   <td style= "text-align:center">
-                      <!-- O botão editar redireciona o usuário para o script php de edição  -->
-                      <a href="/Edicao/edicao_verifica.php"><button type='button' class='btn btn-primary btn-sm' style = "background: #DD8A00; border: 0">Editar</button></a>
+                      <!-- O botão editar redireciona o usuário para o script php de edição, com o valor da coluna ID passada pela URL  -->
+                      <a href="Update_script/select_verifica.php?id_up=<?php echo $registros[$linha]['id'] ?>"><button type='button' class='btn btn-primary btn-sm' style = "background: #DD8A00; border: 0">Editar</button></a>
                   </td>
                   <?php
 
@@ -177,19 +177,46 @@
         </section>
 
     </main>
+
+    <?php 
+
+    if(isset($_SESSION["update_registro"])){
+
+      echo "<style>.update_form {display:block}</style>";
+
+    }
+
+    ?>
+
+    <div class = "update_form">
     
+      <form class="row g-3" style="display: grid;" action = "Update_script/update_verifica.php" method = "POST">
+          <div class="col-md-6">
+            <label for="nome" class="form-label">ID</label>
+            <input style = "width: max-content;" type = "text" class="form-control" id="nome" placeholder="Nome completo" name = "update_id" value = "<?php if(isset($_SESSION['update_registro'])){ echo $_SESSION['update_registro']['id']; } ?>">
+          </div>
+          <div class="col-md-6">
+            <label for="nome" class="form-label">Nome</label>
+            <input style = "width: max-content;" type = "text" class="form-control" id="nome" placeholder="Nome completo" name = "update_nome" value = "<?php if(isset($_SESSION['update_registro'])){ echo $_SESSION['update_registro']['nome']; } ?>">
+          </div>
+          <div class="col-md-6">
+            <label style = "width: max-content;" for="telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="telefone" placeholder="Insira o DDD" style="width: max-content;" name = "update_telefone" value = "<?php if(isset($_SESSION['update_registro'])){ echo $_SESSION['update_registro']['telefone']; } ?>">
+          </div>
+          <div class="col-md-6">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" style="width: max-content;" placeholder="usuário@exemplo.com" name = "update_email" value = "<?php if(isset($_SESSION['update_registro'])){ echo $_SESSION['update_registro']['email']; } ?>">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" style="background: #dd8a00; border: 0;" name = "btn_update">Update</button>
+          </div>
+        </form>
+
+    </div>
+
+    <script src="Javascript/jquery/jquery-3.5.1.js"></script>
+    <script src="Javascript/scripts.js"></script>
+
 </body>
-
-      <script>
-
-        $(".fa-user-plus").click(function(){
-            $(".fb_1").fadeToggle(500);
-        });
-
-        $(".fa-user-minus").click(function(){
-            $(".fb_2").fadeToggle(500);
-        });
-
-    </script>
 
 </html>

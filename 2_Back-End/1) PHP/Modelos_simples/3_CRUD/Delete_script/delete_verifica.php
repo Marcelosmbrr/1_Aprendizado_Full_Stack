@@ -1,6 +1,6 @@
 <?php
 
-    session_set_cookie_params(5,"/"); //duração da session
+    session_set_cookie_params(2,"/"); //duração da session
     session_start();
     require_once("Conexao/conexao.php");
     require_once("Classes/PessoaClass.php");

@@ -82,7 +82,17 @@ thead tr{
 /*CONTAINER DELETAR PESSOA*/
 
 .main_delete-side{
-   display: grid;
-   grid-template-rows: auto auto;
-   justify-content: start;
+    display: grid;
+    grid-template-rows: min-content auto;
+}
+
+/* CONTAINER DE UPDATE*/
+.update_form{
+    padding: 10px;
+    border: 1px solid #333;
+    position: fixed;
+    bottom: 100px;
+    left: 42%;
+    display: none;
+    background: whitesmoke;
 }
