@@ -1,0 +1,4 @@
+1-REST
+2-Padrões Projeto
+3-Orientação a Objeto
+4- MVC
