@@ -1,0 +1,6 @@
+1- Redes
+2- Segurança aplicações
+3 - Infra estrutura - Azure, AWS, etc
+4 - Virtualização para desenvolvimento - Docker
+5 - Integração e entrega contínua - Automação - Jenkins
+6 - Monitoramento e visualização - NetData

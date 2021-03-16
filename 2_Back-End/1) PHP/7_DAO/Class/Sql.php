@@ -1,9 +1,12 @@
 <?php
 
+    //Essa classe é acessível por esse namespace
+    namespace Classes;
+
     //ESTA É A CLASSE INTERMEDIÁRIA PARA ACESSO AOS DADOS
     //É NESTE ARQUIVO QUE OS DADOS SÃO MANIPULADOS DIRETAMENTE NO BANCO, POIS EXTENDE A PDO, QUE É NATIVA DO PHP
 
-    class sql extends PDO{
+    class Sql extends PDO{
 
         private $conn; 
 

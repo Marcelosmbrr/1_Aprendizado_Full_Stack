@@ -1,6 +1,8 @@
 <?php
 
-    require_once("Class_Usuario.php");
+    require("vendor".DIRECTORY_SEPARATOR."autoload.php");
+
+    use Classes;
 
     //Pesquisa select de um só usuário
     $user = new Usuario;

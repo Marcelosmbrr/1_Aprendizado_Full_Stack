@@ -1,5 +1,10 @@
 <?php
 
+    //Essa classe é acessível por esse namespace
+    namespace Classes;
+
+    use Classes\Sql;
+
     class Usuario{
 
         private $idusuario;
@@ -64,7 +69,7 @@
 
             //Instanciamos um objeto da classe SQL
             //A instância, sabemos, cria a conexão pelo método construct da classe SQL
-            $sql = new sql();
+            $sql = new Sql();
 
             //Chamamos o método SELECT da classe SQL enviando o comando SQL e o parâmetro  
             $results = $sql->select("SELECT * FROM usuarios WHERE idusuario = :ID", array(":ID"=>$id));
