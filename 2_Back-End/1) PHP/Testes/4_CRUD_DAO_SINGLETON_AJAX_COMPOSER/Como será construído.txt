@@ -1,7 +1,7 @@
 Geral:
 1- Index se comunicará, primeiro, com o Script AJAX, enviando para ele os dados a serem processados, posteriormente, pelos scripts PHP
 2 - Tendo recebidos os dados do Index, o Script AJAX os enviará para os scripts PHP correspondentes, que farão as verificações dos dados
-3 - Após verificados pelos scrips de verificação, os dados serão enviados para a classe SQL que executará as queries
+3 - Após verificados pelos scrips de verificação, os dados serão enviados para a classe SQL que executará as queries, por instâncias, é claro
 4 - O retorno da execução das queries será para a classe Usuário, que fará a seleção dos dados a serem retornados para o View
 5 - Finalmente, a classe Usuário retorna os dados para a camada View afim de serem utilizados, como devem, para a experiência do usuário e finalidade do programa
 
