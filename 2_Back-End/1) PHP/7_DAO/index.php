@@ -1,13 +1,20 @@
 <?php
 
-    require("vendor".DIRECTORY_SEPARATOR."autoload.php");
+    require_once("vendor/autoload.php");
 
-    use Classes;
+    use Classes\Usuario;
 
-    //Pesquisa select de um só usuário
-    $user = new Usuario;
-    $user->loadByid(1);
-    echo $user; //Esse echo ativa o método __toString
+    $user = new Usuario(1);
+    if($user == false){
+
+        echo "Teste";
+
+    }else{
+
+        //Chama o método mágico toString
+        echo $user;
+
+    }
 
 
 
