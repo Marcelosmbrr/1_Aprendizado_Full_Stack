@@ -1,6 +1,7 @@
 <?php
 
     namespace Classes;
+    use PDO;
 
     class Sql extends PDO{
 
@@ -9,7 +10,7 @@
         //Método mágico de construção
         public function __construct(){
 
-            $this->conn = new PDO("mysql:host=localhost;dbname=crud_modelo", "root", "root");
+            $this->conn = new PDO("mysql:host=localhost;dbname=dao_teste", "root", "root");
 
         }
 
@@ -19,7 +20,7 @@
 
             foreach($params as $chave => $valor){
 
-                $this->conn->setParams($chave, $valor, $statment);
+                $this->setParams($chave, $valor, $statment);
 
             }
 
@@ -49,7 +50,7 @@
 
         public function select($query, $params = array()){
 
-            $exec_return = $this->conn->queryInit($query, $params);
+            $exec_return = $this->queryInit($query, $params);
 
             if($exec_return){
 

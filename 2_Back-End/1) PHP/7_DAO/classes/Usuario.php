@@ -2,6 +2,7 @@
 
     namespace Classes;
     use Classes\Sql;
+    use DateTime;
 
     class Usuario{
 
@@ -71,9 +72,9 @@
                     $row = $return_select[0];
 
                     $this->setIdusuario($row["idusuarios"]);
-                    $this->setNome($row["nome"]);
+                    $this->setNome($row["username"]);
                     $this->setSenha($row["senha"]);
-                    $this->setDtcadastro($row["dtcadastro"]);
+                    $this->setDtcadastro(new DateTime($row["dtcadastro"]));
 
                 }
             }else{
@@ -87,10 +88,21 @@
         //Método mágico de impressão
         public function __toString(){
 
-            return "Certo";
-            
+            //IMPORTANTE SABER: 
+            //Enviando apenas em forma de array, a impressão dos valores no index preserva a privacidade dos valores dos atributos
+            //Enviando com json_encode() a privacidade dos valores é revelada
+            //Portanto, em uma aplicação real, deveriam ser enviados para o index apenas alguns valores revelados, e não todos, como a senha, que é obviamente um valor sigiloso
+            return json_encode(array(
 
+                "idusuario"=>$this->getIdusuario(),
+                "nome"=>$this->getNome(),
+                "senha"=>$this->getSenha(),
+                "dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s")
+
+            ));
+            
         }
+
     }
 
 

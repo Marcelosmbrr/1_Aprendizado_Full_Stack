@@ -1,2 +1,0 @@
-As aplicações devem estar dentro do diretório que o servidor utilizado procura por arquivos.
-Por exemplo, no caso do XAMPP, seria o "htdocs", e do WAMPServer seria o "www".

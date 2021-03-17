@@ -1,0 +1,36 @@
+Geral:
+1- Index se comunicará, primeiro, com o Script AJAX, enviando para ele os dados a serem processados, posteriormente, pelos scripts PHP
+2 - Tendo recebidos os dados do Index, o Script AJAX os enviará para os scripts PHP correspondentes, que farão as verificações dos dados
+3 - Após verificados pelos scrips de verificação, os dados serão enviados para a classe SQL que executará as queries
+4 - O retorno da execução das queries será para a classe Usuário, que fará a seleção dos dados a serem retornados para o View
+5 - Finalmente, a classe Usuário retorna os dados para a camada View afim de serem utilizados, como devem, para a experiência do usuário e finalidade do programa
+
+Ordem de funcionamento:
+
+Camada View:
+1 - Para que o programa cumpra com sua finalidade, deve dispor dos dados que o usuário necessita
+2 - O usuário pode inserir dados via input, e estes devem ser processados
+
+Scripts de verificação:
+1 - Receberão os dados do Script AJAX
+2 - Aplicarão os filtros de dados, impedindo possíveis ataques, como injeção de SQL
+3 - Enviarão os dados filtrados para a classe SQL 
+
+Classe SQL:
+1 - A camada que irá fundir os dados com o banco será a classe SQL, que herdará a classe PDO
+2 - Terá um único atributo, $conn, que será a instância da classe PDO
+3- A função construtora será a instância da classe PDO, seguindo o padrão SINGLETON
+4 - A execução da query pela classe SQL será retornada para a próxima camada da aplicação, que terá o objeto da classe SQL instanciado - o contexto da classe Usuário
+5 - Sendo um SELECT ou não, o retorno desta classe incluirá todos os campos do registro afetado, pois será a classe Usuário que fará a seleção dos dados que serão enviados para a camada View
+
+Classe Usuario:
+1- A classe SQL retornará para a classe Usuário a execução da query 
+2 - A classe Usuário terá como atributos privados os campos existentes dos registros da tabela Usuários, do banco
+3 - A classe terá, naturalmente, os métodos getter e setters
+4 - Os dados que devem ser retornados para a camada View serão selecionados e enviados via JSON dentro de um array associativo, com o método json_encode() 
+
+DETALHES:
+A condição de execução do SELECT universal para impressão de todos os registros, na camada View, será o carregamento do body 
+
+
+
