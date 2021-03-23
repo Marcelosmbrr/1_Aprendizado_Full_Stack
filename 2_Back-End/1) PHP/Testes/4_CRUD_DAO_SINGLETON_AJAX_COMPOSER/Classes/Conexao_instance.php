@@ -1,12 +1,19 @@
-<?php
+<?php  
 
-    class Conexao{
+    //Esta classe serve para processar e retornar a instância de uma OUTRA classe
+    //Neste caso, uma instância da classe PDO
 
-        //Declarar propriedades ou métodos de uma classe como estáticos faz deles acessíveis sem a necessidade de instanciar a classe
-        //https://www.php.net/manual/pt_BR/language.oop5.static.php
+    namespace Classes;
+    use PDO;
+
+    class Conexao_instance{
+
+        //Serve para a condicional
         private static $instance;
 
-        public static function getConn(){
+        private function __construct(){}
+
+        public static function getInstance(){
 
             //$this é diferente de self //https://pt.stackoverflow.com/questions/575/quando-usar-self-vs-this-em-php
             //Quando não existir uma instância
@@ -14,7 +21,10 @@
                 
                 //É criada uma
                 try{
-                    return self::$instance = new PDO("mysql:host=localhost;dbname=db_name", "root", "root");
+
+                     self::$instance = new PDO("mysql:host=localhost;dbname=dao_teste", "root", "root");
+                     return self::$instance;
+                    
                 }
                 catch(PDOException $e){
                     echo "Erro com o banco de dados:" .$e->getMessage();
@@ -30,6 +40,7 @@
                 return self::$instance;
             }
         }
+        
     }
 
 ?>

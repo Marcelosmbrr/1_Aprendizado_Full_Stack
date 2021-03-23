@@ -1,2 +1,0 @@
-https://imasters.com.br/back-end/o-padrao-singleton-com-php
-https://www.devmedia.com.br/php-singleton-aplicando-o-padrao-de-projeto-na-pratica/28469
