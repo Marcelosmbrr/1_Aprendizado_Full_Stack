@@ -10,20 +10,20 @@
 
     class Pessoa_DAO {
 
-        private $idusuario;
+        private $id;
         private $nome;
-        private $senha;
-        private $dtcadastro;
+        private $telefone;
+        private $email;
 
     
-        public function getIdusuario()
+        public function getId()
         {
-            return $this->idusuario;
+            return $this->id;
         }
  
-        public function setIdusuario($idusuario)
+        public function setId($id)
         {
-            $this->idusuario = $idusuario;
+            $this->id = $id;
 
         }
 
@@ -38,22 +38,22 @@
 
         }
 
-        public function getSenha()
+        public function getTelefone()
         {
-            return $this->senha;
+            return $this->telefone;
         }
 
-        public function setSenha($senha)
+        public function setTelefone($telefone)
         {
-            $this->senha = $senha;          
+            $this->telefone = $telefone;          
         }
 
-        public function getDtcadastro()
+        public function getEmail()
         {
-            return $this->dtcadastro;
+            return $this->email;
         }
 
-        public function setDtcadastro($dtcadastro)
+        public function setEmail($dtcadastro)
         {
             $this->dtcadastro = $dtcadastro;
 
@@ -62,7 +62,7 @@
         public function loadbyID($id){
 
             //Query SQL
-            $query = "SELECT * FROM usuarios WHERE idusuarios = :ID"; 
+            $query = "SELECT * FROM pessoas WHERE id = :ID"; 
 
             //Especificações/parâmetros da Query
             $params = array(":ID"=>$id); 
@@ -81,10 +81,10 @@
                     //Será um vetor necessariamente porque no banco de dados não existem dois registros de mesmo id
                     $row = $return_select[0];
 
-                    $this->setIdusuario($row["idusuarios"]);
-                    $this->setNome($row["username"]);
-                    $this->setSenha($row["senha"]);
-                    $this->setDtcadastro(new DateTime($row["dtcadastro"]));
+                    $this->setIdusuario($row["id"]);
+                    $this->setNome($row["nome"]);
+                    $this->setSenha($row["telefone"]);
+                    $this->setDtcadastro($row["email"]);
 
                 }
             }else{
@@ -93,6 +93,54 @@
 
             }
   
+        }
+
+        public static function loadAll(){
+
+            //Query SQL
+            $query = "SELECT * FROM pessoas"; 
+
+            //Especificações/parâmetros da Query
+            $params = array(null); 
+
+            //CONTINUE///////
+
+        }
+
+        public function deletebyID($id){
+
+             //Query SQL
+             $query = "DELETE FROM pessoas WHERE id = :ID";; 
+
+             //Especificações/parâmetros da Query
+             $params = array(":ID"=>$id); 
+ 
+             //CONTINUE//////
+
+        }
+
+        public function updatebyID($id, $nome, $telefone, $email){
+
+             //Query SQL
+             $query = "UPDATE pessoas SET id = :id, nome = :nome, telefone = :telefone, email = :email WHERE id = :id"; 
+
+             //Especificações/parâmetros da Query
+             $params = array(":ID"=>$id); 
+ 
+             //CONTINUE//////
+
+        }
+
+        public function cadastrarPessoa($nome, $telefone, $email){
+
+            //Query SQL
+            $query = "INSERT INTO pessoas VALUES (DEFAULT, :nome, :telefone, :email)"; 
+
+            //Especificações/parâmetros da Query
+            $params = array(":nome"=>$nome, ":telefone"=>$telefone, ":email"=>$email); 
+
+            //CONTINUE
+
         }
 
 
@@ -105,10 +153,10 @@
         //Portanto, em uma aplicação real, deveriam ser enviados para o index apenas alguns valores revelados, e não todos, como a senha, que é obviamente um valor sigiloso
         return json_encode(array(
 
-            "idusuario"=>$this->getIdusuario(),
+            "id"=>$this->getId(),
             "nome"=>$this->getNome(),
-            "senha"=>$this->getSenha(),
-            "dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s")
+            "telefone"=>$this->getTelefone(),
+            "email"=>$this->getEmail()
 
         ));
         

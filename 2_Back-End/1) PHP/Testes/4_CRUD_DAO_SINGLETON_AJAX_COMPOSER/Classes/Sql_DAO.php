@@ -38,7 +38,7 @@
                     $data = $statment->fetchAll(PDO::FETCH_ASSOC);
                     return $data;
 
-                } else if($query_type == "create" || $query_type == "delete" || $query_type == "update") {
+                } else if($query_type == "insert" || $query_type == "create" || $query_type == "delete" || $query_type == "update") {
 
                     return true;
 
@@ -57,7 +57,7 @@
             
         }
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////MÉTODOS CHAMADOS PELA CLASSE PESSOA//////////////////////////////////////////////////////////////////////////////////////
 
         public function select($query, $params = array()){
 
@@ -75,7 +75,80 @@
                 return false;
 
             }
-        }   
+        }
+        
+        public function insert($query, $params = array()){
+
+            $query_type = "insert";
+            
+            $exec_return = $this->queryInit($query_type, $query, $params);
+
+            if($exec_return){
+
+                //Retorna true
+                return $exec_return;
+
+            }else{
+
+                return false;
+
+            }
+        }
+
+        public function create($query, $params = array()){
+
+            $query_type = "create";
+            
+            $exec_return = $this->queryInit($query_type, $query, $params);
+
+            if($exec_return){
+
+                //Retorna true
+                return $exec_return;
+
+            }else{
+
+                return false;
+
+            }
+        }
+
+        public function delete($query, $params = array()){
+
+            $query_type = "delete";
+            
+            $exec_return = $this->queryInit($query_type, $query, $params);
+
+            if($exec_return){
+
+                //Retorna true
+                return $exec_return;
+
+            }else{
+
+                return false;
+
+            }
+        }
+
+        public function update($query, $params = array()){
+            
+            $query_type = "update";
+            
+            $exec_return = $this->queryInit($query_type, $query, $params);
+
+            if($exec_return){
+
+                //Retorna true
+                return $exec_return;
+
+            }else{
+
+                return false;
+
+            }
+
+        }
     }
 
 ?>

@@ -22,7 +22,7 @@
                 //É criada uma
                 try{
 
-                     self::$instance = new PDO("mysql:host=localhost;dbname=dao_teste", "root", "root");
+                     self::$instance = new PDO("mysql:host=localhost;dbname=crud_modelo", "root", "root");
                      return self::$instance;
                     
                 }
