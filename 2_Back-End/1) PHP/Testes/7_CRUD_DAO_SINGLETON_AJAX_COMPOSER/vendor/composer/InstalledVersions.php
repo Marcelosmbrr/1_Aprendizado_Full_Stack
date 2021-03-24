@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ef615291b13c201ee543d34b5f0054c6fdc23175',
+    'reference' => 'ee9966250da5f18636803089f92cd42709da3ff2',
     'name' => 'marcelosmbr/crud_dao_singleton_ajax',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ef615291b13c201ee543d34b5f0054c6fdc23175',
+      'reference' => 'ee9966250da5f18636803089f92cd42709da3ff2',
     ),
   ),
 );
