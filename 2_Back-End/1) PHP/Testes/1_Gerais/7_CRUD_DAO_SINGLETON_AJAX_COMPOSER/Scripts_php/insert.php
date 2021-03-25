@@ -35,7 +35,7 @@
                 $cadastro_return = $obj_pessoa->cadastrarPessoa($nomef, $telefonef, $emailf);
 
                 //True ou false
-                echo json_encode($cadastro_return);
+                echo $cadastro_return;
 
             }
         }

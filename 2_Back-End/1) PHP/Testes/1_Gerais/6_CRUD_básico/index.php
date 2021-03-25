@@ -137,7 +137,7 @@
                   <?php
 
                       //Após criado o Botão editar, fechamos a linha
-                      echo "<tr>";
+                      echo "</tr>";
 
                       //Se for a última linha, o processo termina definitivamente
                       //Se não for a última linha, o processo reinicia a partir do for

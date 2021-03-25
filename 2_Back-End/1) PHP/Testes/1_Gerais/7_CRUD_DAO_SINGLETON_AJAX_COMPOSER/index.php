@@ -17,7 +17,7 @@
 
     <header>
 
-        <h1 style="color: #fff;"><i class="fas fa-database" style="color: #DD8A00;"></i> CRUD COM MYSQL</h1>
+        <h1 style="color: #fff;"><i class="fas fa-database" style="color: #DD8A00;"></i> CRUD AJAX_DAO_SINGLETON_COMPOSER</h1>
 
     </header>
 
@@ -95,8 +95,8 @@
 
                 <form class="row g-3 form-delete" style="display: grid;" action = "Delete_script/delete_verifica.php" method = "POST">
                     <div class="col-md-6">
-                      <label for="nome" class="form-label">ID</label>
-                      <input style = "width: max-content;" type = "text" class="form-control" id="nome" placeholder="ID do registro" name = "delete_id">
+                      <label for="id_dinput" class="form-label">ID</label>
+                      <input style = "width: max-content;" type = "text" class="form-control" id="id_dinput" placeholder="ID do registro" name = "delete_id">
                     </div>
                     <div class="col-12">
                       <button type="submit" class="btn btn-primary" style="background: #dd8a00; border: 0;" name = "btn_delete">Delete</button>
@@ -112,31 +112,23 @@
     <!-- O FORMULÁRIO DE UPDATE POR PADRÃO É DISPLAY NONE -->
     <!-- DEVE APARECER CASO O USUÁRIO CLIQUE NO BOTÃO DE EDITAR, DE ALGUM DOS REGISTROS LISTADOS -->
     <div class = "update_form">
-
-        <?php 
-          if(isset($_SESSION["update_registro"])){
-
-            echo "<style>.update_form {display:block}</style>";
-
-          }
-        ?>
     
       <form class="row g-3 form-update" style="display: grid;" action = "Update_script/update_verifica.php" method = "POST">
           <div class="col-md-6">
-            <label for="nome" class="form-label">ID</label>
-            <input style = "width: max-content;" type = "text" class="form-control" id="nome" placeholder="Nome completo" name = "update_id" value = "<?php if(isset($_SESSION['update_registro'])){ echo $_SESSION['update_registro']['id']; } ?>">
+            <label for="id_uinput" class="form-label">ID</label>
+            <input style = "width: max-content;" type = "text" class="form-control" id="id_uinput" placeholder="Nome completo" name = "update_id">
           </div>
           <div class="col-md-6">
-            <label for="nome" class="form-label">Nome</label>
-            <input style = "width: max-content;" type = "text" class="form-control" id="nome" placeholder="Nome completo" name = "update_nome" value = "<?php if(isset($_SESSION['update_registro'])){ echo $_SESSION['update_registro']['nome']; } ?>">
+            <label for="nome_uinput" class="form-label">Nome</label>
+            <input style = "width: max-content;" type = "text" class="form-control" id="nome_uinput" placeholder="Nome completo" name = "update_nome">
           </div>
           <div class="col-md-6">
-            <label style = "width: max-content;" for="telefone" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="telefone" placeholder="Insira o DDD" style="width: max-content;" name = "update_telefone" value = "<?php if(isset($_SESSION['update_registro'])){ echo $_SESSION['update_registro']['telefone']; } ?>">
+            <label style = "width: max-content;" for="telefone_uinput" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="telefone_uinput" placeholder="Insira o DDD" style="width: max-content;" name = "update_telefone">
           </div>
           <div class="col-md-6">
-              <label for="email" class="form-label">E-mail</label>
-              <input type="email" class="form-control" id="email" style="width: max-content;" placeholder="usuário@exemplo.com" name = "update_email" value = "<?php if(isset($_SESSION['update_registro'])){ echo $_SESSION['update_registro']['email']; } ?>">
+              <label for="email_uinput" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email_uinput" style="width: max-content;" placeholder="usuário@exemplo.com" name = "update_email">
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary" style="background: #dd8a00; border: 0;" name = "btn_update">Update</button>

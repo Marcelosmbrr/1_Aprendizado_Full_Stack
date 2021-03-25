@@ -18,19 +18,16 @@
 
             $statment = $obj_pdo->prepare($query);
 
-            //////////////////////////////////////PROBLEMA/////////////////////////////////////
-            //PROBLEMAS COM QUERIES QUE TEM PARÂMETROS
-
             if(!empty($params)){
 
                 foreach($params as $chave => $valor){
+                    
+                    $this->setParams($chave, $valor, $statment);
+                    
+                    }
 
-                   $this->setParams($chave, $valor, $statment);
-    
-                }
             }
                 
-            
             //Se for um select, irá retornar um array associativo, se não, apenas irá retornar true
             //Surge a necessidade da variável "query type" aqui, como um outro referencial para o tratamento do retorno
             if($statment->execute()){
@@ -52,8 +49,7 @@
                 return false;
 
             }
-            
-            
+              
         }
 
         private function setParams($chave, $valor, $statment){
@@ -61,8 +57,6 @@
             $statment->bindParam($chave, $valor);
             
         }
-
-        //////////////////////////////////////PROBLEMA/////////////////////////////////////
 
         /////////////////////////////////////////////MÉTODOS CHAMADOS PELA CLASSE PESSOA//////////////////////////////////////////////////////////////////////////////////////
 
@@ -81,6 +75,18 @@
         public function insert($query, $params = array()){
 
             $query_type = "insert";
+            
+            //Recebe true, ou false
+            $exec_return = $this->queryInit($query_type, $query, $params);
+
+            //True ou false
+            return $exec_return;
+
+        }
+
+        public function delete($query, $params = array()){
+
+            $query_type = "delete";
             
             //Recebe true, ou false
             $exec_return = $this->queryInit($query_type, $query, $params);

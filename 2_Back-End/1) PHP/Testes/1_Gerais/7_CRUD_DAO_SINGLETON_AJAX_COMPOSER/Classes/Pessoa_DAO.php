@@ -81,7 +81,7 @@
         public function cadastrarPessoa($nome, $telefone, $email){
 
             //Query SQL
-            $query = "INSERT INTO pessoas VALUES (:nome, :telefone, :email)"; 
+            $query = "INSERT INTO pessoas (id, nome, telefone, email) VALUES (DEFAULT, :nome, :telefone, :email)"; 
 
             //Especificações/parâmetros da Query
             $params = array(":nome"=>$nome, ":telefone"=>$telefone, ":email"=>$email); 
@@ -93,6 +93,25 @@
 
             //True ou false
             return $return_insert;
+
+
+        }
+
+        public function deletebyID($id){
+
+            //Query SQL
+            $query = "DELETE FROM pessoas WHERE id = :ID"; 
+
+            //Especificações/parâmetros da Query
+            $params = array(":ID"=>$id); 
+
+            $obj_sql = Sql_instance::getInstance();
+
+            //Recebe true, ou false
+            $return_delete = $obj_sql->delete($query, $params);
+
+            //True ou false
+            return $return_delete;
 
 
         }
