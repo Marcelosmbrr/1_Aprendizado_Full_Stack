@@ -1,0 +1,6 @@
+1) Ampliação da segurança para impedir ataques, como roubo de sessão, e outros; []
+
+2) Possibilidade de escolher entre as imagens salvas na pasta de upload;[]
+
+3) Tornar o código mais organizado e eficiente; []
+

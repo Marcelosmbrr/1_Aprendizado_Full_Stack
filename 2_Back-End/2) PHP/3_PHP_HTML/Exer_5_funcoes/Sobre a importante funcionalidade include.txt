@@ -1,0 +1,3 @@
+Dentro de um código php, podemos utilizar o "include arquivo.php", para, como o próprio nome denota, incluir um arquivo.php dentro de outro.
+Assim, podemos, por exemplo, chamar funções, em um programa, que estariam escritas em um outro arquivo.php. Este estaria digamos "conectado" ao que escrevemos.
+Ver em https://www.youtube.com/watch?v=o3y8af8rSKM&list=PLHz_AreHm4dm4beCCCmW4xwpmLf6EHY9k&index=16

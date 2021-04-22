@@ -1,0 +1,10 @@
+Deve ser utilizado com Composer
+https://github.com/feulf/raintpl3
+
+{
+    "require": {
+        "rain/raintpl": ">=3.0.0"
+    }
+}
+
+O código utilizado no index.php é o existente na pasta example-simples, do gitHub.

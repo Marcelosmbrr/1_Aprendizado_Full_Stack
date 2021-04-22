@@ -1,0 +1,96 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+}
+
+a, ul, ol{
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background: whitesmoke;
+}
+
+/*HEADER*************/
+header{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #333;
+    box-shadow: 0px 6px 13px 0px rgba(0,0,0,0.75);
+}
+
+.logo{
+    width: 480px;
+}
+
+.logo h1{
+    color: #fff;
+    font-size: 2em;
+}
+
+.navbar_header{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.li_item{
+    margin: 5px;
+    cursor: pointer;
+}
+
+.li_item a{
+    display: block;
+    color: #fff;
+    padding: 8px;
+    
+}
+
+.li_item a:hover{
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid #fff;
+}
+
+/* TRONCO ***********/
+.div_form{
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    background: #4766cc;
+}
+
+.div_download{
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    background: #4766cc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.upload_msg{
+    width: 500px;
+}
+
+.div_form, .div_download, .upload_msg{
+    margin: 50px auto;
+}
+
+.div_download-leftside{
+    border-right: 2px solid #333;
+}
+
+.div_download-rightside img{
+    display: block;
+    width: 100%;
+}

@@ -1,4 +1,0 @@
-Alura - Desenvolvedor PHP: https://www.alura.com.br/formacao-desenvolvedor-php
-Alura - Arquiteto PHP: https://www.alura.com.br/formacao-arquiteto-php
-Node Studio - PHP MVC: https://www.nodestudio.com.br/curso/curso-de-php-mvc
-Node Studio - Laravel: https://www.nodestudio.com.br/curso/curso-de-laravel 
