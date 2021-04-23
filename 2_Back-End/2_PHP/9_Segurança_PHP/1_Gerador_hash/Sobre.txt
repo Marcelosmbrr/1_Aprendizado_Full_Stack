@@ -1,0 +1,2 @@
+O programa acima gera um Hash a partir de uma string, passada em um input, com a função password_hash();
+Também, com a função passoword_verify() existente no código, é possível verificar a compatibilidade entre uma string e um Hash, passados também por inputs.
