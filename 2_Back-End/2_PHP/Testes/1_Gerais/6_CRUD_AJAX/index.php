@@ -77,7 +77,6 @@
 
             </section>
             
-
             <section class = "main_right-column">
                 
                 <!-- O FORMULÁRIO DE EDIÇÃO E DE EXCLUSÃO SERÃO RENDERIZADOS NESTE CONTAINER VIA AJAX -->
@@ -85,13 +84,12 @@
                      
                 </div>
 
-                <div class = "alert_msg_up">
+                <div class = "alert_msg_up-del">
                     <!-- AQUI É IMPRESSO A ESTRUTURA "ALERT" DO BOOTSTRAP - UPDATE -->
                 </div>
 
             </section>
             
-
         </main>     
     </body>
     <script src="javascript/jquery/jquery-3.5.1.js"></script>

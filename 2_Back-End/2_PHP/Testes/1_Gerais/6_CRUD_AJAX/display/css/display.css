@@ -71,7 +71,7 @@ main{
     color: #fff;
 }
 
-.alert_msg_reg, .alert_msg_up{
+.alert_msg_reg, .alert_msg_up-del{
     margin: 0 auto;
     width: max-content;
 }

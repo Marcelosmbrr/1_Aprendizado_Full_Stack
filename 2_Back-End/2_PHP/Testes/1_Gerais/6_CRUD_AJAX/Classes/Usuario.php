@@ -91,7 +91,6 @@
 
             $stmt->execute();
 
-            //rowCount retorna o número de linhas afetadas pela instrução SQL
             if($stmt->rowCount() > 0){
 
                 //Neste caso o rowCount é superior a 0
@@ -110,7 +109,7 @@
         public function Delete_registro($id){
 
             //O comando SQL de inserção a ser executado 
-            $query = "DELETE * FROM usuario WHERE cd_usuario = :id";
+            $query = "DELETE FROM usuario WHERE cd_usuario = :id";
 
             //Variável recebe o StatmentObject
             $stmt = $this->pdo->prepare($query); 
@@ -125,7 +124,6 @@
 
                 //Neste caso o rowCount é superior a 0
                 //Significa que um registro foi deletado
-
                 return true;
 
             }else{
@@ -134,11 +132,7 @@
                 return false;
             }
         }
-
-        
+     
     }
-
-
-
 
 ?>

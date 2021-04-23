@@ -205,13 +205,13 @@
                         $('#username_edit_input').val('');
 
                         //Para impedir sobreposição de alertas
-                        $(".alert_msg_up").empty();
+                        $(".alert_msg_up-del").empty();
 
                         //Se a resposta for true
                         if(response == true){
 
                             //Alerta de sucesso é renderizado
-                            $('.alert_msg_up').hide().prepend("<div class='alert alert-success' role='alert'> Atualização realizada com sucesso! </div>").fadeIn(500);
+                            $('.alert_msg_up-del').hide().prepend("<div class='alert alert-success' role='alert'> Atualização realizada com sucesso! </div>").fadeIn(500);
                             $(".alert").delay(5000).fadeOut(500);
 
                             //Esvaziamos o tbody, para que não hajam conflitos na atualização da listagem
@@ -224,7 +224,7 @@
                         }else{
 
                             //É impresso um alerta de fracasso (danger), do bootstrap, seguindo a mesma lógica do alerta de sucesso
-                            $('.alert_msg_up').hide().prepend("<div class='alert alert-danger' role='alert'> Erro na atualização! Tente novamente! </div>").fadeIn(500);
+                            $('.alert_msg_up-del').hide().prepend("<div class='alert alert-danger' role='alert'> Erro na atualização! Tente novamente! </div>").fadeIn(500);
                             $(".alert").delay(5000).fadeOut(500);
 
                         }
@@ -274,30 +274,61 @@
                 //Agora vou recuperar o id
                 campo_id = document.getElementById("id_input").value = vetor_tds[0].innerHTML;
 
-                //Agora vou recuperar o valor do campo id da linha
-                valor_ID = vetor_tds[0].innerHTML;
-                //console.log(valor_ID);
-
-                //Poderia ter uma confirmação de exclusão
-
-                //AJAX
-                $.ajax({
-
-                    url:'/script_php/delete.php',
-                    method: 'POST',
-                    data: {ID: valor_ID},
-                    dataType: 'text', //Tratamento da resposta //Por ser um delete, será true ou false
-                    beforeSend: function(){ console.log("Excluíndo registro.."); } 
-
-                }).done(function(response){
-
-                    //console.log(response)
+                //MODIFICAÇÃO ASSÍNCRONA DO REGISTRO DEFINIDO
+                $('.formulario_exclusao').submit(function(e){
+                    e.preventDefault(); 
                     
+                    //Recuperamos o valor do id, agora existente como valor do input
+                    del_id = $('#id_input').val();
+
+                    //AJAX
+                    $.ajax({
+
+                        url:'/script_php/delete.php',
+                        method: 'POST',
+                        data: {ID: del_id},
+                        dataType: 'text', //Tratamento da resposta //Por ser um update, será true ou false
+                        beforeSend: function(){ console.log("Excluíndo registro.."); } 
+
+                    }).done(function(response){
+
+                        //console.log(response);
+                    
+                        //O input do form é esvaziado
+                        $('#id_input').val('');
+                        
+                        //Para impedir sobreposição de alertas
+                        $(".alert_msg_up-del").empty();
+
+                        //Se a resposta for true
+                        if(response == true){
+
+                            //Alerta de sucesso é renderizado
+                            $('.alert_msg_up-del').hide().prepend("<div class='alert alert-success' role='alert'> Exclusão realizada com sucesso! </div>").fadeIn(500);
+                            $(".alert").delay(5000).fadeOut(500);
+
+                            //Esvaziamos o tbody, para que não hajam conflitos na atualização da listagem
+                            $("#corpo_tabela").empty();
+
+                            //E recuperamos os registros novamente, para atualizar
+                            getRegistros();
+
+                        //Se a reposta for false
+                        }else{
+
+                            //É impresso um alerta de fracasso (danger), do bootstrap, seguindo a mesma lógica do alerta de sucesso
+                            $('.alert_msg_up-del').hide().prepend("<div class='alert alert-danger' role='alert'> Erro na exclusão! Tente novamente! </div>").fadeIn(500);
+                            $(".alert").delay(5000).fadeOut(500);
+
+                        }
+
+                    });
+
                 });
 
             }else if(statusTxt == "error"){
 
-              alert("Erro no carregamento do formulário!");
+              console.log("Erro no carregamento do formulário!");
 
             }
 
