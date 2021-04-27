@@ -3,8 +3,8 @@
   session_set_cookie_params(2,"/"); //duração da session
   session_start();
 
-  require_once("Conexao/conexao.php");
-  require_once("Classes/PessoaClass.php");
+  require __DIR__."/Conexao/conexão.php";
+  require __DIR__."/Classes/PessoaClass.php";
 
   $obj = new Pessoa($pdo);
                  
