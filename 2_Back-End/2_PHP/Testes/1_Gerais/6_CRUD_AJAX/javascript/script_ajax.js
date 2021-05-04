@@ -75,7 +75,7 @@
         
         $.ajax({
 
-            url: '/script_php/select.php',
+            url: 'script_php/select.php',
             method: 'GET',
             dataType: 'json', //Tratamento da resposta //A resposta é convertida em um objeto literal JS
             beforeSend: function(){ console.log("Buscando registros..."); } //Antes de enviar..
@@ -284,7 +284,7 @@
                     //AJAX
                     $.ajax({
 
-                        url:'/script_php/delete.php',
+                        url:'script_php/delete.php',
                         method: 'POST',
                         data: {ID: del_id},
                         dataType: 'text', //Tratamento da resposta //Por ser um update, será true ou false
