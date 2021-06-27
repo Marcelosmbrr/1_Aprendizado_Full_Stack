@@ -29,18 +29,18 @@
             if($user->getUsuario($usuario, $senha)){
 
                 //Se o método Get retornar true, significa que o usuário e senha foram encontrados no banco, em um mesmo registro (linha)
-                if(isset($_SESSION['nome_usuario'])){
+                if(isset($_SESSION['user'])){
 
                     //Se existir a sessão que recebe o nome de usuário do campo 'username' do banco de dados //Operação realizada no arquivo da classe User
                     //Somos redirecionados para a página do sistema
-                    header("location: http://localhost:8000/Login/sistema.php");
+                    header("location: ../../sistema.php");
 
                 }
 
             }else{
 
                 $_SESSION['erro_msg'] = "Login e/ou senha incorretos!";
-                header("location: http://localhost:8000/");
+                header("location: ../../index.php");
 
             }
 
@@ -51,7 +51,7 @@
         $_SESSION['erro_msg'] = "Login não realizado!";
 
         //Header direciona o usuário para a aplicação localizada em um endereço especificado
-        header("location: http://localhost:8000/");
+        header("location: ../../index.php");
 
     }
 
