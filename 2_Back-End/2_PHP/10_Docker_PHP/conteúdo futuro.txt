@@ -1,2 +1,0 @@
-1) Documento de texto sobre minha visão pessoal do entendimento do Docker
-2) Como criar ambiente de desenvolvimento PHP com Docker

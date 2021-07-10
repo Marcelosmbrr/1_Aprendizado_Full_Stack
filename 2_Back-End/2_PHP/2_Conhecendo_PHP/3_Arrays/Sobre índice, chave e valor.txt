@@ -1,5 +1,0 @@
-Existem dois tipos de arrays: os indexados e os associativos.
-https://www.quora.com/What-is-the-difference-between-an-indexed-and-an-associative-array-in-PHP
-
-Sobre índice, chave e valor:
-https://www.quora.com/What-are-the-differences-between-keys-and-index-in-PHP-arrays
