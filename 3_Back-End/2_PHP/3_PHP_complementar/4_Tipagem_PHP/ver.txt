@@ -1,3 +1,0 @@
-https://pt.stackoverflow.com/questions/93707/tipagem-do-retorno-no-php-7-quais-as-vantagens
-https://www.php.net/manual/pt_BR/language.types.declarations.php 
-https://www.javatpoint.com/php-oops-type-hinting
