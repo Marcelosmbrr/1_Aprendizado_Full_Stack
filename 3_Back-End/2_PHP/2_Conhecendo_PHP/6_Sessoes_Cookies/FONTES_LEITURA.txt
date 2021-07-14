@@ -1,0 +1,8 @@
+
+1) Artigo - relação COOKIE-SESSION e funcionamento: 
+https://klauslaube.com.br/2012/04/05/entendendo-os-cookies-e-sessoes.html
+
+2) Sobre armazenar valores de sessão em Cookies:
+https://pt.stackoverflow.com/questions/124705/guardar-o-id-do-usu%C3%A1rio-em-cookies-%C3%A9-seguro
+
+
