@@ -1,1 +1,0 @@
-No futuro esta pasta terá programas testes que implementarão o framework Laravel e o padrão arquitetural MVC.
