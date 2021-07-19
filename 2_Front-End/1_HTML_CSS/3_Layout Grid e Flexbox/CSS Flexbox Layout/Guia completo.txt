@@ -1,3 +1,0 @@
-Guia CSS FlexBox-------------------
-
-https://origamid.com/projetos/flexbox-guia-completo/
