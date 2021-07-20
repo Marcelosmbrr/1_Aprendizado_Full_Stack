@@ -5,7 +5,7 @@
 
         <div class="mb-3">
             <label for="formFile" class="form-label">Upload de uma imagem</label>
-            <input class="form-control" type="file" id="formFile" name = "arquivo_enviado" multiple> <!-- Atributo multiple -->
+            <input class="form-control" type="file" id="formFile" name = "arquivo_enviado[]" multiple> <!-- Atributo multiple, name como array -->
         </div>
 
         <input type="submit" value = "Enviar" name = "form_enviado">
@@ -24,13 +24,13 @@
 
                 $extensionsPermited = array("png", "jpg", "jpeg", "gif");
 
-                $extension = pathinfo($_FILES['arquivo_enviado']['name'], PATHINFO_EXTENSION);
+                $extension = pathinfo($_FILES['arquivo_enviado']['name'][$contador], PATHINFO_EXTENSION);
 
                 if(in_array($extension, $extensionsPermited)){
 
                     $folder = "arquivos/";
 
-                    $temporary = $_FILES["arquivo_enviado"]["tmp_name"];
+                    $temporary = $_FILES["arquivo_enviado"]["tmp_name"][$contador];
 
                     $newName = uniqid() . ".$extension";
 
