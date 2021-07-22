@@ -3,9 +3,9 @@
 
 //As declarações try...catch marcam um bloco de declarações para testar (try),  e especifica uma resposta, caso uma exceção seja lançada
 try {
-    throw "myException"; // gera uma exceção
+    throw "Minha exception"; // gera uma exceção
  }
- catch (e) {
+ catch (exception) {
     // Declarações para manipular quaisquer exceções
-    // Sendo "e" a exceção definida
+    console.log("erro: "+ e);
  }

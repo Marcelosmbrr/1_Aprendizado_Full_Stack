@@ -3,7 +3,7 @@
 //Variáveis declaradas podem ser do tipo Let, Var ou Const
 //Se o tipo for omitido, serão do tipo var
 
-//SOBRE VAR **************/
+//SOBRE VAR *************************************************************************/
 
 //Var possui escopo global, de função, mas não de bloco
 //Significa que não se identifica dentro de um if, for, switch, enfim, mas, apenas ou no escopo global, ou em uma função - o que é um problema
@@ -24,7 +24,7 @@ nome = "ok";
 nome = "ooook";
 console.log(nome) //Irá imprimir "ooook"
 
-//SOBRE LET **************/
+//SOBRE LET ****************************************************************************/
 
 //Let possui escopo de bloco, global e de função, e foi implementado no ES6 para solucionar os problemas do Var
 //Let permite que o código seja melhor planejado e compreendido no que diz respeito ao fluxo dos dados
@@ -45,14 +45,27 @@ let cidade = "Pelotas";
 let cidade = "Pelotas";
 console.log(cidade); //Irá imprimir "Identifier 'cidade' has already been declared"
 
-//SOBRE CONST **************/
+//SOBRE CONST ***************************************************************************/
 
-//Declarar uma variável como const não significa necessariamente que seu valor não pode ser mudado
-//Significa que não podemos sobrescrever o seu identificador - assim como ocorre com let
-//O mais diferencial em relação ao let é que devemos obrigatoriamente definir um valor para ela quando a declararmos
+//Declarar uma variável como const significa que o endereço na memória do valor que recebe não pode ser alterado
+//Ou seja, o valor em si pode ser alterado, se isso não significar uma alteração no endereço da memória para onde a constante aponta
+//Isto é possivel //É o mesmo objeto apontado
+const objeto = {atributo: "A"}
+objeto.atributo = "B";
+//Estas alterações não seriam possíveis
+objeto = {atributo: "B"} //Novo objeto
+const obj2 = "A";
+obj2 = "B";
 
+//Não podemos sobrescrever o seu identificador - assim como ocorre com let
 
-//SOBRE HOISTING
+//O maior diferencial em relação ao let é que devemos obrigatoriamente definir um valor para ela quando a declararmos
+//Isto não é possível
+const constante;
+console.log(constante);
+
+//SOBRE HOISTING ****************************************************************************/
+
 //O Hoisting ocorre quando seu código Javascript é compilado : Basicamente, todas as declarações de variáveis são movidas para o topo de seu escopo local
 //Hoisting não funciona com Let ou Const
 console.log("O valor é " + a); //Irá imprimir Undefined
