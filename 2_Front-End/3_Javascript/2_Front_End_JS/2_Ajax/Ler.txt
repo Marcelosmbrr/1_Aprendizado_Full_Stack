@@ -1,1 +1,0 @@
-As aplicações AJAX, implementadas com servidores locais, devem estar dentro do diretório que o servidor utiliza para procura por arquivos.
