@@ -1,0 +1,79 @@
+<!-- 
+SELETOR QUERY
+https://developer.mozilla.org/pt-BR/docs/Web/API/Document
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<style>
+
+    *{
+        font-family: monospace;
+    }
+
+    .box{
+        width: 250px;
+        height: 250px;
+        border: 1px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: darkolivegreen;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+
+    .destaque{
+        border: 10px solid orangered;
+        color: orangered;
+        font-size: large;
+    }
+
+</style>
+<body>
+
+    <div class = "box primeiro">
+        <h2>Primeiro Box</h2>
+    </div>
+
+    <div class = "box segundo">
+        <h2>Segundo Box</h2>
+    </div>
+
+    <div class = "box terceiro">
+        <h2>Terceiro Box</h2>
+    </div>
+
+    <script>
+
+        //É preferível o uso de querySelector e querySelectorAll
+        //Estes dois já realizam o trabalho do seletor de ID, ClassName, TagName, etc
+
+        //Classlist: https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
+        setTimeout(() => {
+
+            document.querySelector(".primeiro").classList.add("destaque");
+
+        }, 2000);
+
+        setTimeout((box) => {
+
+            document.querySelector(".primeiro").classList.remove("destaque");
+
+        }, 4000);
+        
+        //Permite selecionar diversos elementos, retornando um NodeList
+        document.querySelectorAll(".primeiro, .segundo, .terceiro");
+        document.querySelectorAll("div.primeiro, div.segundo");
+        document.querySelectorAll("div");
+
+    </script>
+    
+</body>
+</html>

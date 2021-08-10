@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletor Name</title>
+</head>
+<style>
+
+    *{
+        outline: unset;
+    }
+
+    body{
+        background: #333;
+    }
+
+    form{
+        border: 1px solid #fff;
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        padding: 10px;
+    }
+
+    input, select, button{
+        padding: 5px;
+    }
+
+    button{
+        cursor: pointer;
+    }
+
+</style>
+<body>
+
+    <form action="" name = "formulario">
+        <input type="text" name = "pesquisa" placeholder="Digite o termo...">
+        <select name="seletor" id="seletor">
+            <option value="1">Opção 1</option>
+            <option value="2">Opção 2</option>
+        </select>
+        <button disabled>Pesquisar</button>
+    </form>
+
+    <script>
+
+        //Atributos "Name" podem ser acessados pelo seletor ByName:
+        console.log(document.getElementsByName("formulario"));
+
+        //Também podem ser acessados diretamente a partir de document:
+            console.log(document.formulario);
+            //Acesso do name "formulario"
+            document.formulario.pesquisa.value = "Valor";
+
+            //Acesso do name seletor, pelo name formulario
+            document.formulario.seletor.value = "2";
+
+    </script>
+    
+</body>
+</html>
