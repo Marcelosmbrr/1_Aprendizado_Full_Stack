@@ -1,0 +1,4 @@
+==DOCUMENTAÇÃO===============
+
+https://www.w3schools.com/css/default.asp
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Animations/Using_CSS_animations

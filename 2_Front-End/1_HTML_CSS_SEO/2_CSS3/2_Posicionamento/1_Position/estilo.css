@@ -1,0 +1,50 @@
+body{
+    font-family: 'arial';
+    font-weight: bolder;
+    background: ;
+    height: 2500px;
+}
+
+.caixa{
+    padding: 5px;
+    width: 50%;
+    border: 2px solid #333;
+}
+
+.static{
+    background: coral;
+}
+
+.relative{
+    background: crimson;
+    position: relative;
+    left: 1000px;
+    width: 30%;
+}
+
+.parent-absolute{
+    position: relative;
+    background: darkgoldenrod;
+    height: 400px;
+}
+
+.absolute{
+    position: absolute;
+    background: darkcyan;
+    right: 10px;
+    bottom: 10px;
+}
+
+.fixed{
+    width: 20%;
+    position: fixed;
+    bottom: 10px;
+    right: 0;
+    background: violet;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+    background: #159;
+}
