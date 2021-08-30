@@ -1,2 +1,5 @@
 https://www.origamid.com/projetos/css-grid-layout-guia-completo/
 https://origamid.com/projetos/flexbox-guia-completo/
+
+Rocket Seat - GRID:
+https://www.youtube.com/watch?v=HN1UjzRSdBk&t=5s

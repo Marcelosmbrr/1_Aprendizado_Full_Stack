@@ -1,0 +1,52 @@
+.modal_calculator{
+    background-color: #222;
+    border-radius: 5px;
+    padding: 20px;
+    outline: none;
+
+    width: 250px;
+}
+
+table{
+    color: #fff;
+    width: 100%;
+}
+
+th{
+    padding: 5px;
+    color: #fff;
+}
+
+.value_box{
+    background: #f7f7f7;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.modalButton{
+    padding: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.keyboard{
+    padding: 10px;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.keyboard_button{
+    width: 100%;
+    padding: 10px;
+}
+
+.keyboard div{
+    margin: 1px;
+}
+
+.btn:focus{
+    box-shadow: none;
+}

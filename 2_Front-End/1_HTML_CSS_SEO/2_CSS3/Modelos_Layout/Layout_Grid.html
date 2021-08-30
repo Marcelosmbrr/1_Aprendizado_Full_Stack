@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Bootstrap - breakpoints</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style type="text/css">
+
+      *{
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+      }
+
+      /* LAYOUT DO BODY */
+      body{
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 120px 1fr 100px; /* TRÊS LINHAS: TOPO, MEIO, BAIXO */
+        grid-template-columns: 250px 1fr; /* DUAS COLUNAS */
+        color: #fff;
+      }
+
+      /* POSICIONAMENTO DOS GRID ITEMS NO GRID CONTAINER */
+
+      header{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: tomato;
+      }
+
+      aside{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        background-color: brown;
+      }
+
+      main{
+        background-color: #222;
+      }
+
+      footer{
+          grid-column-start: 1;
+          grid-column-end: 3;
+          background-color: orangered;
+      }
+
+      /* ESTILIZAÇÕES SECUNDÁRIAS */
+
+      .grid-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 5px solid #333;
+      }
+
+      .text-item{
+        flex-direction: column;
+      }
+
+      ul li{
+        padding: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <header class = "grid-item">
+      <h1>HEADER</h1>
+    </header>
+
+    <aside class = "grid-item">
+      <h1>ASIDE</h1>
+    </aside>
+
+    <main class = "grid-item text-item">
+      <h1>MAIN</h1>
+      <ul style = "width: 500px; border-top: 1px solid #fff;">
+        <li><p>Esta configuração é: grid-template-rows = 120px 1fr 150px e grid-template-columns = 250px 1fr.</p></li>
+        <li><p>O template rows define a quantidade de linhas, e o template columns define a quantidade de colunas por linha. Então são 3 linhas com duas colunas cada.</p></li>
+        <li><p>Por padrão os GRID items são alocados de acordo com o fluxo do HTML e as células do GRID - um item para cada célula. Eles seriam o header, main, aside e footer.</p></li>
+        <li><p>O GRID possui linhas virtuais que delimitam as células, e elas são utilizadas como os referenciais para a customização espacial dos GRID items.</p></li>
+        <li><p>As linhas são o fator crucial. Como dito, por padrão, um GRID item ocupa uma célula, isto é, o espaço entre duas linhas, mas pode ser configurado para ocupar mais de uma.</p></li>
+        <li><p>A contagem das linhas virtuais começa nas extremidades. Cada linha aqui, possuindo duas colunas, possui três linhas virtuais, contando da esquerda para direita, por exemplo.</p></li>
+        <li><p>O header começa na linha 1 do eixo horizontal, e termina na 3, ocupando todo o espaço nesse sentido, assim como o footer; o aside começa na linha 2 do eixo Y, e termina na 3; o main se auto adaptou ao espaço restante.</p></li>
+      </ul>
+    </main>
+
+    <footer class = "grid-item">
+      <h1>FOOTER</h1>
+    </footer>
+
+  </body>
+</html>
