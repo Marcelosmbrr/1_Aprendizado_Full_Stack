@@ -1,0 +1,18 @@
+.mobile_navbar_window{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 70px;
+
+    background-color: #142934;
+    color: #fff;
+}
+
+.mobile_navbar_window ul li{
+    padding: 20px;
+}
+
+.hide{
+    display: none;
+}

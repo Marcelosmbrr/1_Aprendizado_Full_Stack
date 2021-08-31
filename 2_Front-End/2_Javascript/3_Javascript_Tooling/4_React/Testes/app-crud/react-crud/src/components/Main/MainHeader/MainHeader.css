@@ -1,0 +1,31 @@
+.main_header{
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.mh_left_content{
+    display: flex;
+}
+  
+.mh_left_content select:last-child{
+margin: 0px 5px;
+}
+
+.mh_right_content{
+display: flex;
+align-items: center;
+}
+
+.mh_rc_list{
+display: flex;
+}
+
+.edition_tools_mobile i{
+    margin-left: 10px;
+    font-size: 1.1em;
+}
