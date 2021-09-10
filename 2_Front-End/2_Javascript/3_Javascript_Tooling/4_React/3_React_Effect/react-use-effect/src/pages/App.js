@@ -43,8 +43,8 @@ function App() {
               <h1>Como implementar o useEffect?</h1>
               <div className = "container container-text">
                 <p>Tendo feito o import desse recurso, a síntaxe básica é: useEffect(callback) ou useEffect(callback, [dependencies]).
-                <br />O segundo parâmetro é opcional. É um array de valores selecionados, que serão os que, quando alterados, irão ativar a função. 
-                <br />Esse array de dependências selecionadas, serve para que o useEffect não seja executado sempre que houver uma mínima alteração no seu cache.</p>
+                <br />O segundo parâmetro é opcional, mas também um pilar do seu funcionamento. É um array de valores selecionados, que serão os que, quando alterados, irão ativar a função. 
+                <br />Se esse array de dependências não existir, o useEffect será disparado uma única vez - apenas quando o componente for montado.</p>
               </div>
             </div>
           </div>
