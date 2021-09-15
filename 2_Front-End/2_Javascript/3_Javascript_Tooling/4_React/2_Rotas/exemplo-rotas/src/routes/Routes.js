@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'; //REACT ROUTER //O LINK ESTÁ NO ASIDE
+import {Switch, Route} from 'react-router-dom'; //REACT ROUTER //O LINK ESTÁ NO ASIDE
 
 //IMPORT PÁGINAS
 import { Home } from '../pages/Home/Home';
