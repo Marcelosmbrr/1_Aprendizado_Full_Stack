@@ -1,0 +1,53 @@
+.aside_center{
+    flex-grow: 1;
+
+    background: #252F3E;
+}
+
+.page_menu{
+    padding: 0.5rem;
+}
+
+.aside_menu_li a{
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0.2rem 0px;
+    border-radius: 0.3rem;
+
+    text-decoration: none;
+    color: #c0c0c0;
+}
+
+.aside_menu_li > a:hover{
+    background: #3B4452;
+    color: #fff;
+}
+
+.aside_menu_li a > i{
+    width: 1.5rem;
+}
+
+.selected{
+    background: #3B4452;
+    color: #fff !important;
+}
+
+.close_button{
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.aside_top{
+    height: 48.3px;
+    background: #fff;
+
+    text-align: center;
+}
+
+.logo_embrapa{
+    width: 110px;
+    height: auto;
+}
+
+

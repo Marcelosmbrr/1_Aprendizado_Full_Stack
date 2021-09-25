@@ -1,0 +1,10 @@
+.main_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem;
+
+    color: #fff;
+    background: #1B2330;
+}

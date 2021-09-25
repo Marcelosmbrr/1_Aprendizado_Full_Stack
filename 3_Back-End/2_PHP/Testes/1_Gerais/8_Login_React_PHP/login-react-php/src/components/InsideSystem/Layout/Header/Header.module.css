@@ -1,0 +1,43 @@
+.header{
+    flex-basis: 65px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav_header{
+    margin-right: 2.5rem;
+}
+
+.header_menu{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.header_menu li{
+    font-size: 1rem;
+    margin: 0px 0.5rem;
+    cursor: pointer;
+}
+
+.btn_aside_toggle{
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.hide{
+    display: none;
+}
+
+.container_menu_toggle{
+    margin-left: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
