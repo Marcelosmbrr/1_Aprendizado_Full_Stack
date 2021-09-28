@@ -3,7 +3,7 @@ import style from './RecuperarSenha.module.css';
 // ==== Importação do hook useState, e useRef ==== //
 import { useState, useEffect } from 'react';
 
-// ==== Importação do Jquery ==== //
+// ==== Importação do Jquery para o Ajax ==== //
 import $ from 'jquery';
 
 // ==== Importação do componente de Link do roteamento ==== //

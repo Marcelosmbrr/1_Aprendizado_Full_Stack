@@ -1,6 +1,6 @@
 import style from './Login.module.css';
 
-// ==== Importação do Jquery ==== //
+// ==== Importação do Jquery para o Ajax ==== //
 import Jquery from 'jquery';
 
 // ==== Importação do hook useState ==== //

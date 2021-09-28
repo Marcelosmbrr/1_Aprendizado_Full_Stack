@@ -12,9 +12,9 @@ export function ContentSide({AsideState, setAsideState}){
         <>
             <div className = {style.content_side}>
                 <Header AsideState = {AsideState} setAsideState = {setAsideState} />
-                <Main />
-                <Footer />
-            </div>
+                <Main /> 
+                {/* <Footer /> */ }
+            </div> 
         </>
     )
 }

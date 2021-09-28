@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect, useRouteMatch } from "react-router-dom";
 
 // ==== Componente cujo valor de retorno é o fator condicional para acesso ao sistema ==== //
 import { Authentication } from "./Authentication";
@@ -17,6 +17,7 @@ import { Incidents } from '../pages/InsideSystem/Incidents/Incidents';
 import { Logbook } from '../pages/InsideSystem/Logbook/Logbook';
 import { MyMaps } from '../pages/InsideSystem/MyMaps/MyMaps';
 import { NewPlan } from '../pages/InsideSystem/NewPlan/NewPlan';
+import {MyProfile} from '../pages/InsideSystem/MyProfile/MyProfile';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -31,18 +32,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-{ /* 
-  
-   Nested Routes - rotas encadeadas - https://reactrouter.com/web/example/nesting 
-     <Route exact path = "/dashboard" component = {Home} />
-                  <Route path = "/newplan" component = {NewPlan} />
-                  <Route path = "/mymaps" component = {MyMaps} />
-                  <Route path = "/logbook" component = {Logbook} />
-                  <Route path = "/incidents" component = {Incidents} />
-               
-              
-*/}
-
 export function Routes(){ 
 
     return(
@@ -54,8 +43,35 @@ export function Routes(){
                 <PrivateRoute path = "/sistema" component={Sistema} />
                 <Route path="/recuperarsenha" component={RecuperarSenha} />
                 <Route exact path="*" component={NotFound} />
-              </Switch>
+            </Switch> 
         </BrowserRouter>
+        
+        
     )
 
 };
+
+export function InsideRoutes(){
+
+    // ==== Hook useRouteMatch ==== //
+    let { path, url } = useRouteMatch();
+
+    // Os componentes que formam a parte interna do sistema estão dentro do componente "Sistema"
+    // O componente Sistema é carregado pelo componente de rotas Route, que possui um BrowserRouter
+    // Então, o InsideRoutes não precisa e não pode ter outro "BrowserRouter" 
+    // O roteamento, para ser assíncrono, deve sempre ser feito com apenas um BrowserRouter embrulhando toda a aplicação
+
+    return (
+        
+        <Switch>
+            <Route exact path = {`${path}`} component = {Home}/>
+            <Route path = {`${path}/newplan`} component = {NewPlan} />
+            <Route path = {`${path}/mymaps`} component = {MyMaps} />
+            <Route path = {`${path}/logbook`} component = {Logbook} />
+            <Route path = {`${path}/incidents`} component = {Incidents} />
+        </Switch>
+
+    )
+    
+    
+}

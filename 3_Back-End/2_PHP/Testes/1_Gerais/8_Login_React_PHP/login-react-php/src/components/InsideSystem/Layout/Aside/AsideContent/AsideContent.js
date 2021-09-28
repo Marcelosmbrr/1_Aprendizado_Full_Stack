@@ -1,5 +1,5 @@
 import style from './AsideContent.module.css';
-//import logoEmbrapa from '../../../../assets/images/logo.png';
+import logoReact from '../../../../../assets/images/logo.png';
 
 // ==== Importação dos componentes do roteamento ==== //
 import { Link } from 'react-router-dom';
@@ -15,6 +15,10 @@ import { usePager } from '../../../../../context/Page/PageContext';
 // ==== Seu provider está no index.js ==== //
 import { useDevice } from '../../../../../context/Device/DeviceContext';
 
+// ==== Importação do hook useRouteMatch da lib de roteamento ==== //
+// Será usado para fazer rotas encadeadas // https://reactrouter.com/web/example/nesting
+import { useRouteMatch } from "react-router-dom";
+
 // ==== Importação dos componentes do Material UI ==== //
 import IconButton from '@material-ui/core/IconButton';
 import ArrowIcon from '@material-ui/icons/ReplyAll';
@@ -29,6 +33,9 @@ export function AsideContent({AsideState, setAsideState}){
 
     // ==== State da largura do documento ==== //
     const {DeviceWidth, setDeviceWidth} = useDevice();
+
+    // ==== Hook useRouteMatch ==== //
+    let { path, url } = useRouteMatch();
 
     //Função para alterar os states que se relacionam com a troca da página
     function ChangePage(e){
@@ -69,7 +76,6 @@ export function AsideContent({AsideState, setAsideState}){
             //O elemento clicado se torna o valor do state
             setItemSelected(target);
 
-            console.log(target)
         }
 
     }
@@ -79,18 +85,18 @@ export function AsideContent({AsideState, setAsideState}){
         <>
             <div className = {style.aside_center}>
                 <div className = {style.aside_top}>
-                    <img src = "" className = {style.logo_embrapa} alt = "logo"/>
+                    <img src = {logoReact} className = {style.logo_react} alt = "logo"/>
                 </div>
                 <nav>
                 <ul className = {style.page_menu}>
                         {DeviceWidth < 1000 && (
                             <li onClick = {() => {setAsideState(!AsideState)}} className = {style.close_button}><IconButton aria-label="close" style={{color: "#fff"}}><ArrowIcon /></IconButton></li>
                         )}
-                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {"/dashboard"}><i class="fas fa-tachometer-alt"></i> Dashboard</Link></li>
-                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {"/newplan"}><i class="fas fa-plus"></i> Novo Plano</Link></li>
-                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {"/mymaps"}><i class="fas fa-map"></i> Meus Mapas</Link></li>
-                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {"/logbook"}><i class="fas fa-clipboard-list"></i> Logbook</Link></li>
-                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {"/incidents"}><i class="fas fa-exclamation-triangle"></i> Incidentes</Link></li>
+                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to={`${url}`}><i class="fas fa-tachometer-alt"></i> Dashboard</Link></li>
+                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {`${url}/newplan`}><i class="fas fa-plus"></i> Novo Plano</Link></li>
+                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {`${url}/mymaps`}><i class="fas fa-map"></i> Meus Mapas</Link></li>
+                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {`${url}/logbook`}><i class="fas fa-clipboard-list"></i> Relatórios</Link></li>
+                        <li onClick = {ChangePage} className = {style.aside_menu_li}><Link to = {`${url}/incidents`}><i class="fas fa-exclamation-triangle"></i> Incidentes</Link></li>
                     </ul>
                 </nav>
             </div>

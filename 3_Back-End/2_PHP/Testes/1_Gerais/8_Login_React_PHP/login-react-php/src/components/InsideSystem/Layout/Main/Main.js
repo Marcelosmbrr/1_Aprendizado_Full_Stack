@@ -1,6 +1,7 @@
 import style from './Main.module.css';
 
-import { Routes } from '../../../../routes/Routes';
+// ==== Importação do componente OutsideRoutes da lib de roteamento ==== //
+import { InsideRoutes } from '../../../../routes/Routes';
 
 export function Main(){
 
@@ -8,7 +9,7 @@ export function Main(){
 
         <>
             <main className = {style.main}>
-                <Routes />
+                <InsideRoutes /> 
             </main>
         </>
     )

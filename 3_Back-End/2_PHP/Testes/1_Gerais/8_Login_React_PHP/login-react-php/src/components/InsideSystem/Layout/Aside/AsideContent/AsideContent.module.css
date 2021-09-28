@@ -39,15 +39,18 @@
 }
 
 .aside_top{
-    height: 48.3px;
+    height: 65px;
     background: #fff;
 
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.logo_embrapa{
-    width: 110px;
-    height: auto;
+.logo_react{
+    width: 130px;
+    height: 50px;
 }
 
 

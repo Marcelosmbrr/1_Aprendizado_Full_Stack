@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// ==== Importação do componente RoutesOutside da lib de roteamento ==== //
+// ==== Importação do componente OutsideRoutes da lib de roteamento ==== //
 import { Routes } from './routes/Routes';
 
 // ==== Importação do provider do contexto Auth - de autenticação ==== //

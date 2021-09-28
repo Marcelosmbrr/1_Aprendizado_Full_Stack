@@ -3,7 +3,7 @@ import style from './Registro.module.css';
 // ==== Importação de componentes estruturais ==== //
 import { Modal } from '../../../components/OutsideSystem/modal/Modal';
 
-// ==== Importação do Jquery ==== //
+// ==== Importação do Jquery para o Ajax ==== //
 import Jquery from 'jquery';
 
 // ==== Importação do hook useState ==== //

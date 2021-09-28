@@ -1,25 +1,23 @@
 import style from './Sistema.module.css';
 
 // ==== Importação hooks nativos ==== //
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 
-// ==== Importação do Jquery ==== //
+// ==== Importação do Jquery para o Ajax ==== //
 import Jquery from 'jquery';
-
-// ==== Importação do hook do Context de usuário autenticado ==== //
-import { useAuthentication } from '../../../context/Auth/UserAuthContext';
 
 // ==== Importação do provider do contexto Page - de paginação ==== //
 import { PageProvider } from '../../../context/Page/PageContext';
+
+// ==== Importação do hook do Context de usuário autenticado ==== //
+// Os dados decodificados do token serão armazenados no contexto //
+import { useAuthentication } from '../../../context/Auth/UserAuthContext';
 
 // ==== Importação do hook personalizado do contexto Device ==== //
 import { useDevice } from '../../../context/Device/DeviceContext';
 
 // ==== Importação do Hook useHistory da lib de roteamento ==== //
 import { useHistory } from 'react-router';
-
-// ==== Importação do componente de Link do roteamento, da lib de roteamento ==== //
-import { Link } from 'react-router-dom';
 
 // ==== Importação de componentes estruturais ==== //
 import { Aside } from '../../../components/InsideSystem/Layout/Aside/Aside';
@@ -36,6 +34,9 @@ export function Sistema() {
   // ==== State da largura do documento ==== //
   const {DeviceWidth, setDeviceWidth} = useDevice();
 
+  // === Para impedir o loop do decode ==== //
+  const [decoded, setDecoded] = useState(false);
+
   // ==== Listener para atualização do state da largura do documento ==== //
   window.addEventListener("resize", () => {
 
@@ -48,83 +49,90 @@ export function Sistema() {
 
   // Sempre que o sistema carregar, o token será decodificado no servidor, e seus dados retornados 
   // Os dados retornados serão armazenados no Context para serem utilizados nos componentes do sistema 
-  useEffect(() => {
 
-    const storedTokenData = {token: localStorage.getItem("user-token")}
+  function DecodeToken(){
 
-    const URL = "http://localhost:80/backend-react-app/index.php";
+    if(!decoded){
 
-    const ajaxData = {
-      tokenDecode: {
-        value: localStorage.getItem("user-token")
-      } 
-    }
+      const storedTokenData = {token: localStorage.getItem("user-token")}
 
-    Jquery.ajax({
+      const URL = "http://localhost:80/backend-react-app/index.php";
 
-      url: URL,
-      method: 'POST',
-      data: ajaxData,
-      dataType: 'json', //Tratamento da resposta
-      beforeSend: function(){ console.log("RESGATANDO DADOS DO USUÁRIO AUTENTICADO"); } //Antes de enviar..
+      const ajaxData = {
+        tokenDecode: {
+          value: localStorage.getItem("user-token")
+        } 
+      }
 
-    }).done((response) => {
+      Jquery.ajax({
 
-      if(response.status){
+        url: URL,
+        method: 'POST',
+        data: ajaxData,
+        dataType: 'json', //Tratamento da resposta
+        beforeSend: function(){ console.log("RESGATANDO DADOS DO USUÁRIO AUTENTICADO"); } //Antes de enviar..
 
-        // Armazenamento dos dados do token no Contexto
-        FillingUserContext(response.data);
+      }).done((response) => {
 
-      }else{
+        if(response.status){
+
+          // Armazenamento dos dados do token no Contexto
+          FillingUserContext(response.data);
+
+          setDecoded(true);
+
+        }else{
+
+          // Redirecionamento do usuário para a página de login
+          RedirectToLogin();
+          
+        }
+        
+      }).fail(function(jqXHR,textStatus,errorThrown){
+
+        //console.log( "Request failed: " + textStatus );
 
         // Redirecionamento do usuário para a página de login
         RedirectToLogin();
-        
-      }
-       
-    }).fail(function(jqXHR,textStatus,errorThrown){
 
-      //console.log( "Request failed: " + textStatus );
+      })
 
-      // Redirecionamento do usuário para a página de login
-      RedirectToLogin();
+    }else{
 
-    })
+      console.log("Já foi decodificado");
 
-    // Persistência dos dados do usuário logado no contexto "UserAuthContext"
-    // Para resgatar os dados do usuário nos componentes em que forem necessários
-    function FillingUserContext(data){
+    }  
 
-      setAuthData({full_name: data.full_name, email: data.email, username: data.username});
+  }
+ 
+  // Persistência dos dados do usuário logado no contexto "UserAuthContext"
+  // Para resgatar os dados do usuário nos componentes em que forem necessários
+  function FillingUserContext(data){
 
-    }
+    setAuthData({full_name: data.full_name, email: data.email, username: data.username});
 
-    // Redirecionar o usuário para o login
-    // Caso de erro na decodificação do token
-    function RedirectToLogin(){
+  }
 
-      localStorage.removeItem('user-token');
-      history.push("/");
+  // Redirecionar o usuário para o login
+  // Caso de erro na decodificação do token
+  function RedirectToLogin(){
 
-    }
+    localStorage.removeItem('user-token');
+    history.push("/");
 
-  });
+  }
 
-  const teste = "false";
+  const t = false;
 
   return (
 
-    <div className={style.sistema_interface}>
+    <div className={style.sistema_interface} onLoad = {DecodeToken}>
 
-      {teste == true ? <PageProvider>
+      <PageProvider>
         <Aside AsideState = {AsideState} setAsideState = {setAsideState}/>
         <ContentSide AsideState = {AsideState} setAsideState = {setAsideState}/>
-      </PageProvider> : null}
-
-      <h1>Sistema</h1>
-      <Link to = "/">Deslogar</Link>
-      
-          
+      </PageProvider>
+            
     </div>
   );
 }

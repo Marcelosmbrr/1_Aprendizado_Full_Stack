@@ -32,7 +32,7 @@ export function Header({AsideState, setAsideState}){
                 </div>
                 <nav className = {style.nav_header}>
                     <ul className = {style.header_menu}>
-                        <li><SettingsMenu /></li>
+                        {/* <li><SettingsMenu /></li> */ }
                         <li><UserMenu /></li>
                     </ul>
                 </nav>
