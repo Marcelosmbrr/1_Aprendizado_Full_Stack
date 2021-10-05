@@ -1,3 +1,4 @@
 1 - Guia escrito de Git e Github
 2 - Visão geral de metodologias ágeis
-3 Ferramentas de uso geral no trabalho (notion, deploy (vercel, jenkins), etc)
+3 - Ferramentas de uso geral no trabalho (notion, deploy (vercel, jenkins), etc)
+4 - Planejamento - BrainStorm, MindMap, etc

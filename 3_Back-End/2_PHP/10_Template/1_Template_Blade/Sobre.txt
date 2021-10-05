@@ -1,0 +1,4 @@
+Blade é um Template Engine do Framework Laravel.
+Para esse teste foi utilizada a versão autônoma do mecanismo, criada para uso fora do Laravel.
+https://packagist.org/packages/jenssegers/blade
+https://www.youtube.com/watch?v=g5WTKm-2L5w

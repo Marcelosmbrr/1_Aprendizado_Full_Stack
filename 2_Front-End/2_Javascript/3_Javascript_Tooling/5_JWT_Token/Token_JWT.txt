@@ -1,0 +1,26 @@
+==================================REFERENCIAS==================================
+
+https://jwt.io/
+https://www.sitepoint.com/php-authorization-jwt-json-web-tokens/
+
+==================================EXPLICAÇÃO BÁSICA==================================
+
+1) O Token JWT serve para autenticação e para distribuição de dados na aplicação, como uma sessão;
+
+2) O Token é uma criptografia de 3 partes. São 3 strings concatenadas: o cabeçalho JWT, a carga útil do JWT e a assinatura do JWT;
+
+3) A presença do JWT, e a sua validade, são os fatores da autenticação na aplicação;
+
+4) Todas as solicitações para o aplicativo, exceto para a página de login e logout, precisam ser autenticadas por meio de um JWT;
+
+5) Depois que um usuário preencher e enviar, por exemplo, o formulário de login, ocorrerá o processamento no Back-End;
+
+6) Se as credenciais estiverem corretas, elas serão armazenadas em uma estrutura de dados, e esta será convertida para um JWT - tudo isto ainda no Back-End;
+
+7) Criado o token, ele será enviado para o Front-End - o token é, então, a resposta do servidor nesse processo de login;
+
+8) No Front-End terá a rotina para envio do Token para o local Storage;
+
+9) Existindo no local Storage, e sendo válido, o token poderá ser requisitado em quaisquer operações dentro do sistema;
+
+10) Além disso, também os dados persistidos no token poderão ser obtidos, e para isso deve ser reenviado para o back-end, onde haverá a rotina de decodificação do JWT;

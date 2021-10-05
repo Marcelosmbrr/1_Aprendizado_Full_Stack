@@ -1,0 +1,22 @@
+{
+    "name": "lcmar/react-app",
+    "description": "Integration PHP-React",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Marcelosmbr",
+            "email": "profissionalsmbr@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "firebase/php-jwt": "dev-master",
+        "phpmailer/phpmailer": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Classes\\": "classes/",
+            "Services\\": "services/"
+        }
+    }
+}
