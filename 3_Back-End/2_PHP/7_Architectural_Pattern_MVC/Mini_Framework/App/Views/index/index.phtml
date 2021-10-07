@@ -1,0 +1,42 @@
+<nav>
+    <p><a href = "/">Index</a> / <a href = "./aboutus" style = "color: #333;">Sobre nós</a></p>
+</nav>
+<hr>
+
+<?php
+
+    // StdClass do Action.php
+    // É construído dinâmicamente no contralador da rota
+    echo $this->viewData->dbMessage;
+
+    $table = "
+        <table>
+        <tbhead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </tbhead>
+        <tbody>";
+
+    foreach($this->viewData->dbData as $key => $value){
+
+        $table .= "
+            <tr>
+                <td>{$value['id']}</td>
+                <td>{$value['name']}</td>
+                <td>{$value['price']}</td>
+            </tr>
+        ";
+        
+    }
+
+    $table .= "
+            </tbody>
+        </table>
+    ";
+
+    echo $table;
+
+?>
