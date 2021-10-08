@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <title>CRUD MVC</title>
+</head>
+<style>
+
+    *{
+        box-sizing: border-box;
+    }
+
+    body{
+        background: #333;
+        background: #c0c0c0;
+        padding: 0;
+        margin: 0;
+        font-family: 'verdana';
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    header{
+        width: 100%;
+        height: 150px;
+        background: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #c0c0c0;
+    }
+
+    main{
+        padding: 10px;
+    }
+
+    th, td{
+        padding: 10px;
+    }
+
+    th{
+        border-bottom: 2px solid #333;
+    }
+
+
+</style>
+<body>
+
+    <header>
+        <h1>INSIDE SYSTEM - CRUD</h1>
+    </header>
+    
+    <main>
+        <?php 
+
+        // Esse arquivo é incluído em Action.php
+        // Action.php é uma classe que executa as actions do controlador da rota presente
+        // Esse método realiza um require dinâmico e seletivo dos arquivos da View
+        $this->setLayoutContent(); 
+
+        ?>
+    </main>
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+</body>
+</html>
