@@ -1,0 +1,15 @@
+// ======================== SDK DO DART ======================== //
+
+Para programar em Dart, o primeiro passo necessário é instalar o seu kit de desenvolvimento, ou SDK: https://dart.dev/get-dart
+Seguindo o guia de uso do Windows, que é o SO utilizado no momento em que escrevo essa orientação, é preciso instalar o Chocolatey.
+Esse programa é um gerenciador de pacotes para o sistema operacional Windows, e serve para facilitar o download e instalação de softwares: https://chocolatey.org/
+
+Para realizar a instalação do Chocolatey, e também do SDK do Dart, é preciso utilizar o Windows Power Shell em modo de administrador.
+
+// ======================== CONFIGURANDO O VS CODE ======================== //
+
+Para trabalhar com Visual Studio Code devem ser instaladas as extensões "Dart", e "Flutter".
+
+// ======================== AMBIENTE DE TESTES DE ALGORITMOS ======================== //
+
+No próprio site do Dart existe um ambiente de execução de algoritmos: https://dart.dev/#try-dart

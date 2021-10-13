@@ -1,0 +1,9 @@
+.login_page{
+    background: #333;
+}
+
+.left_side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
