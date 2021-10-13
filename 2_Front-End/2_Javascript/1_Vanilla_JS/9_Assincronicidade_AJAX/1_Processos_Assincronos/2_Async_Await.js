@@ -19,6 +19,7 @@
 //Em seguida tem o primeiro AWAIT, que trava a função ASYNC enquanto não recebe o processamento da Promise existente na função execPA()
 //A função execPA() recebe o número atual, e o fator, e retorna a resolução que é a soma de ambos
 //Após o processamento de todos os AWAIT, o retorno é executado, e tratado fora da função com .then()
+
 async function progressaoAritmetica(A1, Fator) {
         console.log(`Será uma progressão aritmética de fator ${Fator}`);
 

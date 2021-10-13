@@ -1,0 +1,8 @@
+==== O QUE SÃO COLEÇÕES NO DART? ====
+
+- Coleções são grupos de objetos que representam um elemento específico. 
+- A biblioteca dart :: collection é usada para implementar a coleção no dart. 
+- Há uma variedade de coleções disponíveis em dardos.
+
+Veja aqui: https://dart.dev/codelabs/iterables
+E aqui: https://www.geeksforgeeks.org/dart-collections/#:~:text=Collections%20are%20groups%20of%20objects,of%20collections%20available%20in%20dart.
