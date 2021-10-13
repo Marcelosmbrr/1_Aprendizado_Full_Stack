@@ -8,6 +8,8 @@
 - Se o método fosse implementado na super classe Pessoa, as que não precisam desses recursos adicionais também os teriam, o que é ineficiente.
 - Para isso serve o Mixin. É como uma mini classe que serve apenas para ofertar recursos isolados.
 
+Veja mais: https://www.treinaweb.com.br/blog/o-que-sao-mixins-e-qual-sua-importancia-no-dart
+
 */
 
 void main() {
