@@ -1,0 +1,20 @@
+==== ARRAYS NO DART ====
+
+- Primeiro: não existem arrays no Dart, mas sim objetos do tipo List
+- No Dart, então, o que normalmente se chamaria array em outras linguagens, se chama Lista/List
+
+==== LISTAS SIMPLES ====
+
+- Lista 1D ou simplesmente Listé um tipo de dados que tem coleção de itens de dados de forma linear
+- Armazena elementos em uma única linha e com um índice 
+- Por exemplo: List intList = [1,2,3,4];
+
+==== LISTA MULTIDIMENSIONAL ====
+
+- A classe List fornece um método chamado "generate", que gera uma lista de valores e pode ser usado para criar uma lista 2D e 3D
+- A síntaxe é: List<E>.generate(int length,E generator(int index), {bool growable: true})
+- Quanto à síntaxe: 
+    * length indica o tamanho da lista
+    * generator é uma função que preenche a lista
+    * growable se falso define que o tamanho da lista é fixo
+
