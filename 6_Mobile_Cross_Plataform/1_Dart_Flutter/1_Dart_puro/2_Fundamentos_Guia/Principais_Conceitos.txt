@@ -1,4 +1,0 @@
-==== PRINCIPAIS CONCEITOS DA LINGUAGEM DART ====
-
-Veja aqui: https://dart.dev/guides/language/language-tour#important-concepts
-E aqui, sobre a tipagem: https://dart.dev/guides/language/type-system

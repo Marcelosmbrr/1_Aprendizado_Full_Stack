@@ -1,0 +1,4 @@
+==== OBJETO QUEUE ====
+
+ - Uma Queue é uma coleção que pode ser manipulada em ambas as extremidades - começo e fim
+ - Queue significa "fila"

@@ -1,0 +1,5 @@
+==== GERENCIADOR DE PACOTES DO DART ====
+
+- Pub é o gerenciador de pacotes da linguagem de programação Dart
+- Contém bibliotecas e pacotes reutilizáveis ​​para programas Flutter, AngularDart e Dart em geral
+https://dart.dev/tools/pub/cmd

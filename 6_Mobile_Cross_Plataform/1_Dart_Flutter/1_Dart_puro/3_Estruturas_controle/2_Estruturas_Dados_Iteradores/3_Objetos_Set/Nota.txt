@@ -1,0 +1,33 @@
+==== O QUE SÃO OS OBJETOS SET ====
+
+Uma coleção de objetos em que cada objeto pode ocorrer apenas uma vez.
+O tipo de dados de um Conjunto pode ser inteiro, String, duplo, Objeto ou qualquer tipo de dados.
+Existem três tipos de Set no Dart, diferenciados pela forma como os dados armazenados afetam a iteração dos elementos.
+Por padrão, se você criar um novo Set, uma instância de LinkedHashSet será criada.
+
+==== BIBLIOTECA COLLECTION ====
+
+- Para utilizar objetos Set, a biblioteca 'dart:collection' deve ser importada.
+
+==== HASHSET ====
+
+HashSet é uma implementação de conjunto baseada em hash table não ordenada.
+Portanto, se você inserir o valor A primeiro e, em seguida, inserir outro valor B, ao iterar os elementos, poderá obter o valor B primeiro antes do valor A.
+Ele permite null como elemento.
+
+==== LINKEDHASHSET ==== 
+
+Em LinkedHashSet, os dados são armazenados com base no pedido de inserção.
+Portanto, se você inserir o valor A primeiro e, em seguida, inserir outro valor B, ao iterar os elementos, obterá o valor A antes do valor B.
+Como HashSet, ele permite elemento nulo.
+
+==== SPLAYTREESET ====
+
+SplayTreeSet é baseado em uma árvore de auto-ordenação.
+Você não pode armazenar objetos não comparáveis, ​​incluindo nulos.
+Ele também pode ajustar a árvore para mover os elementos acessados ​​com frequência perto do topo dela. Uma ordenação por uso.
+
+==== CURIOSIDADE: O QUE É O "HASH" NO NOME? ====
+
+Tabela de Hash:
+https://blog.pantuza.com/artigos/tipos-abstratos-de-dados-tabela-hash

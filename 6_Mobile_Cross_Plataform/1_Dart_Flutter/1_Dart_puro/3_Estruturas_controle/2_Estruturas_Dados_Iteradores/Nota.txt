@@ -1,0 +1,29 @@
+===== ESTRUTURAS DE DADOS NO DART ====
+
+- Todas as estruturas de dados no Dart são objetos, e coleções de objetos!
+- Também são chamadas de coleções.
+- Arrays indexados são objetos List, estruturas chave-valor são objetos Map, etc.
+- Para cada estrutura de dados tem uma tipagem típica, e um conjunto de funções e formas de iterar sobre elas.
+
+==== ESTRUTURAS DE DADOS ITERATIVAS DO DART ====
+
+- Um "Iterable" é uma coleção de elementos que podem ser acessados ​​sequencialmente
+- Uma coleção é um objeto que representa um grupo de objetos, que são chamados de elementos
+- Dependendo da finalidade, as coleções podem ter diferentes estruturas e implementações
+- As principais coleções iterativas são:
+    * List: usado para ler elementos por seus índices - são os "arrays indexados" do Dart
+    * Map: usado para ler os elementos usando uma chave - são os objetos chave-valor do Dart
+    * Set: usado para conter elementos que podem ocorrer apenas uma vez
+
+Veja mais aqui: https://dart.dev/codelabs/iterables
+
+==== ARMAZENAMENTO DE OBJETOS/INSTÂNCIAS DE CLASSES - MAP E LIST ====
+
+- As coleções Map e List podem armazenar objetos de classes.
+- Exemplo: 
+
+Pessoa P1 = new Pessoa();
+Pessoa P2 = new Pessoa();
+
+List<Pessoa> listaObjetosPessoa = [P1, P2];
+Map<String, Pessoa> mapaObjetosPessoa = {"objeto1": P1, "objeto2": P2};

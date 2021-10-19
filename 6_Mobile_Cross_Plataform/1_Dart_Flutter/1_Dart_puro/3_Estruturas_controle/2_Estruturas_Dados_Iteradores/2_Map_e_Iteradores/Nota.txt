@@ -1,0 +1,4 @@
+==== OBJETO MAP ====
+
+- Uma coleção de pares de chave / valor, a partir da qual você recupera um valor usando sua chave associada.
+- Fazendo uma comparação, o Map está para o objeto literal no Javascript, ou para o array associativo no PHP

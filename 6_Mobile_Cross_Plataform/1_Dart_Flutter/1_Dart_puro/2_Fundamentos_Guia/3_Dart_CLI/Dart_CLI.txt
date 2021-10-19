@@ -1,0 +1,11 @@
+==== COMMAND LINE APPS COM DART ====
+
+- Para que servem
+- Qual sua utilidade
+- Como funcionam
+https://dart.dev/tutorials/server/cmdline
+
+- Todos os comandos
+https://dart.dev/tools/dart-tool
+
+

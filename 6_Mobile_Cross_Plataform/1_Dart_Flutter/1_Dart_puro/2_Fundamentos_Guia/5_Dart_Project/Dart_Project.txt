@@ -1,0 +1,23 @@
+==== DART PROJECT - UMA ESTRUTURA DE DIRETÓRIOS PRÉ CONSTRUÍDA ====
+
+- Um projeto Dart é uma estrutura de arquivos e pastas para o desenvolvimento de aplicações com a linguagem
+- É como a organização de um React App, mas para desenvolvimento com Dart
+- Um nome utilizado para isso é "template"
+
+- A criação de um projeto Dart é via linha de comando, e o comando utilizado para isso é o "dart create"
+- O local/pasta onde a aplicação será criada deve ser acessado
+- E então deve ser escrito o comando "dart create -t [template_argument] [nome_projeto]
+- [template_argument] é a especificação do template a ser utilizado, e [nome_projeto] é o nome que será utilizado para o projeto
+
+Sobre a criação de templates Dart, e suas especificações: https://dart.dev/tools/dart-create
+
+==== EXPLICAÇÃO DAS PASTAS E ARQUIVOS IMPORTANTES ====
+
+pasta .dart_tool: contém os recursos nativos do dart
+pasta bin: pasta pública que contém os scrips do aplicativo - como o entry point
+pasta lib: pasta pública que contém recursos importáveis - podem ter funções, classes, etc
+pasta test: pasta que contém um arquivo para realizar testes com a biblioteca 'Test'
+
+arquivo pubspeck.yaml: arquivo manifesto do projeto, e de gerenciamento das dependências
+
+

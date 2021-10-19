@@ -1,0 +1,10 @@
+==== PRINCIPAIS CONCEITOS DA LINGUAGEM DART ====
+
+- Tudo que você pode colocar em uma variável é um objeto, e cada objeto é uma instância de uma classe
+- Mesmo números, funções e nulos são objetos
+- Embora o Dart seja fortemente tipado, as anotações de tipo são opcionais porque o Dart pode inferir tipos
+- Se você habilitar o Safety Null, as variáveis ​​não podem conter nulo, a menos que você diga que podem
+
+Para saber mais: https://dart.dev/guides/language/language-tour#important-concepts
+Sobre tipagem: https://dart.dev/guides/language/type-system
+

@@ -1,7 +1,0 @@
-Esse texto tem como finalidade documentar erros, que surgem devido as peculiaridades do Dart.
-
-================= VALORES NULOS =================
-
-================= AUTO VALIDAÇÃO DAS CONDIÇÕES =================
-
-================= VALORES CONDICIONADOS =================
