@@ -1,0 +1,57 @@
+=========DOCUMENTAÇÃO================
+
+https://webpack.js.org/concepts/
+
+=========ARTIGO======================
+
+https://medium.com/rocketseat/entendendo-e-dominando-o-webpack-4b2e8b3e02da
+
+========MINI CURSO===================
+
+https://www.youtube.com/watch?v=bKk_4jtXq0Y
+
+=======PASSO A PASSO BÁSICO==========
+
+1) CRIAR UM PACKAGE.JSON
+
+2) INSTALAR O WEBPACK VIA NPM - npm install --save-dev webpack webpack-cli
+
+3) CRIAR UMA PASTA CHAMADA "SRC", E DENTRO O ARQUIVO "INDEX.JS" - ESTE É O ENTRY POINT: https://webpack.js.org/concepts/#entry 
+3.1) O ENTRY POINT É O "PONTO DE ENTRADA" PARA O MAPEAMENTO DAS DEPENDÊNCIAS DO PROJETO
+3.2) NO ENTRY POINT SÃO REUNIDAS TODAS AS DEPENDÊNCIAS, VIA IMPORT, PARA CONSTRUÇÃO DA "ÁRVORE DE DEPENDÊNCIAS" DO WEBPACK
+
+4) CRIAR UMA PASTA CHAMADA "DIST", DENTRO O ARQUIVO "MAIN.JS" - ESTE É O "OUTPUT" DO WEBPACK: https://webpack.js.org/concepts/#output
+4.1) ESTE ARQUIVO TAMBÉM É POR VEZES NOMEADO COMO "BUNDDLE", CUJA TRADUÇÃO É "PACOTE", E TAMBÉM PODE SER ENTENDIDO COMO "AGREGADOR"
+4.2) O QUE ELE FEZ É AGREGAR TODOS OS RECURSOS DO ENTRY POINT EM UMA FORMA MIMIFICADA EM UM ÚNICO PACOTE PARA SER UTILIZADO
+
+5) CRIAR UMA PASTA DE NOME "PUBLIC", E DENTRO O ARQUIVO "INDEX.HTML" - O OUTPUT DA APLICAÇÃO EM SI
+5.1) O ARQUIVO JS QUE SERÁ VINCULADO AO INDEX.HTML É O MAIN.JS; O PACOTE ÚNICO DOS SCRIPTS JAVASCRIPT CRIADO PELO WEBPACK 
+
+6) CRIAR O ARQUIVO DE CONFIGURAÇÃO DO WEBPACK - WEBPACK.CONFIG.JS - https://webpack.js.org/concepts/#loaders
+6.1) O WEBPACK SÓ ENTENDE ARQUIVOS JAVASCRIPT E JSON, E PARA AMPLIAR SUAS CAPACIDADES ENTRAM EM CENA OS "LOADERS"
+6.2) OS LOADERS PERMITEM QUE O WEBPACK PROCESSE OUTROS TIPOS DE ARQUIVOS CONVERTENDO-OS EM MÓDULOS VÁLIDOS, E ADICIONANDO-OS À ÁRVORES DE DEPENDÊNCIAS
+6.3) PARA QUE ESSE RECURSO SEJA UTILIZADO, É NECESSÁRIO O ARQUIVO DE CONFIGURAÇÃO DO WEBPACK
+
+7) EXISTEM PLUGINS PARA EMPACOTAR CSS, PARA EMPACOTAR ARQUIVOS DE IMAGEM, PARA GERAR HTML, ETC
+
+EXEMPLO CONFIG WEBPACK LOADER DE CSS E PLUGIN PARA EXTERNALIZA-LO:
+
+const path = require('path'); //para obter o caminho relativo do bunddle
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //require do plugin
+
+module.exports = {
+   mode: 'development', //ambiente de utilização 
+  entry: './src/index.js' //entry point dos recursos
+  output: {
+    filename: 'main.js', //arquivo bunddle
+    path: path.resolve(_dirname, './dist') //caminho relativo do bunddle
+  },
+  module: { //configuração dos loaders //test: se encontrar isso //use: faça/use isso (neste caso, um plugin e um loader)
+    rules: [{ test: /\.css$/, use: use: [MiniCssExtractPlugin.loader, 'css-loader'] }], 
+  },
+  plugins: [ //adicionam recursos ao webpack
+      new MiniCssExtractPlugin({
+          filename: "index.css" //bunddle dos arquivos css
+      })
+  ]
+};

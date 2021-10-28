@@ -1,0 +1,4 @@
+Material UI - https://material-ui.com/pt/
+Reactstrap - https://reactstrap.github.io/
+Semantic UI - https://react.semantic-ui.com/
+React Responsive - https://www.npmjs.com/package/react-responsive

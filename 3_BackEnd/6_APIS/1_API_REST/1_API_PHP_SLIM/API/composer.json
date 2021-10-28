@@ -1,0 +1,10 @@
+{
+    "name": "lcmar/1_api_rest_php_slim",
+    "description": "Criando API REST com PHP/SLIM",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {
+        "slim/psr7": "dev-master",
+        "slim/slim": "4.x-dev"
+    }
+}

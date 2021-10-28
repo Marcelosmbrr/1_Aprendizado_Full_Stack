@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #111;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    outline: unset;
+
+  }
+  
+  ul, ol, li{
+    list-style: none;
+  }
+
+  table td, th{
+    text-align: center;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  ul li{
+    padding: 5px;
+    border: 2px solid #10202D;
+    cursor: pointer;
+  }
+
+  li:hover i{
+    color: #00B4A0;
+  }
+
+ tr{
+   cursor: pointer;
+ }
+
+ 

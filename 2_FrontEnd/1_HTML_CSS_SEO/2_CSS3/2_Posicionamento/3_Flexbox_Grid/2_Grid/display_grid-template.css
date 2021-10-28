@@ -1,0 +1,18 @@
+/* ESTILIZAÇÃO DO EXEMPLO DO GRID COM GRID-TEMPLATE */
+
+.container_grid{
+    width: 1200px;
+    height: 600px;
+    background: #333;
+    border: 5px solid #333;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.gi-3{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

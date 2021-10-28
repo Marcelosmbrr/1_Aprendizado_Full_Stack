@@ -1,3 +1,0 @@
-https://react-hook-form.com/ - React Hook Form
-https://unform.dev/ - RocketSeat
-https://formik.org/docs/overview - Formik

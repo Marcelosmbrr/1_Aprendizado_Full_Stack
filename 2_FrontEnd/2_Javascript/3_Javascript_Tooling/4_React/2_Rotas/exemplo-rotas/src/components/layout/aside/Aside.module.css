@@ -1,0 +1,19 @@
+.page_navigation{
+    padding: 0;
+}
+
+.pn_item{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.pn_item a{
+    color: #222;
+    display: block;
+    padding: 0.8rem 2rem;
+}
+
+.pn_item:hover a{
+    background: #f0f0f0;
+    color: steelblue;
+}

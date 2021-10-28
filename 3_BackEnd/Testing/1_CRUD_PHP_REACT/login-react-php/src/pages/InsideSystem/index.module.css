@@ -1,0 +1,19 @@
+.main_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem;
+
+    color: #fff;
+    background: #1B2330;
+}
+
+.main_content{
+    flex-grow: 1;
+    background: #F0F7F7;
+
+    padding: 0.5rem;
+
+    box-shadow: inset 1px 1px 6px 0px rgba(0,0,0,0.75);
+}

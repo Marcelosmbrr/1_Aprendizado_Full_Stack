@@ -1,0 +1,30 @@
+==== O QUE É DEVOPS ====
+
+- DevOps é uma cultura de desenvolvimento e organização
+- Dev vêm de "Development", ou desenvolvimento, e ops "operations", ou operações
+- DevOps tem a meta principal melhorar a integração entre desenvolvedores de softwares e a equipe de infraestrutura
+
+==== CONHECIMENTOS DEVOPS ====
+
+- Sistema Linux
+- Desenvolvimento ágil
+- CI/CD (Integração Contínua e Entrega Contínua)
+- Controle de versão
+- Infraestrutura em Cloud, virtualização
+- Automatização de testes
+- Automatização de sistema de logs
+- Microsserviços
+
+==== EXEMPLOS DE TECNOLOGIAS ====
+
+Infra estrutura: Azure e Amazon AWS
+Virtualização para desenvolvimento: Docker
+Integração e entrega contínua - automação: Jenkins
+Monitoramento e visualização: NetData
+
+==== SERVIÇOS/PLATAFORMAS COM RECURSOS DEVOPS ====
+
+Azure Devops: https://azure.microsoft.com/pt-br/overview/what-is-devops/#devops-overview
+Amazon AWS Devops: https://aws.amazon.com/pt/devops/what-is-devops/
+
+

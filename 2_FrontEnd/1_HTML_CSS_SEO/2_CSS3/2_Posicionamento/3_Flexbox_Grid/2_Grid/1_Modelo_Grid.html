@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./display_grid-area.css">
+    <link rel="stylesheet" href="./display_grid-template.css">
+    <title>Display Grid - Modelo - Origamid</title>
+</head>
+<style>
+
+    html{
+        height: 100%;
+    }
+
+    body{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+
+    /* HEADER */
+    .cabecalho{
+        width: 100%;
+        height: 150px;
+        box-shadow: 0px 1px 3px #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    ul, ol, li, a{
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .menu_cabecalho{
+        display: flex;
+    }
+
+    li{
+        padding: 10px;
+        margin-right: 2px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    li:hover{
+        border-bottom: 1px solid #333; 
+    }
+
+    /* BODY/CONTENT */
+
+    section{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container_grid{
+    width: 85%;
+    height: 400px;
+    border: 5px solid #333;
+
+    display: grid;
+
+    }
+
+    .grid-item{
+        background: tomato;
+        margin: 2px;
+        padding: 2px;
+        text-align: center;
+
+    }
+
+    .guideline-reference{
+        width: auto;
+        height: auto;
+    }
+
+    .flex_link{
+    background: tomato;
+    border-radius: 5px;
+    color: rgb(155, 44, 24);
+    }
+
+
+
+</style>
+<body>
+
+    <header class = "cabecalho">
+        <div class = "logo">
+            <h1>CSS GRID</h1>
+        </div>
+
+        <nav>
+            <ul class = "menu_cabecalho">
+                <li>Home</li>
+                <li class = "flex_link">Display Flex</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class = "guideline-reference">
+            <p>Guia documento: <a href="https://www.origamid.com/projetos/css-grid-layout-guia-completo/" target="_blank">Origamid Grid Layout</a></p>
+            <p>Guia vídeo: <a href = "https://www.youtube.com/watch?v=HN1UjzRSdBk&t=5s" target = "_blank">Rocketseat</a></p>
+            <p>Um container marcado com Grid é chamado de <strong>"Grid Container"</strong>, e aquilo que existe dentro dele de <strong>"Grid Item"</strong>.</p>
+            <p>Utilizar o posicionamento Grid implica em <strong>posicionar bidirecionalmente os "Grid Items"</strong> de um "Grid Container". Um grid é uma <strong>grade de linhas e colunas</strong>.</p>
+            <p><strong>Importante:</strong> Os Grid Items e o grid/grade são coisas distintas! Os Grid Items se formam e posicionam de acordo com a grade, e que existe de forma implícita. Por isso, é possível definir uma grade sem Grid Items.</p>
+        </div>
+        <div class = "container_grid">
+            <div class = "grid-item gi-1">
+                <h2>Grid Item 1</h2>
+            </div>
+            <div class = "grid-item gi-2">
+                <h2>Grid Item 2</h2>
+            </div>
+            <div class = "grid-item gi-3">
+                <h2>Grid Item 3</h2>
+            </div>
+        </div>        
+    </section>
+    
+</body>
+</html>

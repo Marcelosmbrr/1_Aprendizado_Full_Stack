@@ -1,0 +1,4 @@
+============FORMAS DE INSTALAÇÃO E DOCUMENTAÇÃO===============================
+
+Pode ser instalado por NPM, via CDN, ou realizando o download dos arquivos zipados.
+https://getbootstrap.com/docs/5.1/getting-started/download/

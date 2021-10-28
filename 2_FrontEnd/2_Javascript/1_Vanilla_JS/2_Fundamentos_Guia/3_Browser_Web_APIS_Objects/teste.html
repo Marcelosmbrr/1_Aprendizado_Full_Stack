@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload = "tellName()">
+    <script>
+
+        function tellName(){
+
+            let confirm = window.confirm("Quer me dizer seu nome?");
+
+            if(confirm){
+
+                let nome = window.prompt("Qual o seu nome?");
+
+                if(nome.length >= 2){
+
+                    window.alert("Então seu nome é "+ nome);
+
+                }else{
+
+                    tellName();
+
+                }
+        
+            }else{
+
+                tellName();
+            }
+        
+        }
+
+    </script>
+</body>
+</html>

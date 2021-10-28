@@ -1,9 +1,0 @@
-{
-    "name": "lcmar/template rain-tpl",
-    "description": "Aprendendo template rain-tpl",
-    "type": "project",
-    "minimum-stability": "dev",
-    "require": {
-        "rain/raintpl": ">=3.0.0"
-    }
-}

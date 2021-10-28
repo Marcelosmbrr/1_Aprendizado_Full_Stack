@@ -1,0 +1,38 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #222;
+    flex-grow: 1;
+    color: #fff;
+}
+
+.header_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_logo h1{
+    margin-left: 10px;
+}
+
+main{
+    flex-grow: 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    background-color: #222;
+    flex-grow: 1;
+}

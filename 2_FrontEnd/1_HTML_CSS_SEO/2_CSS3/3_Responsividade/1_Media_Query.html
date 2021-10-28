@@ -1,0 +1,87 @@
+<!-- 
+
+Media Queries é a utilização de Media Types com uma ou mais expressões envolvendo características de uma media para definir formatações para diversos dispositivos. 
+O browser ou a aplicação lê as expressões definidas na query, caso o dispositivo se encaixe nestas requisições, o CSS será aplicado.
+Assim, Media Queries definem condições para que diferentes estilizações sejam utilizadas em cenários específicos. 
+
+Como funciona?
+Geralmente usamos as Media Queries dentro código CSS, que é bem mais organizado. Você linka seu CSS normalmente no HEAD do seu documento.
+E dentro do código CSS, você vai separar os famosos **breakpoints**, que são as condições da largura das telas do dispositivos, que definem quando cada bloco de CSS será utilizado.
+E assim você vai escrevendo seu CSS e manipulando a formatação do layout de acordo com dispositivo desejado.
+
+Para mais informações: https://tableless.com.br/introducao-sobre-media-queries/
+Ver também: https://mediaqueri.es/
+
+-->
+
+
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+
+    <title>Bootstrap - breakpoints</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+        /* ABAIXO TEMOS OS JÁ CITADOS "BREAKPOINTS"; VEJA NA EXPLICAÇÃO DO TOPO DO DOCUMENTO*/
+        /* PARA VER OS EFEITOS: EXPANDIR E REDUZIR O TAMANHO DA JANELA DO NAVEGADOR */
+        
+        /******************************************/
+        /*Extra small devices (portrait phones, menor que 576px)*/
+        @media (max-width: 575px) {
+          body{
+            background: lightcoral;
+          }
+        }
+
+        /*Small devices (landscape phones, 576px e maiores)*/
+        @media (min-width: 576px) and (max-width: 768px) {
+          body{
+            background: lightsalmon;
+          }
+        }
+
+        /*Medium devices (tablets, 768px e maiores)*/
+        @media (min-width: 768px) and (max-width: 992px) {
+          body{
+            background: lightslategrey;
+          }
+        }
+
+        /*Large devices (desktops, 992px e maiores)*/
+        @media (min-width: 992px) and (max-width: 1200px) {
+          body{
+            background: lightseagreen;
+          }
+        }
+
+        /*Extra large devices (large desktops, 1200px  e maiores)*/
+        @media (min-width: 1200px) {
+          body{
+            background: lightsteelblue;
+          }
+        }
+
+    </style>
+
+  </head>
+
+  <body style="margin-bottom: 200px; width: 600px; margin: 0 auto;">
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

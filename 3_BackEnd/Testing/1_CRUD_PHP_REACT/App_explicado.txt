@@ -1,0 +1,57 @@
+========================LIBS=====================================
+
+* Material UI (Componentes Front): https://mui.com/
+* Jquery (Ajax): https://www.npmjs.com/package/jquery
+* React Router (rotas): https://github.com/remix-run/react-router
+* React Device Detect (para detecção do navegador): https://www.npmjs.com/package/react-device-detect
+* React Geolocation (para detecção do local de acesso): https://terrestris.github.io/react-geo/docs/latest/index.html#/Introduction
+* Token JWT PHP: https://github.com/firebase/php-jwt
+* PHPMailer: https://github.com/PHPMailer/PHPMailer
+
+========================GUIAS=====================================
+
+TUTORIAL ROTA PRIVADA:
+
+https://blog.rocketseat.com.br/reactjs-autenticacao/
+
+TUTORIAL ENVIROMENT VARIABLES - PARA O SECRET DO JWT:
+
+https://www.youtube.com/watch?v=mMR5v2YW8r4
+
+========================PLANO=====================================
+
+1) CRIAR O APP REACT
+
+2) ARQUIVO INDEX: RENDERIZAÇÃO DE <ROUTES />
+	2.1) COMPONENTES ROUTES IRÁ RETORNAR A ROTA ATUAL
+
+4) ROTAS EXISTENTES - FORA DO SISTEMA: LOGIN, REGISTRO, RECUPERAR SENHA, SISTEMA E PÁGINA DESCONHECIDA
+	4.1) ROTAS EXISTENTES - DENTRO DO SISTEMA: ROTAS DO MENU ASIDE, E MEUS DADOS
+
+5) A ROTA DO SISTEMA É PRIVADA - ACESSADA PELA CONFIRMAÇÃO DA AUTENTICAÇÃO
+	5.1) CONFIRMAÇÃO BACK-END PARA AUTENTICAÇÃO
+	5.2) TOKEN JWT PARA AUTENTICAÇÃO
+		5.2.1) O LOGIN BEM SUCEDIDO GERA UM TOKEN JWT COM OS DADOS DO USUÁRIO (NOME COMPLETO, EMAIL, USERNAME, BROWSER E GEOLOCALIZAÇÃO)
+		5.2.2) O TOKEN CONTÉM OS DADOS DO USUÁRIO, E É ARMAZENADO NO LOCAL STORAGE
+		5.2.3) QUANDO CARREGADO O SISTEMA, O TOKEN É VALIDADO, DECODIFICADO NO BACK-END, E OS DADOS SÃO ENVIADOS PARA O FRONT EM UM JSON
+		5.2.4) O JSON É CONVERTIDO PARA UM OBJETO JAVASCRIPT, E ARMAZENADO EM UM STATE GLOBAL/CONTEXT, QUE É ACESSÍVEL EM TODO O SISTEMA (INTERNO)
+		5.2.5) NA AUSÊNCIA DESSE TOKEN, OU SE FALHAR SUA DECODIFICAÇÃO, O USUÁRIO É DESLOGADO, E ENVIADO NOVAMENTE PARA A PÁGINA DE LOGIN
+		5.2.6) SE O USUÁRIO DESLOGAR POR VONTADE PRÓPRIA, SEU TOKEN É DESTRUÍDO - CONTRADIZ SEU PROPÓSITO, MAS SERÁ FEITO DESTA FORMA
+			5.2.7) A PERSISTÊNCIA DO TOKEN PERMITIRIA O ACESSO AO SISTEMA SEM A NECESSIDADE DE UM NOVO LOGIN
+
+6) VALIDAÇÃO DOS DADOS NO FRONT-END - EFEITO DE ERRO NOS CAMPOS
+6.1) OS DADOS DE FORMULÁRIO SÃO ENVIADOS PARA O BACK-END APENAS SE APROVADOS NO FRONT-END
+
+8) BACK-END COM PHP - PASTA FORA DA RAÍZ DO REACT APP
+	8.1) A PASTA DO BACK-END EXISTE NO SERVIDOR - APACHE/XAMPP
+	8.1) O É USADO COMPOSER PARA GERENCIAMENTO DE CLASSES E PACOTES EXTERNOS
+	8.2) OPCIONAL: USO DO PADRÃO SINGLETON
+	8.3) IMPLEMENTAÇÃO FUTURA: LARAVEL
+
+========================OBSERVAÇÕES=====================================
+
+* Erro CORS (requisição para domínios diferentes): https://stackoverflow.com/questions/36764325/xampp-jquery-ajax-access-control-origin-error
+
+
+
+

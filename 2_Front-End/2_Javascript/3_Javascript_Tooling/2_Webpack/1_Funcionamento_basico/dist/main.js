@@ -1,1 +1,0 @@
-(()=>{"use strict";(new class{somaNumeros(e,t){const s=document.createElement("header");s.style.width="100%",s.style.height="150px",s.style.display="flex",s.style.justifyContent="center",s.style.alignItems="center",document.querySelector("body").appendChild(s);const n=document.createElement("h1");s.appendChild(n)}}).somaNumeros(20,30)})();

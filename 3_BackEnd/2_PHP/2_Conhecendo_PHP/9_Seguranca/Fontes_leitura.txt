@@ -1,0 +1,5 @@
+        
+        
+        FONTES DE LEITURA
+        https://imasters.com.br/back-end/seguranca-em-aplicacoes-web-com-php
+        https://www.php.net/manual/pt_BR/security.php

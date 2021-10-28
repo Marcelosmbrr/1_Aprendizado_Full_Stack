@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Flexbox - Modelo - Origamid</title>
+    <link rel="stylesheet" href="./display.css">
+</head>
+<body>
+
+    <header class = "cabecalho">
+        <div class = "logo">
+            <h1>CSS FLEXBOX</h1>
+        </div>
+
+        <nav>
+            <ul class = "menu_cabecalho">
+                <li>Home</li>
+                <li class = "grid_link">Display Grid</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class = "guideline-reference">
+            <p>Guia: <a href="https://origamid.com/projetos/flexbox-guia-completo/" target="_blank">Origamid Flexbox</a></p>
+            <p>Um container marcado com Flexbox é chamado de <strong>"Flex Container"</strong>, e aquilo que existe dentro dele de <strong>"Flex Item"</strong>.</p>
+            <p>Utilizar o posicionamento Flex implica em <strong>posicionar unidirecionalmente os "Flex Items"</strong> de um "Flex Container".</p>
+            <p>O <strong>"main axis" é o eixo principal</strong> escolhido. Será o eixo X se o Flex Direction for "row", e será o eixo Y se for "column".</p>
+            <p>O <strong>"cross axis" é o eixo transversal</strong>, isto é, o alternativo ao principal escolhido.</p>
+        </div>
+        <div class = "container_flex">
+            <div class = "flex-item fi-1" style = "align-self: center;">
+                <h2>Flex Item 1</h2>
+            </div>
+
+            <div class = "flex-item fi-2">
+                <h2>Flex Item 2</h2>
+            </div>
+
+            <div class = "flex-item fi-3">
+                <h2>Flex Item 3</h2>
+            </div>
+
+            <div class = "flex-item fi-4">
+                <h2>Flex Item 4</h2>
+            </div>
+
+            <div class = "flex-item fi-5">
+                <h2>Flex Item 5</h2>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

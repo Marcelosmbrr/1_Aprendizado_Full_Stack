@@ -1,0 +1,8 @@
+.menu_toggle{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu_toggle:hover i{
+    color: steelblue;
+}

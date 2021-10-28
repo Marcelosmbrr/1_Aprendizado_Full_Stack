@@ -1,0 +1,9 @@
+{
+    "name": "lcmar/template-blade",
+    "description": "Aprendendo o template Blade",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {
+        "jenssegers/blade": "dev-master"
+    }
+}

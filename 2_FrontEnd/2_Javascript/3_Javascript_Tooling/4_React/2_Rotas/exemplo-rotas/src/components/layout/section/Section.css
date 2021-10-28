@@ -1,0 +1,15 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page-alert{
+    width: max-content;
+    margin: 0px 0.5rem;
+}
+
+.page-alert h1{
+    font-size: 3rem;
+}

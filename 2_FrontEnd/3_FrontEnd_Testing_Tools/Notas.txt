@@ -1,0 +1,5 @@
+https://css-tricks.com/front-end-testing-is-for-everyone/#h-unit-testing
+https://www.perfecto.io/blog/comprehensive-guide-front-end-testing#needforfrontendtesting
+https://www.guru99.com/frontend-testing.html
+
+Jasmine, Mocha, Needle
