@@ -1,0 +1,17 @@
+==== INSTALAÇÃO DO ANDROID STUDIO PARA EMULAÇÃO DO DISPOSITIVO ====
+
+Android Studio é um ambiente de desenvolvimento integrado para desenvolver para a plataforma Android.
+
+Um emulador Android facilita (e muito) no desenvolvimento de nossos aplicativos.
+Para isso, o Android Studio permite a criação e gerenciamento de emuladores dentro da IDE.
+Baixe e instale o Android Studio em sua máquina: https://developer.android.com/studio
+
+1 – Ao iniciar o Android Studio, clicamos em “Configure” e selecionamos a opção AVD Mananger
+2 - Selecione o botão “+ create virtual device”. Na próxima tela que abrir, avançaremos selecionando o modelo de smartphone Pixel 2. 
+3 - Selecione a imagem "Android R" para o emulador 
+4 - Após selecionar a imagem do Android R aperte em avançar e depois em finish
+5 - Para testar o emulador, basta pressionar no botão verde de “play” na tela do gerenciador de dispositivos virtuais
+
+==== INSTALAÇÃO DO GENYMOTION PARA EMULAÇÃO DO DISPOSITIVO ====
+
+O Genymotion é um emulador completo de Android para Windows.

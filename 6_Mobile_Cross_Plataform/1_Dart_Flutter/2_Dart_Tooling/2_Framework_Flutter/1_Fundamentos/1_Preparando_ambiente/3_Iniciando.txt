@@ -1,0 +1,8 @@
+==== INICIANDO PROJETO FLUTTER ====
+
+- Tendo configurado o ambiente, vá para a linha de comandos e navegue até uma pasta qualquer da sua máquina, na qual você deseja criar um projeto Flutter. 
+- Feito isso, dê ao Flutter o comando flutter create my_app
+- Abra a pasta my_app com a IDE e verifique se o projeto foi reconhecido como um projeto Dart/Flutter
+- Se for, na IDE que você estiver, clique no botão de play para rodar o código 
+  - Também é possível executar o código acessando a raíz do projeto, e digitando "flutter run"
+- Se o ambiente de emulação estiver configurado, o código será executado no dispositivo Android simulado

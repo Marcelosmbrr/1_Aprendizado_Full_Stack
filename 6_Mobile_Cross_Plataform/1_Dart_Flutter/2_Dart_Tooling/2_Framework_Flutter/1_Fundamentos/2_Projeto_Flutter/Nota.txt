@@ -1,0 +1,28 @@
+==== CRIAÇÃO DE PROJETO FLUTTER ====
+
+==== FLUTTER CREATE ====
+- Para criarmos o projeto no Prompt, executaremos flutter create seguido de um espaço e do nome do projeto - no caso, flutter create primeiro_projeto
+- Com a execução do comando, o Flutter executará diversas tarefas para gerar nosso projeto
+- Isso irá gerar um template, isto é, uma estruturas de pastas e arquivos de um aplicativo Flutter
+- Esse template é igual ao de um projeto Dart, mas ampliado
+
+==== FLUTTER RUN ====
+
+- Em seguida, é recomendável entrar no diretório do projeto criado, via prompt, e digitar flutter run
+- O Flutter verificará se existe um dispotivo para executar o aplicativo - se não houver uma emulação, ele irá ser exibido no navegador
+- Se tivéssemos conectado um dispositivo físico, digitaríamos flutter devices no Prompt para exibir os dispositivos disponíveis
+
+==== FLUTTER EMULATORS ====
+
+- Neste caso, não como terá nenhum, será recomendando o uso do comando "flutter emulators"
+- Esse comando irá procurar por emulações criadas, e se existir alguma, ela será listada
+- Assim, copiaremos o ID desse emulador, por exemplo "Pixel_API_28", e executaremos flutter emulators --launch <emulator id>
+- Com isso o emulador será inicializado
+
+==== DISPOSITIVO/EMULAÇÃO PREPARADA -> FLUTTER RUN =====
+
+- Com o emulador rodando, executaremos flutter run no Prompt
+- Agora, será indicado que ele estará rodando dentro do dispositivo Android e o ambiente será preparado para executar todas as tarefas dentro do ambiente Android
+- Algum tempo depois da execução, o Flutter conseguirá nos mostrar dentro do emulador o aplicativo inicial gerado
+- O aplicativo inicial do Flutter é o "Flutter Demo Home Page"
+- Esse visual inicial é como o ponto partida de um React app - a ideia é a mesma

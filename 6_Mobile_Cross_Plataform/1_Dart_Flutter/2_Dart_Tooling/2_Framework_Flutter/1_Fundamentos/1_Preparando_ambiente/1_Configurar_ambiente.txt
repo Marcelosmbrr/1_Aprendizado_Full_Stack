@@ -1,0 +1,44 @@
+==== CONFIGURAÇÃO DO AMBIENTE ====
+
+- Para desenvolvermos utilizando Flutter, precisaremos dos seguintes itens instalados em nossa máquina, independentemente se ela é Windows, Linux ou macOS:
+Flutter SDK: https://flutter.dev/docs/get-started/install
+Uma IDE com plug-ins de suporte ao Flutter, como: VS Code, Android Studio e IntelliJ IDEA
+
+=== INSTALAÇÃO DO FLUTTER - WINDOWS ====
+
+Para instalar e configurar o Flutter no Windows, veja os passos a seguir:
+
+1 - O Flutter depende do Git para funcionar. 
+Então, é necessário que o Git esteja instalado na máquina antes de instalarmos o Flutter. 
+Para isso, basta baixar o cliente do Git para Windows da sua página oficial. 
+A instalação é no estilo Avançar> Avançar> Concluir. 
+Quando o download for concluído, basta clicar no instalador do Git para que o processo de instalação seja iniciado.
+
+2 - Baixe o arquivo zip da última versão do Flutter. 
+Esse arquivo pode ser encontrado na página oficial do Flutter, dentro da seção “Get the Flutter SDK”. 
+O nome do arquivo normalmente é flutter_windows_x.x.x-stable.zip, no qual as letras “x” são os números da versão mais atual disponível.
+
+3 - Extraia o arquivo zip com o Flutter SDK para uma pasta onde não sejam necessários privilégios de administrador. 
+A documentação do Flutter recomenda que o SDK seja extraído para C:\flutter.
+
+4 - Para utilizarmos o Flutter CLI (interface de linha de comandos) diretamente em qualquer linha de comando, os seguintes passos são necessários:
+
+Vá em Painel de Controle > Contas de usuário > Alterar as variáveis do meu ambiente.
+
+Na seção de variáveis de ambiente de usuário, procure a variável chamada “Path”.
+
+Adicione à variável “Path” o caminho para a pasta C:/flutter/bin. Não se esqueça de separar a nova entrada das entradas pré-existentes com um ponto e vírgula (;).
+
+Reinicie o Windows.
+
+Abra uma instância do git bash ou cmd e digite o comando Flutter. O help do Flutter deve ser exibido.
+
+5 - E por último, mas não menos importante, execute em uma linha de comando do Windows o comando flutter doctor, para que ele dê o diagnóstico completo e informe se a instalação foi realizada corretamente. 
+Caso ainda haja pendências, ele dirá quais são e como resolvê-las.
+
+==== CONFIGURANDO FLUTTER NO VS CODE E NO IntelliJ IDEA ====
+
+Na aba do lado esquerdo chamada "Plugins", pesquise primeiro "Dart" e instale. 
+Depois repita o processo pesquisando por "Flutter" e instalando a extensão do Flutter.
+
+
