@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ElevatedButtonGenerator extends StatelessWidget {
   final String buttonText;
-  final List<TextEditingController> _inputsControllers;
+  late List<TextEditingController> _inputsControllers = [];
 
   ElevatedButtonGenerator(this.buttonText, this._inputsControllers);
 

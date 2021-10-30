@@ -1,8 +1,11 @@
 // ==== ESSA CLASSE FUNCIONA COMO UMA PÁGINA ==== //
 // ==== EXIBE OS ITENS DE TRANSFERÊNCIAS, QUE SÃO WIDGETS "CARD", E TAMBÉM O BOTÃO PARA EXIBIR O FORMULÁRIO ==== //
+
 import 'package:flutter/material.dart';
-import 'package:primeiro_projeto/models/TransferItem.dart';
-import 'package:primeiro_projeto/screens/TransferForm.dart';
+import 'package:primeiro_projeto/models/transfer_item.dart';
+import 'package:primeiro_projeto/screens/transfer_form.dart';
+// Para geração de códigos únicos // https://pub.dev/packages/uuid
+import 'package:uuid/uuid.dart';
 
 class TransferList extends StatefulWidget {
   final List<TransferItem> transfersList = [];
@@ -21,7 +24,7 @@ class TransferListState extends State<TransferList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Todas as transferências'),
+        title: const Text('All transfers'),
         backgroundColor: Colors.green,
       ),
       // ==== Widget "ListView" para listagem de itens com scroll ==== //
@@ -41,9 +44,12 @@ class TransferListState extends State<TransferList> {
 
           // Recuperação do valor retornado do método Navigator.pop() realizado no envio do formulário
           formReturn.then((newTransferData) {
-            debugPrint("Nova transferência recebida | Valor: ${newTransferData[0]} | Conta: ${newTransferData[1]} |");
+            debugPrint("New transfer created | Valor: ${newTransferData[0]} | Conta: ${newTransferData[1]} |");
             setState(() {
-              widget.transfersList.add(TransferItem(newTransferData[0], newTransferData[1]));
+              // Objeto para geração de um UUID
+              // https://pub.dev/packages/uuid
+              var uuid = Uuid();
+              widget.transfersList.add(TransferItem(newTransferData[0], newTransferData[1], uuid.v1()));
             });
           });
         },
