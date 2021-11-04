@@ -1,3 +1,0 @@
-https://kinsta.com/pt/blog/php-8/
-https://hcode.com.br/blog/o-que-ha-de-novo-no-php-8-parte-1
-https://www.homehost.com.br/blog/tutoriais/php/php-8/#funcoes

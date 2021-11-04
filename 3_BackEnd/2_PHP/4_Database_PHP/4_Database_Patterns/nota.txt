@@ -1,0 +1,16 @@
+Além do padrão Repository que foi citado neste capítulo, existe também o padrão DAO.
+
+Segundo o livro DDD in PHP, a diferença é a seguinte:
+
+The significant difference is that Repositories represent collections, while DAOs are closer to the database and are often far more table-centric.
+
+Basicamente, ambos servem o mesmo propósito, mas a diferença é na interface deles, ou seja, em termos práticos, nos nomes dos métodos.
+
+Enquanto DAOs vão ter métodos como get, create, update e delete, lembrando ações que realizamos em tabelas de um banco de dados, Repositories vão possuir métodos como all, findById, add, remove, tratando os dados como uma coleção.
+
+Eu opto sempre por utilizar Repositories para que eles continuem fazendo sentido caso eu esteja persistindo dados em algum lugar que não seja um banco de dados (API, arquivo, sistema externo, etc)
+
+
+=== EXCÇÕES PDO ====
+
+atributo PDO::ATTR_ERRMODE com valor ERRMODE_EXCEPTION

@@ -1,0 +1,20 @@
+{
+    "name": "lcmar/dotenv",
+    "description": "Utilizando vari\u0000veis de ambiente para armazenar configura\u0000\u0000es da aplica\u0000\u0000o",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Marcelosmbrr",
+            "email": "profissionalsmbr@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "vlucas/phpdotenv": "5.3.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Root\\": "/"
+        }
+    }
+}

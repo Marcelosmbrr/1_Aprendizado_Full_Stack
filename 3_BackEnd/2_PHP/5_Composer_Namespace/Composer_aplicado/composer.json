@@ -1,0 +1,14 @@
+{
+    "name": "marcelosmbr/composer_guia",
+    "description": "Primeiro Composer",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": { 
+        "cocur/slugify": "dev-master"
+    },
+    "autoload": { 
+        "psr-4":{ 
+            "Classes\\":"Classes/" 
+        }
+    }
+}
