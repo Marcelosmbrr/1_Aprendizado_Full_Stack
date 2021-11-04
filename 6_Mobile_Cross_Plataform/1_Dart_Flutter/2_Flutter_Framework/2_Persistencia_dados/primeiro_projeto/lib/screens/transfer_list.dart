@@ -4,11 +4,12 @@
 import 'package:flutter/material.dart';
 import 'package:primeiro_projeto/models/transfer_item.dart';
 import 'package:primeiro_projeto/screens/transfer_form.dart';
-import 'package:primeiro_projeto/models/transfers_storage.dart';
 // Para geração de códigos únicos // https://pub.dev/packages/uuid
 import 'package:uuid/uuid.dart';
 
-class TransferList extends StatefulWidget with TransfersStorage {
+class TransferList extends StatefulWidget {
+  final List<TransferItem> transfersList = [];
+
   TransferList({Key? key}) : super(key: key);
 
   @override
@@ -45,18 +46,10 @@ class TransferListState extends State<TransferList> {
           formReturn.then((newTransferData) {
             debugPrint("New transfer created | Valor: ${newTransferData[0]} | Conta: ${newTransferData[1]} |");
             setState(() {
-              // Objeto para geração de um UUID // https://pub.dev/packages/uuid
+              // Objeto para geração de um UUID
+              // https://pub.dev/packages/uuid
               var uuid = Uuid();
-
-              // O ID da transferência vai ter essa composição: [quantidade transferências somado 1].uuid
-              var transferID = "${widget.transfersList.length}-${uuid.v1()}";
-
-              // Widget da nova transferência
-              TransferItem newTransfer = TransferItem(newTransferData[0], newTransferData[1], transferID);
-
-              // Adição do Widget da nova transferência ao storage das transferências
-              widget.transfersList.add(newTransfer);
-
+              widget.transfersList.add(TransferItem(newTransferData[0], newTransferData[1], uuid.v1()));
             });
           });
         },

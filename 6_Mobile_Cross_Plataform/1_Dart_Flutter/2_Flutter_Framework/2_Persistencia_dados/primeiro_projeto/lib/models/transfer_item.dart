@@ -1,9 +1,8 @@
 // ==== CLASSE PARA GERAÇÃO GENÉRICA DE CARDS/ITENS ==== //
 import 'package:flutter/material.dart';
-import 'package:primeiro_projeto/models/transfers_storage.dart';
 
 // ignore: must_be_immutable
-class TransferItem extends StatelessWidget with TransfersStorage{
+class TransferItem extends StatelessWidget {
   late double valor;
   late int conta;
   late String uuid;
@@ -45,15 +44,8 @@ class TransferItem extends StatelessWidget with TransfersStorage{
                     children: <Widget>[
                       IconButton(
                         onPressed: () {
-                          // Quebrar o ID da transferência em uma lista de valores
-                          List<dynamic> transferIDSplit = this.uuid.split("-");
+                          //debugPrint("DELETING TRANSFER || ID: $uuid");
 
-                          // Extrair o valor da primeira posição da lista
-                          // Esse primeiro valor é igual à posição do elemento na Lista de transferências
-                          int transferStorageIndex = transferIDSplit[0];
-
-                          // Remoção da transferência a partir do seu índice
-                          //transfersList.removeAt(transferStorageIndex);
                         },
                         icon: const Icon(Icons.delete),
                         color: Colors.red,
@@ -69,5 +61,3 @@ class TransferItem extends StatelessWidget with TransfersStorage{
     );
   }
 }
-
-
