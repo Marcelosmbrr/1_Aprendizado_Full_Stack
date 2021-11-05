@@ -1,0 +1,42 @@
+# O htaccess utiliza uma linguagem de programação própria chamada apenas de "linguagem Apache" ou "Diretivas"
+# Confira a documentação aqui: https://httpd.apache.org/docs/2.2/mod/directives.html
+
+# Para comentar no htaccess é necessário utilizar esse símbolo (#)
+# O htaccess possui diversos poderes, e aqui serão mostrados apenas alguns exemplos
+
+# Abre o bloco de código condicional IfModule, que engloba todo o resto
+# Ele serve para definir regras 
+# Neste caso a regra é a habilitação do comando de reescrita, caso já não esteja
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+# O bloco de comandos abaixo nega o acesso a esse arquivo
+<files ~ "^.*\.([Hh][Tt][Aa])"> # Arquivo envolvido no comando será o que começar com "hta" ou "HTA"
+order allow,deny # Aberta uma ordem de permissão e negação
+deny from all # Negar o acesso ao arquivo para todos
+</files>
+
+# O bloco de comandos abaixo serve para criar URLs amigáveis
+# O que ele faz é retirar a extensão .php dos arquivos
+Rewritecond %{REQUEST_FILENAME} !-f # Condição para reescrita
+Rewritecond %{REQUEST_FILENAME} !-d # Condição para reescrita
+Rewritecond %{REQUEST_FILENAME} !-l # Condição para reescrita
+# Basta alterar o trecho "$1.php [L]" para mudar o tipo de arquivo a ser afetado. Exemplo: "$1.html [L]"
+RewriteRule ^([\w\d-]+)$ $1.php [L]
+
+# Aberta uma ordem de permissão e negação
+# Negação de acesso do IP 189.38.82.2
+Order deny,allow
+Deny from all
+Allow from 189.38.82.2
+
+# Para desabilitar ou habilitar display_erros (On/Off)
+php_flag display_errors Off
+
+# Para definir a página principal do site
+DirectoryIndex home.php
+
+# Fechamento do bloco condicional IfModule
+ </IfModule>
