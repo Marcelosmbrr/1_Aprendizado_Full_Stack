@@ -1,9 +1,12 @@
 <?php
 
-    namespace Classes;
-    use PDO;
+    // O padrão DAO configura a prática de criar uma classe genérica que realiza as operações CRUD
+    // Os métodos dessa classe genérica são os característicos dos grupos DQL, DML e DDL
+    // Os métodos são: Select, Update, Delete e Insert 
 
-    class Sql extends PDO{
+    use PDO;
+    
+    class DAOSql extends PDO{
 
         private $conn;
 

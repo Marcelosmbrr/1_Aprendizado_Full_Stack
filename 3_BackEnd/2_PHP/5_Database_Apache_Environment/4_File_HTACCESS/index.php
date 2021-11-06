@@ -7,7 +7,7 @@
 ==== O QUE É HTACCESS ====
 
 - O seu nome vem de HyperText access 
-- A linguagem de programação utilizada no arquivo é uma própria para ele mesmo, mas sua forma visual é de texto puro
+- A linguagem de programação utilizada no arquivo é uma própria para ele mesmo, chamada de "linguagem Apache" - uma variante do Perl que utiliza Regex
 - O arquivo .htaccess serve para controlar diversos parâmetros do servidor Apache
 - Ele é um arquivo de configuração de servidor distribuído, ou seja, ele configura o servidor apenas no diretório em que o arquivo .htaccess está
 - Em uma arquitetura MVC, normalmente existe na pasta public

@@ -24,6 +24,7 @@ Rewritecond %{REQUEST_FILENAME} !-f # Condição para reescrita
 Rewritecond %{REQUEST_FILENAME} !-d # Condição para reescrita
 Rewritecond %{REQUEST_FILENAME} !-l # Condição para reescrita
 # Basta alterar o trecho "$1.php [L]" para mudar o tipo de arquivo a ser afetado. Exemplo: "$1.html [L]"
+# Sintaxe: RewriteRule padrão_procurado valor_reescrita [flag]
 RewriteRule ^([\w\d-]+)$ $1.php [L]
 
 # Aberta uma ordem de permissão e negação
