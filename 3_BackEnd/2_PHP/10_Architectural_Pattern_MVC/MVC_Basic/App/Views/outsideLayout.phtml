@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <title>LAYOUT EXTERNO</title>
+</head>
+<style>
+
+    /* ==== RESET ==== */
+    *{
+        padding: 0;
+        margin: 0;
+        outline: none;
+        box-sizing: border-box;
+
+        /* root font size for the rem measure */
+        font-size: 10px;
+    }
+
+    body{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        font-family: sans-serif;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: #545E75;
+    }
+
+    a{
+    text-decoration: none;
+    }
+
+    ul, ol, li{
+        list-style: none;
+    }
+
+    /* ==== PAGE CONFIGURATION ==== */
+
+    section{
+        padding: 1rem;
+        background: #E0E2DB;
+        border-radius: .5rem;
+    }
+
+    /* FORMULARY */
+
+    .form_row label{
+        font-size: 1.2rem;
+    }
+
+    .form_row{
+        margin: .5rem 0px .5rem 0px;
+    }
+
+    .submit_row{
+        text-align: center;
+    }
+
+    input{
+        display: block;
+        padding: .5rem;
+
+        width: 350px;
+
+    }
+
+    p a{
+        font-size: 1.2rem;
+    }
+
+</style>
+<body>
+
+    <section>
+
+    <?php
+
+    // Conteúdo da página da rota
+    $this->renderPageContent();
+
+    ?>
+
+    </section>
+
+</body>
+</body>
+</html>

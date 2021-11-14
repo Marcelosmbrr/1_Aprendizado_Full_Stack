@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <title>LAYOUT INTERNO</title>
+</head>
+<style>
+
+    /* ==== RESET ==== */
+
+    *{
+        padding: 0px;
+        margin: 0px;
+        outline: none;
+        box-sizing: border-box;
+
+        /* root font size for the rem measure */
+        font-size: 10px;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        font-family: sans-serif;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    ul, ol, li{
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    /* ==== PAGE CONFIGURATION ==== */
+
+    header{
+        flex-basis:80px;
+        background: #333;
+        color: #fff;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    section{
+        flex-grow: 3;
+        background: #E0E2DB;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    footer{
+        flex-basis: 80px;
+        background: #333;
+    }
+
+    .header_navbar{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .header_navbar ul li a{
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    /* TABLE CONFIGURATION */
+    td, th{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .table_container{
+        margin: 130px;
+        width: 85%;
+    }
+
+</style>
+<body>
+
+    <header>
+        <h1>INSIDE SYSTEM</h1>
+
+        <nav class = "header_navbar">
+            <ul>
+                <li><a href = "/login">Sair</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section>
+
+    <?php
+
+    // Conteúdo da página da rota
+    $this->renderPageContent();
+
+    ?>
+
+    </section>
+
+    <footer>
+    </footer>
+
+</body>
+</body>
+</html>

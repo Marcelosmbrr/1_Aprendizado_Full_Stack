@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+# Para definir a página principal do site
+DirectoryIndex index.php
+
+# Negar acesso a todos os diretórios diferentes de public
+
+# Negar acesso ao arquivo htaccess
+<files ~ "^.*\.([Hh][Tt][Aa])"> 
+order allow,deny 
+deny from all 
+</files>
+
+# Negar acesso ao arquivo .env
+
+# Retirar a extensão .php dos arquivos, no endereçamento
+Rewritecond %{REQUEST_FILENAME} !-f # Condição para reescrita
+Rewritecond %{REQUEST_FILENAME} !-d # Condição para reescrita
+Rewritecond %{REQUEST_FILENAME} !-l # Condição para reescrita
+# Basta alterar o trecho "$1.php [L]" para mudar o tipo de arquivo a ser afetado. Exemplo: "$1.html [L]"
+# Sintaxe: RewriteRule padrão_procurado valor_reescrita [flag]
+RewriteRule ^([\w\d-]+)$ $1.php [L]
+
+
+
+ </IfModule>

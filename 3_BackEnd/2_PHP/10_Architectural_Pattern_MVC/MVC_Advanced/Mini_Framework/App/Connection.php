@@ -23,6 +23,11 @@
                 try{
 
                      self::$instance = new PDO("mysql:host=localhost;dbname=miniframework_mvc", "root", "");
+
+                    // Alteração do modo de tratamento de erro do PDO
+                    // Função setAttribute do PDO: https://www.php.net/manual/en/pdo.setattribute.php
+                    self::$instance->setAttribute(attribute:PDO::ATTR_ERRMODE, value:PDO::ERRMODE_EXCEPTION);
+
                      return self::$instance;
                     
                 }

@@ -24,7 +24,10 @@ require("vendor/autoload.php");
 
 use Root\Connection;
 
+// A função "createImmutable" recebe a localização do arquivo .env
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+
+// A função load carrega o arquivo encontrado
 $dotenv->load();
 
 $conn = Connection::createConnection();

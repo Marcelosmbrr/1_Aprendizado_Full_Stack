@@ -7,3 +7,7 @@ https://www.php-fig.org/psr/psr-1/
 https://www.php-fig.org/psr/psr-12/
 https://www.php-fig.org/psr/psr-0/
 https://www.php-fig.org/psr/psr-4/
+
+==== TWELVE FACTORS APP ====
+
+https://12factor.net/pt_br/

@@ -45,8 +45,8 @@ abstract class Action {
         // Então se a rota for outra, o controlador será outro, e as actions irão procurar em outra pasta da camada Views (Views/[primeiro nome do controlador])
 
         $actualClass = get_class($this);
-        $actualClass = str_replace("App\\Controllers\\", "", $actualClass);
-        $actualClass = str_replace("Controller", "", $actualClass);
+        $actualClass = str_replace("App\\Controllers\\", "", $actualClass); // Recuperar string "indexController"
+        $actualClass = str_replace("Controller", "", $actualClass); // Tornar "indexController" apenas "index"
 
         // Require dinâmico da View
         require_once("../App/Views/". $actualClass ."/". $this->viewData->page .".phtml");
