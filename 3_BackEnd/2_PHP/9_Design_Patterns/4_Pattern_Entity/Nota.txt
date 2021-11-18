@@ -1,0 +1,24 @@
+======== O QUE É O PADRÃO ENTITY =========
+
+- O termo entidade pode ser muito facilmente confundido com vários outros conceitos. O que diz no livro "DDD in PHP" é:
+
+"Exemplos claros de objetos que exigem uma identidade incluem: Uma pessoa; Um pedido. [...] 
+Esses conceitos têm uma identidade que perdura ao longo do tempo. 
+Não importa quantas vezes os dados destes conceitos sejam alterados, suas identidades permanecem as mesmas. 
+É isso que as torna Entidades."
+
+- Além disso, é muito importante que as entidades tenham suas próprias regras de negócio e não deleguem isso para classes externas.
+- Esse é o conceito explicado muito mais a fundo neste artigo: https://www.martinfowler.com/bliki/AnemicDomainModel.html.
+
+======== O QUE É UMA CLASSE ANÊMICA, E PORQUE NÃO IMPLEMENTAR ESSE ESTILO ========
+
+- Como diz no artigo citado, uma classe anêmica, ou "Modelo de Domínio Anêmico", é um mero "saco de dados"
+- Possui atributos, getters e setters, mas nenhuma regra de negócio, nenhuma lógica para alterações dos seus dados
+- É uma classe que delega seus "cálculos" de domínio para classes externas
+- Como domínio, devemos entender a "regra de negócio" da classe - por exemplo, uma classe "Usuário" lidaria com as regras de negócio dos usuários do sistema
+
+"Muitas vezes esses modelos vêm com regras de design que dizem que você não deve colocar nenhuma lógica de domínio nos objetos de domínio. 
+Em vez disso, há um conjunto de objetos de serviço que capturam toda a lógica do domínio, realizando todos os cálculos e atualizando os objetos do modelo com os resultados".
+
+"O horror fundamental desse antipadrão é que ele é muito contrário à ideia básica do design orientado a objetos; que é combinar dados e processos juntos"
+

@@ -1,0 +1,82 @@
+/* CUSTOM SELECTORS - OUTSIDE PAGES (LOGIN, REGISTRATION AND CHANGE PASSWORD) */
+
+.formulary_container{
+    margin: 1rem 0rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    width: 400px;
+}
+
+.fc_header{
+    color: #FF6500;
+    text-align: center;
+}
+
+.fc_header h1{
+    font-size: 3rem;
+}   
+
+.fc_body{
+
+}
+
+.fc_body form{
+    padding: 0.5rem 0rem;
+}
+
+.fc_footer{
+
+}
+
+.formulary{
+
+}
+
+.form_row{
+    margin: 2rem 0rem;
+}
+
+.input_t1{
+    font-size: 1.5em;
+    width: 100%;
+    border: 1px solid #7F858D;
+    padding: 0.8rem 0.2rem;
+    border-radius: 0.2rem;
+}
+
+::placeholder {
+    font-size: 1.3rem;
+}
+
+.button_t1{
+    border: none;
+    cursor: pointer;
+    background-color: #FF6500;
+    transition: all 0.5s;
+}
+
+.button_t1:hover{
+    background-color: #FF8B1F;
+}
+
+.fr_button{
+    margin-top: 3.5rem;
+}
+
+.fc_footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fc_footer_column{
+    color: #222;
+    text-decoration: underline;
+}
+
+.fc_footer_column a{
+    color: #222;
+    font-size: 1.2rem;
+}

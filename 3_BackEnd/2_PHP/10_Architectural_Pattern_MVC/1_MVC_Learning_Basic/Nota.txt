@@ -1,0 +1,42 @@
+==================== MVC BÁSICO ==========
+
+- Esse programa é um teste pessoal
+- Foi criado praticamente do zero, para que eu pudesse entender os fundamentos lógicos da arquitetura
+- Não houve nenhum planejamento, as conexões entre as partes se deram no improviso, e no entendimento gradual delas
+
+==================== MVC BÁSICO - FUNCIONAMENTO INDEX-CONTROLLER ====================
+
+1) O ENTRY POINT - INDEX.PHP
+
+- Todas as requisições "/" que não especificam o arquivo, isto é, que não são "/[alguma_coisa].php" são realizadas para o index.php
+- Esse index existe na pasta public, que é a raíz do programa - o root
+- Todas as requisições são redirecionadas para a pasta public, e para o arquivo index.php
+
+1.1) O CÓDIGO DO ENTRY POINT - PUBLIC/INDEX.PHP
+
+- Esse arquivo possui algumas configurações, como a instância da classe Route, que recebe o valor do caminho da rota atual
+- Se o endereçamento atual é "/blabla?user=2", a rota atual é essa, "/blabla", que é recuperada com a super $_SERVER["REQUEST_URI"] na função parse_url() com o modo "PHP_URL_PATH"
+- Isso é necessário, essa função, porque $_SERVER["REQUEST_URI"] inclui os parâmetros da URL, e para o roteamento interessa apenas o caminho da rota
+
+- Além disso, esse arquivo tem a instância da classe Dotenv, que serve para carregar os valores do arquivo .env e disponibiliza-los como variáveis globais em $_ENV, ou getenv()
+
+- Possui também a inicilização da sessão, com session_start()
+- Também tem, obviamente, o require do autoload do Composer
+
+- E por último, o index.php tem um sistema de redirecionamento que considera a rota atual e a existência da sessão de usuário autenticado, $_SESSION["user_authenticated"]
+- Se a rota atual não for "/login", "/registration" e "/change_password", e se não existir essa sessão, o usuário será redirecionado para "/login"
+- Um usuário em "/home", sem a sessão de usuário autenticado, seria um usuário não autenticado dentro do sistema
+
+2) CLASSE ROUTE - APP/ROUTE
+
+- Essa classe recebe o valor da rota atual, na sua instância, e persiste ela em um atributo 
+- Depois esse atributo é utilizado em um switch(), em que cada caso é o valor da rota atual
+- Para cada rota, ou caso de rota, um controller é instanciado
+- Existem dois tipos de rotas: a de processamento e a de interação
+
+3) CONTROLLERS - APP/CONTROLLERS/
+
+- Existem dois tipos de controllers: o que realiza operações de login, cadastro e recuperação de senha, e o que renderiza layouts e páginas - operationController e renderController
+- A rota de processamento, que utiliza o operationController, é um intermediário que o usuário não interage, mas que "ativa" processamentos, e depois redireciona o usuário para uma rota de interação
+- A rota de interação carrega o conteúdo da página da rota, que é um arquivo .phtml de nome igual a rota, e o layout que é a estrutura básica da página
+- Existem dois tipos de layout: o outsideLayout que é para as páginas de fora do sistema, e o insideLayout, que é para as páginas internas do sistema

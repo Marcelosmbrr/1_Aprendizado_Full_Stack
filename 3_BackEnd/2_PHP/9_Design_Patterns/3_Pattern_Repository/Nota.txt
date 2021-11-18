@@ -1,0 +1,8 @@
+======== O PADRÃO REPOSITORY ========
+
+- Essa padrão serve para criar uma classe cuja função é exatamente a mesma de uma com o padrão DAO: realizar operações SQL
+- A diferença é que o DAO é super genérico, seus métodos são: select, insert, update e delete
+- Enquanto que o Repository tenta se aproximar das regras de negócio 
+
+- Por exemplo, se exitir uma classe "Student", poderia existir uma "PDOStudentRepository" com os seguintes métodos:
+loadStudent(), loadAllStudents(), saveStudent(), removeStudent(), editStudent().
