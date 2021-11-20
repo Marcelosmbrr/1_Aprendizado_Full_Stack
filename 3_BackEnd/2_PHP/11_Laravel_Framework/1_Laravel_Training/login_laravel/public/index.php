@@ -35,7 +35,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
-| Run The Application
+| PONTO DE ENTRADA DA APLICAÇÃO WEB - ENTRY POINT DO MVC
 |--------------------------------------------------------------------------
 |
 | Once we have the application, we can handle the incoming request using

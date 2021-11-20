@@ -1,15 +1,20 @@
 /* CUSTOM SELECTORS - OUTSIDE PAGES (LOGIN, REGISTRATION AND CHANGE PASSWORD) */
 
+/* FORMULARY CONTAINER LAYER - FC */
+
 .formulary_container{
     margin: 1rem 0rem;
     background: #fff;
-    border-radius: 0.2rem;
+    border-radius: 0.3rem;
     padding: 1rem;
     width: 400px;
+
+    margin-top: 10rem;
+    height: max-content;
 }
 
 .fc_header{
-    color: #FF6500;
+    color: #fb503b;
     text-align: center;
 }
 
@@ -17,20 +22,27 @@
     font-size: 3rem;
 }   
 
-.fc_body{
-
+.fc_footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.fc_footer_column{
+    color: #222;
+    text-decoration: underline;
+}
+
+.fc_footer_column a{
+    color: #222;
+    font-size: 1.2rem;
+}
+
+/* FORMULARY LAYER */
 
 .fc_body form{
     padding: 0.5rem 0rem;
-}
-
-.fc_footer{
-
-}
-
-.formulary{
-
 }
 
 .form_row{
@@ -40,7 +52,7 @@
 .input_t1{
     font-size: 1.5em;
     width: 100%;
-    border: 1px solid #7F858D;
+    border: 1px solid #C4C4C4;
     padding: 0.8rem 0.2rem;
     border-radius: 0.2rem;
 }
@@ -61,22 +73,5 @@
 }
 
 .fr_button{
-    margin-top: 3.5rem;
-}
-
-.fc_footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.fc_footer_column{
-    color: #222;
-    text-decoration: underline;
-}
-
-.fc_footer_column a{
-    color: #222;
-    font-size: 1.2rem;
+    margin-top: 2rem;
 }

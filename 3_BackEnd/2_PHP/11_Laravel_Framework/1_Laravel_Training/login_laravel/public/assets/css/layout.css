@@ -17,7 +17,7 @@ body{
     display: flex;
     flex-direction: column;
 
-    background-color: #f0f0f0;
+    background-color: #171923;
 }
 
 ul, ol, li{
@@ -34,11 +34,15 @@ input{
     display: block;
 }
 
-/* CUSTOM SELECTORS */
+i{
+    font-size: 3rem;
+}
+
+/* CUSTOM SELECTORS FOR STRUCTURES */
 
 .layout_header{
     flex-basis: 100px;
-    background-color: #333;
+    background-color: #13151D;
     box-shadow: 2px 2px 18px 0px rgba(0,0,0,0.75);
 
     display: flex;
@@ -51,11 +55,23 @@ input{
 
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .layout_footer{
     flex-basis: 80px;
-    background-color: #333;
-    box-shadow: 2px -2px 18px 0px rgba(0,0,0,0.75);
+    background-color: #171923;
+    /* box-shadow: 2px -2px 18px 0px rgba(0,0,0,0.75); */
+    text-align: center;
+    color: #fff;
+}
+
+/* CUSTOM SELECTORS FOR EFFECTS */
+
+.hidden{
+    display: none;
+    transition: all 1s;
+}
+
+.error{
+    border: 1px solid red;
 }
