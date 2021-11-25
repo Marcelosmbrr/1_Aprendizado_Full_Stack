@@ -11,7 +11,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.styles(["resources/css/layout.css", "resources/css/outside_page.css", "resources/css/inside_page.css"],
+ "public/assets/css/style_bunddler.css");
