@@ -21,6 +21,7 @@
         <title>Aprendendo Laravel</title>
     </head>
     <body>
+
         <header class = "layout_header">
 
             <h1><img src="/assets/img/laravel-logo.png" alt="Laravel Logo" width="230px"></h1>
@@ -34,5 +35,6 @@
         <footer class = "layout_footer">
             <p>Aprendendo Laravel &copy; 2021</p>
         </footer>
+        
     </body>
 </html>

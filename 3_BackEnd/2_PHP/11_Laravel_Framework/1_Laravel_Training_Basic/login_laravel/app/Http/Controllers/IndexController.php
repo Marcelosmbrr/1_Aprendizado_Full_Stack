@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Session;
 // ACESSO AO MODEL
 use App\Models\Person;
 
-
-
 class IndexController extends Controller
 {
 
@@ -22,11 +20,6 @@ class IndexController extends Controller
 
     }
 
-    // Action responsável por retornar a view da rota "account/registration"
-    public function registration(){
-
-        return view("registration");
-    }
 
     // Action responsável por retornar a view da rota "account/activation"
     public function accountActivation(){
@@ -40,14 +33,7 @@ class IndexController extends Controller
 
     }
 
-    // Action responsável por retornar a view da rota "account/changepassword"
-    public function changePassword(){
-
-        return view("changepassword");
-
-    }
-
-    // Action para recuperação dos dados de requisições POST
+    // Action para recuperação dos dados de requisições POST dos formulários
     public function store(Request $request){
 
         $person = new Person();
@@ -144,5 +130,24 @@ class IndexController extends Controller
         
 
     }
+
+    // ==== ACTIONS NÃO UTILIZADAS - FORAM SUBSTITUIDAS POR UMA ROTA DE VIEW ==================================================================== //
+
+    // NÃO UTILIZADA 
+    // Por ter esse único papel, de retornar uma view, ela não é utilizada, e sim uma rota especializada nisso, e que dispensa controladores // Route::view
+    public function registration(){
+
+        return view("registration");
+    }
+
+    // NÃO UTILIZADA 
+    // Por ter esse único papel, de retornar uma view, ela não é utilizada, e sim uma rota especializada nisso, e que dispensa controladores // Route::view
+    public function changePassword(){
+
+        return view("changepassword");
+
+    }
+
+    // ================================================================================================================== //
 
 }
