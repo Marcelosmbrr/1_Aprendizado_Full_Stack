@@ -18,17 +18,19 @@ function pai(){
 
   //Retorna a função filho()
   return filho;
+
 }
 
-//Contador recebe a função filho, no estado pós primeira execução
-//Chamando a função filho a partir do contador, os estados anteriores gerados são considerados
+// Contador_A recebe a função filho(), no estado pós primeira execução
+// Assim, a função filho() é chamada se chamada a função contador_A()
+// A cada chamada o valor de X é o da chamada anterior
 var contador_A = pai();
 contador_A();    // 1
 contador_A();    // 2
 contador_A();    // 3
 contador_A();    // 4
 
-//Recebe a função filho resetada
+// Recebe a função filho resetada
 var contador_B = pai();
 contador_B(); // 1
 contador_B(); // 2
